@@ -36,11 +36,19 @@
     <Reference Include="BinAff.Utility">
       <HintPath>..\..\..\Reference\BinAff.Utility.dll</HintPath>
     </Reference>
+    <Reference Include="Crystal.Configuration.Component">
+      <HintPath>..\..\..\Reference\Crystal.Configuration.Component.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
