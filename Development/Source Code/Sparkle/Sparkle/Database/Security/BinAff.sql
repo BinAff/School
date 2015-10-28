@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [BinAff]
+    AUTHORIZATION [dbo];
+
