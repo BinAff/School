@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Student.StudentUpdate
+﻿CREATE PROCEDURE [Student].ProfileUpdate
 (  
 	@Id  Bigint,
 	@FirstName Varchar(50),
@@ -8,7 +8,7 @@
 AS
 BEGIN
 
-	UPDATE Student.Student
+	UPDATE Student.Profile
 	SET
 		FirstName = @FirstName,
 		MiddleName = @MiddleName,

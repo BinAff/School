@@ -61,12 +61,15 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Student\Tables\Student.sql" />
-    <Build Include="Student\Stored Procedures\StudentUpdate.sql" />
-    <Build Include="Student\Stored Procedures\StudentDelete.sql" />
-    <Build Include="Student\Stored Procedures\StudentReadAll.sql" />
-    <Build Include="Student\Stored Procedures\StudentRead.sql" />
-    <Build Include="Student\Stored Procedures\StudentInsert.sql" />
     <Build Include="Security\Student.sql" />
+    <Build Include="Student\Tables\Profile.sql" />
+    <Build Include="Student\Stored Procedures\ProfileUpdate.sql" />
+    <Build Include="Student\Stored Procedures\ProfileReadAll.sql" />
+    <Build Include="Student\Stored Procedures\ProfileRead.sql" />
+    <Build Include="Student\Stored Procedures\ProfileInsert.sql" />
+    <Build Include="Student\Stored Procedures\ProfileDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.publish.xml" />
   </ItemGroup>
 </Project>

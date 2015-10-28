@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Student.StudentInsert
+﻿CREATE PROCEDURE [Student].ProfileInsert
 (
 	@FirstName Varchar(50),
 	@MiddleName Varchar(50),
@@ -8,7 +8,7 @@
 AS
 BEGIN
 
-	INSERT INTO Student.Student(FirstName, MiddleName, LastName)
+	INSERT INTO Student.Profile(FirstName, MiddleName, LastName)
 	VALUES(@FirstName, @MiddleName,@LastName)   
 	SET @Id = @@IDENTITY
 	

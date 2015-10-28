@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Student.StudentRead
+﻿CREATE PROCEDURE [Student].ProfileRead
 (
 	@Id Numeric(10,0)
 )
@@ -7,7 +7,7 @@ BEGIN
 
 	SELECT  Id,
 		FirstName, MiddleName, LastName
-	FROM Student.Student WITH (NOLOCK)
+	FROM Student.Profile WITH (NOLOCK)
 	WHERE Id = @Id
 	
 END

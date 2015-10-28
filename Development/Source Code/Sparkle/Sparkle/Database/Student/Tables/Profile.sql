@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Student].[Student] (
+﻿CREATE TABLE [Student].[Profile] (
     [Id]         BIGINT       NOT NULL,
     [FirstName]  VARCHAR (50) NULL,
     [MiddleName] VARCHAR (50) NULL,
