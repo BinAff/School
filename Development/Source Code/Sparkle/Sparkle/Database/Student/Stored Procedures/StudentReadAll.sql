@@ -3,7 +3,8 @@ As
 BEGIN
 
 	SELECT Id,
-		FirstName,MiddleName,LastName
+		FirstName, MiddleName, LastName,
+		StateId
 	FROM Student.Student WITH (NOLOCK)
 	
 END
