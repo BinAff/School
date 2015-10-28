@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.Student.Facade", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.Student.Component", "Sparkle\Student\Sparkle.Student.Component\Sparkle.Student.Component.csproj", "{BF0DB015-0372-4579-A5AD-56E2A6B4FD9C}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Sparkle\Database\Database.sqlproj", "{512A4767-F90C-419D-9ED9-AE02BE237244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,12 @@ Global
 		{BF0DB015-0372-4579-A5AD-56E2A6B4FD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0DB015-0372-4579-A5AD-56E2A6B4FD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0DB015-0372-4579-A5AD-56E2A6B4FD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512A4767-F90C-419D-9ED9-AE02BE237244}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
