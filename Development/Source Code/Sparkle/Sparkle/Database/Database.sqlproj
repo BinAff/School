@@ -80,6 +80,7 @@
     <Folder Include="Guardian\Stored Procedures\" />
     <Folder Include="Configuration\Stored Procedures\" />
     <Folder Include="Accountant\Stored Procedures\" />
+    <Folder Include="Organization\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Student.sql" />
@@ -276,6 +277,13 @@
     <Build Include="Security\Configuration.sql" />
     <Build Include="Security\BinAff.sql" />
     <Build Include="Security\Accountant.sql" />
+    <Build Include="Organization\Tables\UnitType.sql" />
+    <Build Include="Organization\Tables\UnitStatus.sql" />
+    <Build Include="Organization\Tables\UnitClosureReason.sql" />
+    <Build Include="Organization\Tables\Organization.sql" />
+    <Build Include="Organization\Tables\Fax.sql" />
+    <Build Include="Organization\Tables\Email.sql" />
+    <Build Include="Organization\Tables\ContactNumber.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />

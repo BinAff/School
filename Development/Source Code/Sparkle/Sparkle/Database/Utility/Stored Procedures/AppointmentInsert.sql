@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Utility].[AppointmentInsert]
+﻿CREATE PROCEDURE Utility.AppointmentInsert
 (  
 	@ActorId Numeric(10, 0),
 	@Title Varchar(50),
@@ -12,11 +12,13 @@
 	@Id  Numeric(10,0) OUTPUT
 )
 AS
-BEGIN	
-	INSERT INTO [AutoTourism].[Utility].[Appointment]
+BEGIN
+
+	INSERT INTO Utility.Appointment
 		(ActorId, Title, TypeId, Start, [End], Location, [Description], ImportanceId, Reminder)
     VALUES
 		(@ActorId, @Title, @TypeId, @Start, @End, @Location, @Description, @ImportanceId, @Reminder)
 		
 	SET @Id = @@IDENTITY
+
 END
