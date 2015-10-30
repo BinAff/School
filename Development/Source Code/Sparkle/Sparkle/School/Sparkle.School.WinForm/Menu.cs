@@ -3,10 +3,10 @@
 namespace Sparkle.School.WinForm
 {
 
-    public partial class ManagerForm : Sparkle.Core.Presentation.PopupMenu
+    public partial class Menu : Sparkle.Core.Presentation.PopupMenu
     {
 
-        public ManagerForm()
+        public Menu()
             : base()
         {
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace Sparkle.School.WinForm
 {
-    partial class ManagerForm
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
