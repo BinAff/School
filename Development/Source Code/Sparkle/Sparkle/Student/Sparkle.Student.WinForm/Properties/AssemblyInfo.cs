@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sparkle.Student.WinForm")]
-[assembly: AssemblyDescription("Student WinForm")]
+[assembly: AssemblyDescription("Sparkle Student Administration : WinForm Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Binary Affairs")]
 [assembly: AssemblyProduct("Sparkle")]
