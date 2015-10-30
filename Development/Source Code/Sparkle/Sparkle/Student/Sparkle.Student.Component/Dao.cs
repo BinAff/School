@@ -28,6 +28,7 @@ namespace Sparkle.Student.Component
             dt.FirstName = Convert.IsDBNull(dr["FirstName"]) ? String.Empty : Convert.ToString(dr["FirstName"]);
             dt.MiddleName = Convert.IsDBNull(dr["MiddleName"]) ? String.Empty : Convert.ToString(dr["MiddleName"]);
             dt.LastName = Convert.IsDBNull(dr["LastName"]) ? String.Empty : Convert.ToString(dr["LastName"]);
+            dt.Address = Convert.IsDBNull(dr["Address"]) ? String.Empty : Convert.ToString(dr["Address"]);
             dt.State = new Crystal.Configuration.Component.State.Data
             {
                 Id = Convert.IsDBNull(dr["StateId"]) ? 0 : Convert.ToInt64(dr["StateId"]),
@@ -40,6 +41,7 @@ namespace Sparkle.Student.Component
             base.AddInParameter("@FirstName", DbType.String, ((Data)this.Data).FirstName);
             base.AddInParameter("@MiddleName", DbType.String, ((Data)this.Data).MiddleName);
             base.AddInParameter("@LastName", DbType.String, ((Data)this.Data).LastName);
+            base.AddInParameter("@Address", DbType.String, ((Data)this.Data).Address);
             base.AddInParameter("@StateId", DbType.Int64, ((Data)this.Data).State.Id);
         }
 

@@ -24,9 +24,17 @@ namespace Sparkle.Student.Component
             {
                 msg.Add(new Message("First name cannot be empty.", Message.Type.Error));
             }
+            if (ValidationRule.IsNullOrEmpty(data.Address))
+            {
+                msg.Add(new Message("Address cannot be empty.", Message.Type.Error));
+            }
             if (data.State == null || data.State.Id == 0)
             {
                 msg.Add(new Message("State has to be selected.", Message.Type.Error));
+            }
+            if (data.Country == null || data.Country.Id == 0)
+            {
+                msg.Add(new Message("Country has to be selected.", Message.Type.Error));
             }
 
             return msg;

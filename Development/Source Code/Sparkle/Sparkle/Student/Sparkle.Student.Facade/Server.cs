@@ -1,6 +1,8 @@
 ﻿using StateComp = Crystal.Configuration.Component.State;
+using CountryComp = Crystal.Configuration.Component.Country;
 
 using StateFac = Vanilla.Configuration.Facade.State;
+using CountryFac = Vanilla.Configuration.Facade.Country;
 
 using Comp = Sparkle.Student.Component;
 
@@ -25,7 +27,9 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data
+                Address = dt.Address,
+                State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data,
+                Country = new CountryFac.Server(null).Convert(dt.Country) as CountryComp.Data,
             };
         }
 
@@ -38,13 +42,16 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto
+                Address = dt.Address,
+                State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto,
+                Country = new CountryFac.Server(null).Convert(dt.Country) as CountryFac.Dto,
             };
         }
 
         public override void LoadForm()
         {
             (this.FormDto as FormDto).StateList = new StateFac.Server(null).ReadAll<StateFac.Dto>();
+            (this.FormDto as FormDto).CountryList = new CountryFac.Server(null).ReadAll<CountryFac.Dto>();
         }
 
     }

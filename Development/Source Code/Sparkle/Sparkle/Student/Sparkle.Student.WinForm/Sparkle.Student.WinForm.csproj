@@ -35,6 +35,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BinAff.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\BinAff.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BinAff.Facade.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\BinAff.Facade.Library.dll</HintPath>
+    </Reference>
     <Reference Include="BinAff.Presentation.Library">
       <HintPath>..\..\..\Reference\BinAff.Presentation.Library.dll</HintPath>
     </Reference>
@@ -43,6 +51,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Vanilla.Configuration.Facade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\Vanilla.Configuration.Facade.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu.cs">
