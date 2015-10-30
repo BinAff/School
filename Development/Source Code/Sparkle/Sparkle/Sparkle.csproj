@@ -32,18 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BinAff.Presentation.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\BinAff.Presentation.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Splash.cs">
@@ -52,6 +58,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +70,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +85,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="HR\Sparkle.HR.WinForm\Sparkle.HR.WinForm.csproj">
+      <Project>{f01e8020-280a-4b5d-b6b6-421e253d7c93}</Project>
+      <Name>Sparkle.HR.WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="IT\Sparkle.IT.WinForm\Sparkle.IT.WinForm.csproj">
+      <Project>{cb73fbf8-de0a-48ce-97f5-d0d4a323b422}</Project>
+      <Name>Sparkle.IT.WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="Office\Sparkle.Office.WinForm\Sparkle.Office.WinForm.csproj">
+      <Project>{7e4cef79-cbe6-45ac-8f71-997475875cbf}</Project>
+      <Name>Sparkle.Office.WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="School\Sparkle.School.WinForm\Sparkle.School.WinForm.csproj">
+      <Project>{d8f953f0-9abf-47ce-98c1-df155434cdde}</Project>
+      <Name>Sparkle.School.WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sparkle.Core\Sparkle.Core.csproj">
+      <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
+      <Name>Sparkle.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Student\Sparkle.Student.WinForm\Sparkle.Student.WinForm.csproj">
+      <Project>{82c303e3-6df0-423f-977d-5718e6bf9abc}</Project>
+      <Name>Sparkle.Student.WinForm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
