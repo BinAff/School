@@ -19,6 +19,8 @@ namespace Sparkle.Student.Facade
 
         }
 
+        #region Framework
+
         protected override void Instantiate()
         {
             base.ComponentData = new Comp.Data();
@@ -27,25 +29,31 @@ namespace Sparkle.Student.Facade
 
         public override void AssignDto()
         {
-            (base.FormDto as FormDto).Dto = this.Convert(base.ComponentData) as Dto;
-            Comp.Data dt = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = dt.Id;
-            ((base.FormDto as FormDto).Dto as Dto).FirstName = dt.FirstName;
-            ((base.FormDto as FormDto).Dto as Dto).MiddleName = dt.MiddleName;
-            ((base.FormDto as FormDto).Dto as Dto).LastName = dt.LastName;
-            ((base.FormDto as FormDto).Dto as Dto).Address = dt.Address;
-            ((base.FormDto as FormDto).Dto as Dto).State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto;
+            Dto dto = (base.FormDto as FormDto).Dto as Dto;
+            dto = this.Convert(base.ComponentData) as Dto;
+            Comp.Data data = base.ComponentData as Comp.Data;
+            base.ComponentData.Id = data.Id;
+            dto.FirstName = data.FirstName;
+            dto.MiddleName = data.MiddleName;
+            dto.LastName = data.LastName;
+            dto.Address = data.Address;
+            dto.State = new StateFac.Server(null).Convert(data.State) as StateFac.Dto;
+            dto.City = data.City;
+            dto.Pin = data.Pin;
         }
 
         public override void AssignData()
         {
-            Dto dt = (this.FormDto as FormDto).Dto as Dto;
-            base.ComponentData.Id = dt.Id;
-            (base.ComponentData as Comp.Data).FirstName = dt.FirstName;
-            (base.ComponentData as Comp.Data).MiddleName = dt.MiddleName;
-            (base.ComponentData as Comp.Data).LastName = dt.LastName;
-            (base.ComponentData as Comp.Data).Address = dt.Address;
-            (base.ComponentData as Comp.Data).State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data;
+            Dto dto = (this.FormDto as FormDto).Dto as Dto;
+            Comp.Data data = base.ComponentData as Comp.Data;
+            data.Id = dto.Id;
+            data.FirstName = dto.FirstName;
+            data.MiddleName = dto.MiddleName;
+            data.LastName = dto.LastName;
+            data.Address = dto.Address;
+            data.State = new StateFac.Server(null).Convert(dto.State) as StateComp.Data;
+            data.City = dto.City;
+            data.Pin = dto.Pin;
         }
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)
@@ -86,7 +94,9 @@ namespace Sparkle.Student.Facade
             (this.FormDto as FormDto).StateList = new StateFac.Server(null).ReadAll<StateFac.Dto>();
             (this.FormDto as FormDto).CountryList = new CountryFac.Server(null).ReadAll<CountryFac.Dto>();
         }
-        
+
+        #endregion
+
     }
 
 }

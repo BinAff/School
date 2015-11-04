@@ -44,11 +44,9 @@ namespace Sparkle.Core.Facade
 
         public override void Delete()
         {
+            this.AssignData();
             BinAff.Core.ReturnObject<Boolean> ret = this.ComponentServer.Delete();
-            if (this.IsError = ret.HasError())
-            {
-                this.DisplayMessageList = ret.GetMessage(BinAff.Core.Message.Type.Error);
-            }
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
         }
 
         protected override sealed BinAff.Core.ICrud AssignComponentServer(BinAff.Core.Data data)
@@ -60,10 +58,8 @@ namespace Sparkle.Core.Facade
         {
             this.AssignData();
             BinAff.Core.ReturnObject<Boolean> ret = this.ComponentServer.Save();
-            if (this.IsError = ret.HasError())
-            {
-                this.DisplayMessageList = ret.GetMessage(BinAff.Core.Message.Type.Error);
-            }
+            if (ret.Value) (this.FormDto as FormDto).Dto.Id = this.ComponentData.Id;
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
         }
 
         protected abstract void Instantiate();

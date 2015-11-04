@@ -19,7 +19,9 @@ namespace Sparkle.Student.Component
             base.ReadStoredProcedure = "Student.StudentRead";
             base.ReadAllStoredProcedure = "Student.StudentReadAll";
             base.UpdateStoredProcedure = "Student.StudentUpdate";
+            base.NumberOfRowsAffectedInUpdate = 1;
             base.DeleteStoredProcedure = "Student.StudentDelete";
+            base.NumberOfRowsAffectedInDelete = 1;
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)

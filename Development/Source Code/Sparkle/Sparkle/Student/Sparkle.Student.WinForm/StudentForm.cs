@@ -45,6 +45,11 @@ namespace Sparkle.Student.WinForm
             this.cboState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
         }
 
+        protected override Boolean ValidateForm()
+        {
+            return true;
+        }
+
         protected override void AssignDto()
         {
             Facade.Dto dto = base.FormDto.Dto as Facade.Dto;

@@ -11,7 +11,7 @@ namespace Sparkle
         public Splash()
         {
             InitializeComponent();
-            this.timer.Interval = 2000;
+            this.timer.Interval = 10;
             this.timer.Start();
         }
 

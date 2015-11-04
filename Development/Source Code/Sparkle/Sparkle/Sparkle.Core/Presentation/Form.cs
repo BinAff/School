@@ -1,9 +1,8 @@
-﻿
+﻿using System;
 
 using BinAff.Presentation.Library.Extension;
 
 using Sparkle.Core.Facade;
-using System;
 
 namespace Sparkle.Core.Presentation
 {
@@ -46,9 +45,22 @@ namespace Sparkle.Core.Presentation
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            //Validate
-            this.AssignDto();
-            this.Facade.Add();
+            if (this.ValidateForm())
+            {
+                this.AssignDto();
+                this.FormDto.Dto.Id = 0;
+                this.Facade.Add();
+                new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
+                this.FormDto.DtoList.Add(this.FormDto.Dto);
+                if (this.cboList.Items.Count > 0)
+                {
+                    this.cboList.Items.Add(this.FormDto.Dto);
+                }
+                else
+                {
+                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                }
+            }
         }
 
         private void cboList_Click(object sender, EventArgs e)
@@ -58,6 +70,23 @@ namespace Sparkle.Core.Presentation
                 this.FormDto.Dto = this.cboList.SelectedItem as Dto;
                 this.AssignFormControls();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.ValidateForm())
+            {
+                this.AssignDto();
+                this.Facade.Change();
+                new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            this.Facade.Delete();
+            new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
+            this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
         }
 
         #endregion
@@ -75,6 +104,11 @@ namespace Sparkle.Core.Presentation
         }
 
         protected virtual void Bind()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected virtual Boolean ValidateForm()
         {
             throw new System.NotImplementedException();
         }
