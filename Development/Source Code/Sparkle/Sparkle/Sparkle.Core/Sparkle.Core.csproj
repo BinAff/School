@@ -35,18 +35,32 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BinAff.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\BinAff.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BinAff.Facade.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\BinAff.Facade.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="BinAff.Presentation.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\BinAff.Presentation.Library.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade\Dto.cs" />
+    <Compile Include="Facade\FormDto.cs" />
+    <Compile Include="Facade\Server.cs" />
+    <Compile Include="Presentation\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\PopupMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +68,9 @@
       <DependentUpon>PopupMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PopupMenu.resx">
       <DependentUpon>PopupMenu.cs</DependentUpon>
     </EmbeddedResource>

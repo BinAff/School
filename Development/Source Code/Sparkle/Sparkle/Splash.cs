@@ -20,8 +20,15 @@ namespace Sparkle
             Dashboard frm = new Dashboard();
             new Thread(() =>
             {
-                Application.Run(frm);
-                frm.BringToFront();
+                try
+                {
+                    Application.Run(frm);
+                    frm.BringToFront();
+                }
+                catch
+                {
+                    throw;
+                }
             }).Start();
             this.timer.Stop();
             this.Close();

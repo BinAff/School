@@ -7,8 +7,7 @@ BEGIN
 
 	SELECT  Id,
 		FirstName, MiddleName, LastName,
-		Address,
-		StateId
+		Address, StateId, City, Pin
 	FROM Student.Student WITH (NOLOCK)
 	WHERE Id = @Id
 	

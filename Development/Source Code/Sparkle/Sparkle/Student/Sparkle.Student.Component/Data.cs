@@ -11,9 +11,9 @@ namespace Sparkle.Student.Component
         public String LastName { get; set; }
 
         public String Address { get; set; }
-
         public Crystal.Configuration.Component.State.Data State { get; set; }
-        public Crystal.Configuration.Component.Country.Data Country { get; set; }
+        public String City { get; set; }
+        public Int32 Pin { get; set; }
 
     }
 

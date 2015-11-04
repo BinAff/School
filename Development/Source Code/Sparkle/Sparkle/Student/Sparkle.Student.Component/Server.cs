@@ -34,11 +34,6 @@
                 Type = ChildType.Independent,
                 IsReadOnly = true,
             });
-            base.AddChild(new Crystal.Configuration.Component.Country.Server((this.Data as Data).Country)
-            {
-                Type = ChildType.Independent,
-                IsReadOnly = true,
-            });
         }
 
     }

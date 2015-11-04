@@ -6,10 +6,9 @@ using CountryFac = Vanilla.Configuration.Facade.Country;
 namespace Sparkle.Student.Facade
 {
 
-    public class FormDto : BinAff.Facade.Library.FormDto
+    public class FormDto : Sparkle.Core.Facade.FormDto
     {
 
-        public Dto Dto { get; set; }
         public List<StateFac.Dto> StateList { get; set; }
         public List<CountryFac.Dto> CountryList { get; set; }
 

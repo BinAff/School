@@ -15,8 +15,9 @@ namespace Sparkle.Student.Component
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Student.StudentCreate";
+            base.CreateStoredProcedure = "Student.StudentInsert";
             base.ReadStoredProcedure = "Student.StudentRead";
+            base.ReadAllStoredProcedure = "Student.StudentReadAll";
             base.UpdateStoredProcedure = "Student.StudentUpdate";
             base.DeleteStoredProcedure = "Student.StudentDelete";
         }
@@ -33,16 +34,20 @@ namespace Sparkle.Student.Component
             {
                 Id = Convert.IsDBNull(dr["StateId"]) ? 0 : Convert.ToInt64(dr["StateId"]),
             };
+            dt.City = Convert.IsDBNull(dr["City"]) ? String.Empty : Convert.ToString(dr["City"]);
+            dt.Pin = Convert.IsDBNull(dr["Pin"]) ? 0 : Convert.ToInt32(dr["Pin"]);
             return dt;
         }
 
         protected override void AssignParameter(String procedureName)
         {
-            base.AddInParameter("@FirstName", DbType.String, ((Data)this.Data).FirstName);
-            base.AddInParameter("@MiddleName", DbType.String, ((Data)this.Data).MiddleName);
-            base.AddInParameter("@LastName", DbType.String, ((Data)this.Data).LastName);
-            base.AddInParameter("@Address", DbType.String, ((Data)this.Data).Address);
-            base.AddInParameter("@StateId", DbType.Int64, ((Data)this.Data).State.Id);
+            base.AddInParameter("@FirstName", DbType.String, (this.Data as Data).FirstName);
+            base.AddInParameter("@MiddleName", DbType.String, (this.Data as Data).MiddleName);
+            base.AddInParameter("@LastName", DbType.String, (this.Data as Data).LastName);
+            base.AddInParameter("@Address", DbType.String, (this.Data as Data).Address);
+            base.AddInParameter("@StateId", DbType.Int64, (this.Data as Data).State.Id);
+            base.AddInParameter("@City", DbType.String, (this.Data as Data).City);
+            base.AddInParameter("@Pin", DbType.Int32, (this.Data as Data).Pin);
         }
 
     }

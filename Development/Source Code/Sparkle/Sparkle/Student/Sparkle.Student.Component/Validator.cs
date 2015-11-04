@@ -32,9 +32,13 @@ namespace Sparkle.Student.Component
             {
                 msg.Add(new Message("State has to be selected.", Message.Type.Error));
             }
-            if (data.Country == null || data.Country.Id == 0)
+            if (ValidationRule.IsNullOrEmpty(data.City))
             {
-                msg.Add(new Message("Country has to be selected.", Message.Type.Error));
+                msg.Add(new Message("City cannot be empty.", Message.Type.Error));
+            }
+            if (data.Pin == 0)
+            {
+                msg.Add(new Message("Pin cannot be zero.", Message.Type.Error));
             }
 
             return msg;

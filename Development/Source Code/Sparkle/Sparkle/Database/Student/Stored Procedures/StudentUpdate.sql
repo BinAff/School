@@ -5,7 +5,9 @@
 	@MiddleName Varchar(50),
 	@LastName Varchar(50),
 	@Address Varchar(256),
-	@StateId Bigint
+	@StateId Bigint,
+	@City Varchar(50),
+	@Pin Int
 )
 AS
 BEGIN
@@ -16,7 +18,9 @@ BEGIN
 		MiddleName = @MiddleName,
 		LastName = @LastName,
 		Address = @Address,
-		StateId = @StateId
+		StateId = @StateId,
+		City = @City,
+		Pin = @Pin
 	WHERE Id = @Id
 
 END

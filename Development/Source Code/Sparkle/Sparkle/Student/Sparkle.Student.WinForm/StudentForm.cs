@@ -1,57 +1,76 @@
 ﻿using System;
+using System.Linq;
 
 using BinAff.Presentation.Library.Extension;
 
 using CountryFac = Vanilla.Configuration.Facade.Country;
 using StateFac = Vanilla.Configuration.Facade.State;
 
+using Fac = Sparkle.Core.Facade;
+
 namespace Sparkle.Student.WinForm
 {
 
-    public partial class StudentForm : BinAff.Presentation.Library.Form
+    public partial class StudentForm : Sparkle.Core.Presentation.Form
     {
 
-        private Facade.Server facade;
-        private Facade.FormDto formDto;
-
         public StudentForm()
-            :base()
+            : base()
         {
             InitializeComponent();
-            this.formDto = new Facade.FormDto
+            base.ListDisplayName = "FirstName";
+        }
+
+        #region Framework
+
+        protected override Fac.FormDto InstantiateFormDto()
+        {
+            return new Facade.FormDto
             {
-                Dto = new Facade.Dto(),
+                Dto = new Facade.Dto
+                {
+                    State = new StateFac.Dto(),
+                },
             };
-            facade = new Facade.Server(this.formDto);
         }
 
-        private void StudentForm_Load(object sender, EventArgs e)
+        protected override Sparkle.Core.Facade.Server InstantiateFacade()
         {
-            this.facade.LoadForm();
+            return new Facade.Server(base.FormDto as Facade.FormDto);
         }
 
-        private void StudentForm_Shown(object sender, EventArgs e)
+        protected override void Bind()
         {
-            this.cboCountry.Bind(this.formDto.CountryList, "Name");
-            this.cboState.Bind(this.formDto.StateList, "Name");
+            this.cboCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
+            this.cboState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        protected override void AssignDto()
         {
-            //Validate
-            this.Convert();
-            this.facade.Add();
+            Facade.Dto dto = base.FormDto.Dto as Facade.Dto;
+            dto.FirstName = this.txtFirstName.Text;
+            dto.MiddleName = this.txtMiddleName.Text;
+            dto.LastName = this.txtLastName.Text;
+            dto.Address = this.txtAddress.Text;
+            dto.State = this.cboState.SelectedItem as StateFac.Dto;
+            dto.City = this.txtCity.Text;
+            dto.Pin = Convert.ToInt32(this.txtPin.Text);
         }
 
-        private void Convert()
+        protected override void AssignFormControls()
         {
-            this.formDto.Dto.FirstName = this.txtFirstName.Text;
-            this.formDto.Dto.MiddleName = this.txtMiddleName.Text;
-            this.formDto.Dto.LastName = this.txtLastName.Text;
-            this.formDto.Dto.Address = this.txtAddress.Text;
-            this.formDto.Dto.State = this.cboState.SelectedItem as StateFac.Dto;
-            this.formDto.Dto.Country = this.cboCountry.SelectedItem as CountryFac.Dto;
+            Facade.Dto dto = base.FormDto.Dto as Facade.Dto;
+            this.txtFirstName.Text = dto.FirstName;
+            this.txtMiddleName.Text = dto.MiddleName;
+            this.txtLastName.Text = dto.LastName;
+            this.txtAddress.Text = dto.Address;
+            this.cboState.SelectedItem = (this.FormDto as Facade.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
+            this.cboCountry.SelectedItem = (this.FormDto as Facade.FormDto).CountryList.FindLast((p) => { return p.Id == dto.State.Country.Id; });
+            this.txtCity.Text = dto.City;
+            this.txtPin.Text = dto.Pin.ToString();
         }
+
+        #endregion
 
     }
 

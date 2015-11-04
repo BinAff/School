@@ -6,7 +6,7 @@ using CountryFac = Vanilla.Configuration.Facade.Country;
 namespace Sparkle.Student.Facade
 {
 
-    public class Dto : BinAff.Facade.Library.Dto
+    public class Dto : Sparkle.Core.Facade.Dto
     {
 
         public String FirstName { get; set; }
@@ -14,9 +14,9 @@ namespace Sparkle.Student.Facade
         public String LastName { get; set; }
         
         public String Address { get; set; }
-
         public StateFac.Dto State { get; set; }
-        public CountryFac.Dto Country { get; set; }
+        public String City { get; set; }
+        public Int32 Pin { get; set; }
 
     }
 
