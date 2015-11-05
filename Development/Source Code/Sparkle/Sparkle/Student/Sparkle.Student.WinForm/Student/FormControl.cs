@@ -1,53 +1,24 @@
 ﻿using System;
-using System.Linq;
 
 using BinAff.Presentation.Library.Extension;
 
-using CountryFac = Vanilla.Configuration.Facade.Country;
 using StateFac = Vanilla.Configuration.Facade.State;
 
-using Fac = Sparkle.Core.Facade;
-
-namespace Sparkle.Student.WinForm
+namespace Sparkle.Student.WinForm.Student
 {
 
-    public partial class StudentForm : Sparkle.Core.Presentation.Form
+    public partial class FormControl : Core.Presentation.FormControl
     {
 
-        public StudentForm()
-            : base()
+        public FormControl()
         {
             InitializeComponent();
-            base.ListDisplayName = "FirstName";
-        }
-
-        #region Framework
-
-        protected override Fac.FormDto InstantiateFormDto()
-        {
-            return new Facade.FormDto
-            {
-                Dto = new Facade.Dto
-                {
-                    State = new StateFac.Dto(),
-                },
-            };
-        }
-
-        protected override Sparkle.Core.Facade.Server InstantiateFacade()
-        {
-            return new Facade.Server(base.FormDto as Facade.FormDto);
         }
 
         protected override void Bind()
         {
             this.cboCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
             this.cboState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
-        }
-
-        protected override Boolean ValidateForm()
-        {
-            return true;
         }
 
         protected override void AssignDto()
@@ -75,7 +46,10 @@ namespace Sparkle.Student.WinForm
             this.txtPin.Text = dto.Pin.ToString();
         }
 
-        #endregion
+        protected override Boolean ValidateForm()
+        {
+            return true;
+        }
 
     }
 

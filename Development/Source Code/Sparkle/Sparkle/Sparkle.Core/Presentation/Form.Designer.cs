@@ -105,14 +105,15 @@
             // 
             // spcMain
             // 
-            this.spcMain.Location = new System.Drawing.Point(12, 71);
+            this.spcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcMain.Location = new System.Drawing.Point(0, 35);
             this.spcMain.Name = "spcMain";
             // 
             // spcMain.Panel1
             // 
             this.spcMain.Panel1.Controls.Add(this.cboList);
-            this.spcMain.Size = new System.Drawing.Size(219, 169);
-            this.spcMain.SplitterDistance = 72;
+            this.spcMain.Size = new System.Drawing.Size(290, 236);
+            this.spcMain.SplitterDistance = 95;
             this.spcMain.TabIndex = 3;
             // 
             // cboList
@@ -122,7 +123,7 @@
             this.cboList.FormattingEnabled = true;
             this.cboList.Location = new System.Drawing.Point(0, 0);
             this.cboList.Name = "cboList";
-            this.cboList.Size = new System.Drawing.Size(72, 169);
+            this.cboList.Size = new System.Drawing.Size(95, 236);
             this.cboList.TabIndex = 0;
             this.cboList.Click += new System.EventHandler(this.cboList_Click);
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.spcMain);
             this.Controls.Add(this.toolStrip);
             this.Name = "Form";
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.Form_Load);
             this.Shown += new System.EventHandler(this.Form_Shown);
             this.toolStrip.ResumeLayout(false);

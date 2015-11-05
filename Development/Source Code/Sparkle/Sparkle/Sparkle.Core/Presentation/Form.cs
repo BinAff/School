@@ -16,6 +16,23 @@ namespace Sparkle.Core.Presentation
 
         protected String ListDisplayName { get; set; }
 
+        private FormControl formControl;
+        protected FormControl FormControl
+        {
+            private get
+            {
+                return this.formControl;
+            }
+            set
+            {
+
+                this.formControl = value;
+                this.spcMain.Panel2.Controls.Add(this.formControl);
+                this.formControl.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.formControl.BringToFront();
+            }
+        }
+
         public Form()
             : base()
         {
@@ -29,6 +46,7 @@ namespace Sparkle.Core.Presentation
             if (DesignMode) return;
             this.FormDto = this.InstantiateFormDto();
             this.Facade = this.InstantiateFacade();
+            this.FormControl.FormDto = this.FormDto;
             this.Facade.LoadForm();
         }
         
@@ -96,6 +114,26 @@ namespace Sparkle.Core.Presentation
 
         #endregion
 
+        protected virtual void Bind()
+        {
+            this.formControl.Bind();
+        }
+
+        protected virtual void AssignDto()
+        {
+            this.formControl.AssignDto();
+        }
+
+        protected virtual void AssignFormControls()
+        {
+            this.formControl.AssignFormControls();
+        }
+
+        protected virtual Boolean ValidateForm()
+        {
+            return this.formControl.ValidateForm();
+        }
+
         #region Mandatory Hook
 
         protected virtual FormDto InstantiateFormDto()
@@ -104,26 +142,6 @@ namespace Sparkle.Core.Presentation
         }
 
         protected virtual Server InstantiateFacade()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected virtual void Bind()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected virtual Boolean ValidateForm()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected virtual void AssignDto()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected virtual void AssignFormControls()
         {
             throw new System.NotImplementedException();
         }

@@ -14,7 +14,7 @@ namespace Sparkle.Student.WinForm
 
         private void btnStudentInformation_Click(object sender, EventArgs e)
         {
-            new StudentForm().Show();
+            new Student.Form().Show();
             this.Close();
         }
 

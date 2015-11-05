@@ -48,8 +48,10 @@
       <HintPath>..\..\Reference\BinAff.Presentation.Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facade\Dto.cs" />
@@ -60,6 +62,12 @@
     </Compile>
     <Compile Include="Presentation\Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PopupMenu.cs">
       <SubType>Form</SubType>
