@@ -1,5 +1,6 @@
 ﻿using System;
 
+using Lib = BinAff.Presentation.Library;
 using BinAff.Presentation.Library.Extension;
 
 using Sparkle.Core.Facade;
@@ -7,7 +8,7 @@ using Sparkle.Core.Facade;
 namespace Sparkle.Core.Presentation
 {
 
-    public partial class Form : BinAff.Presentation.Library.Form
+    public partial class Form : Lib.Form
     {
 
         protected FormDto FormDto { get; private set; }
@@ -50,7 +51,7 @@ namespace Sparkle.Core.Presentation
                 this.AssignDto();
                 this.FormDto.Dto.Id = 0;
                 this.Facade.Add();
-                new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
+                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
                 this.FormDto.DtoList.Add(this.FormDto.Dto);
                 if (this.cboList.Items.Count > 0)
                 {
@@ -78,15 +79,19 @@ namespace Sparkle.Core.Presentation
             {
                 this.AssignDto();
                 this.Facade.Change();
-                new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
+                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            this.Facade.Delete();
-            new BinAff.Presentation.Library.MessageBox().Show(this.Facade.DisplayMessageList);
-            this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
+            if (this.cboList.SelectedItem == null) return;
+            if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Facade.Delete();
+                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
+            }
         }
 
         #endregion
