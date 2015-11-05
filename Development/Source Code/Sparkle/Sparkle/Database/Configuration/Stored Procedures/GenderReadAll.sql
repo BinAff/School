@@ -1,8 +1,8 @@
-﻿CREATE PROCEDURE [Configuration].[GenderReadAll]
+﻿CREATE PROCEDURE Configuration.GenderReadAll
 AS
 BEGIN
 	
 	SELECT Id, Name
-	FROM Configuration.[Gender] WITH (NOLOCK)
+	FROM Configuration.Gender WITH (NOLOCK)
    
 END

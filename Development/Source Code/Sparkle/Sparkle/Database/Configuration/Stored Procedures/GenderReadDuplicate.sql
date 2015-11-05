@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Configuration].[GenderReadDuplicate]
+﻿CREATE PROCEDURE Configuration.GenderReadDuplicate
 (
 	@Name VARCHAR(50)		
 )

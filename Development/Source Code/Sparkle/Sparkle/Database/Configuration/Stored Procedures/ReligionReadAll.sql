@@ -1,8 +1,8 @@
-﻿CREATE PROCEDURE [Configuration].[ReligionReadAll]
+﻿CREATE PROCEDURE Configuration.ReligionReadAll
 AS
 BEGIN
 	
 	SELECT Id, Name
-	FROM Configuration.[Religion] WITH (NOLOCK)
+	FROM Configuration.Religion WITH (NOLOCK)
    
 END

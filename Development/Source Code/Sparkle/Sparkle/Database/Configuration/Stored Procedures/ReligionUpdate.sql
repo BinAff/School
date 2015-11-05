@@ -1,14 +1,14 @@
-﻿CREATE PROCEDURE [Configuration].[ReligionUpdate]
+﻿CREATE PROCEDURE Configuration.ReligionUpdate
 (
 	@Id Numeric(10,0),
 	@Name Varchar(50)
-	)
+)
 AS
 BEGIN
 	
-	UPDATE Configuration.[Religion]
+	UPDATE Configuration.Religion
 	SET	
 		Name = @Name
-		WHERE Id = @Id
+	WHERE Id = @Id
    
 END

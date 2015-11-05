@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Configuration].[ReligionReadDuplicate]
+﻿CREATE PROCEDURE Configuration.ReligionReadDuplicate
 (
 	@Name VARCHAR(50)		
 )

@@ -1,14 +1,14 @@
-﻿CREATE PROCEDURE [Configuration].[GenderUpdate]
+﻿CREATE PROCEDURE Configuration.GenderUpdate
 (
 	@Id Numeric(10,0),
 	@Name Varchar(50)
-	)
+)
 AS
 BEGIN
 	
-	UPDATE Configuration.[Gender]
+	UPDATE Configuration.Gender
 	SET	
 		Name = @Name
-		WHERE Id = @Id
+	WHERE Id = @Id
    
 END
