@@ -39,6 +39,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examination", "Examination"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.School.Examination.Winform", "Sparkle\School\Examination\Sparkle.School.Examination.Winform\Sparkle.School.Examination.Winform.csproj", "{0969072C-A6F1-46EB-B241-0B248DF487A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Crystal", "Crystal", "{44BBAD74-4FFC-472A-B850-5A66CD03D830}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{8C70F2CE-691B-4207-BE11-F73ACB3E1C0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crystal.Configuration.Component", "Crystal\Configuration\Crystal.Configuration.Component\Crystal.Configuration.Component.csproj", "{2C1A698F-760A-4B91-8F91-4F3A579D7D12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +101,10 @@ Global
 		{0969072C-A6F1-46EB-B241-0B248DF487A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0969072C-A6F1-46EB-B241-0B248DF487A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0969072C-A6F1-46EB-B241-0B248DF487A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C1A698F-760A-4B91-8F91-4F3A579D7D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1A698F-760A-4B91-8F91-4F3A579D7D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1A698F-760A-4B91-8F91-4F3A579D7D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1A698F-760A-4B91-8F91-4F3A579D7D12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,5 +128,7 @@ Global
 		{803253A7-D1EF-4F79-84BB-B6A01924C8F5} = {9E6D0B28-8D60-4590-BA04-E9A4393D3264}
 		{F01E8020-280A-4B5D-B6B6-421E253D7C93} = {4C15658C-9995-44A2-B48F-9F639553F033}
 		{0969072C-A6F1-46EB-B241-0B248DF487A1} = {803253A7-D1EF-4F79-84BB-B6A01924C8F5}
+		{8C70F2CE-691B-4207-BE11-F73ACB3E1C0A} = {44BBAD74-4FFC-472A-B850-5A66CD03D830}
+		{2C1A698F-760A-4B91-8F91-4F3A579D7D12} = {8C70F2CE-691B-4207-BE11-F73ACB3E1C0A}
 	EndGlobalSection
 EndGlobal
