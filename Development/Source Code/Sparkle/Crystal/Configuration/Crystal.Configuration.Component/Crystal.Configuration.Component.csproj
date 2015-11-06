@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gender\Dao.cs" />
+    <Compile Include="Gender\Data.cs" />
+    <Compile Include="Gender\Server.cs" />
+    <Compile Include="Gender\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Religion\Dao.cs" />
     <Compile Include="Religion\Data.cs" />
