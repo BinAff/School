@@ -13,6 +13,8 @@ namespace Crystal.Configuration.Component.Gender
 
         }
 
+        #region Framework
+
         protected override void Compose()
         {
             base.CreateStoredProcedure = "Configuration.GenderInsert";
@@ -36,6 +38,24 @@ namespace Crystal.Configuration.Component.Gender
         protected override void AssignParameter(String procedureName)
         {
             base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
+        }
+       
+        #endregion
+ 
+        internal Data ReadDuplicate()
+        {
+            this.CreateCommand("Configuration.GenderReadDuplicate");
+            this.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
+            DataTable dt = this.ExecuteDataTable();
+            this.CloseConnection();
+            Int64 Id = 0;
+            if (dt != null && dt.Rows.Count > 0 && (Id = Convert.IsDBNull(dt.Rows[0]["Id"]) ? 0 : Convert.ToInt64(dt.Rows[0]["Id"])) > 0)
+            {
+                Data data = new Data();
+                new Dao(data).Read();
+                return data;
+            }
+            return null;
         }
 
     }

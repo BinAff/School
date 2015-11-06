@@ -24,7 +24,11 @@ namespace Crystal.Configuration.Component.Gender
             {
                 msg.Add(new Message("Gender cannot be empty.", Message.Type.Error));
             }
-
+            
+            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            {
+                msg.Add(new Message("Gender already exists.", Message.Type.Error));
+            }
             return msg;
         }
 
