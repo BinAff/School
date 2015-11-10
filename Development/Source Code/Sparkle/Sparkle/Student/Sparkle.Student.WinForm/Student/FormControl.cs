@@ -17,8 +17,11 @@ namespace Sparkle.Student.WinForm.Student
 
         protected override void Bind()
         {
+            this.cboCurrentAddressCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
+            this.cboCurrentAddressState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
             this.cboCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
-            this.cboState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
+            this.cboPermanentAddressCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
+            this.cboPermanentAddressState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
         }
 
         protected override void AssignDto()
@@ -27,10 +30,10 @@ namespace Sparkle.Student.WinForm.Student
             dto.FirstName = this.txtFirstName.Text;
             dto.MiddleName = this.txtMiddleName.Text;
             dto.LastName = this.txtLastName.Text;
-            dto.Address = this.txtAddress.Text;
-            dto.State = this.cboState.SelectedItem as StateFac.Dto;
-            dto.City = this.txtCity.Text;
-            dto.Pin = Convert.ToInt32(this.txtPin.Text);
+            dto.Address = this.txtPermanentAddress.Text;
+            dto.State = this.cboPermanentAddressState.SelectedItem as StateFac.Dto;
+            dto.City = this.txtPermanentAddressCity.Text;
+            dto.Pin = Convert.ToInt32(this.txtPermanentAddressPin.Text);
         }
 
         protected override void AssignFormControls()
@@ -39,11 +42,11 @@ namespace Sparkle.Student.WinForm.Student
             this.txtFirstName.Text = dto.FirstName;
             this.txtMiddleName.Text = dto.MiddleName;
             this.txtLastName.Text = dto.LastName;
-            this.txtAddress.Text = dto.Address;
-            this.cboState.SelectedItem = (this.FormDto as Facade.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
-            this.cboCountry.SelectedItem = (this.FormDto as Facade.FormDto).CountryList.FindLast((p) => { return p.Id == dto.State.Country.Id; });
-            this.txtCity.Text = dto.City;
-            this.txtPin.Text = dto.Pin.ToString();
+            this.txtPermanentAddress.Text = dto.Address;
+            this.cboPermanentAddressState.SelectedItem = (this.FormDto as Facade.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
+            this.cboPermanentAddressCountry.SelectedItem = (this.FormDto as Facade.FormDto).CountryList.FindLast((p) => { return p.Id == dto.State.Country.Id; });
+            this.txtPermanentAddressCity.Text = dto.City;
+            this.txtRollNumber.Text = dto.Pin.ToString();
         }
 
         protected override Boolean ValidateForm()

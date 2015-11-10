@@ -29,7 +29,7 @@
 
         protected override void CreateChildren()
         {
-            base.AddChild(new Crystal.Configuration.Component.State.Server((this.Data as Data).State)
+            base.AddChild(new Crystal.Configuration.Component.State.Server((this.Data as Data).ResidentialAddress.State)
             {
                 Type = ChildType.Independent,
                 IsReadOnly = true,

@@ -34,15 +34,18 @@
             // 
             // spcMain
             // 
-            this.spcMain.Size = new System.Drawing.Size(611, 393);
-            this.spcMain.SplitterDistance = 200;
+            this.spcMain.Size = new System.Drawing.Size(810, 508);
+            this.spcMain.SplitterDistance = 265;
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 428);
+            this.ClientSize = new System.Drawing.Size(810, 543);
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
             this.Name = "Form";
+            this.ShowInTaskbar = true;
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
             this.ResumeLayout(false);

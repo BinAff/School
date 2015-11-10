@@ -36,19 +36,35 @@
     <Reference Include="BinAff.Utility">
       <HintPath>..\..\..\Reference\BinAff.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="Crystal.Configuration.Component">
-      <HintPath>..\..\..\Reference\Crystal.Configuration.Component.dll</HintPath>
+    <Reference Include="Crystal.Configuration.Component - Old">
+      <HintPath>..\..\..\Reference\Crystal.Configuration.Component - Old.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\Category.cs" />
     <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="PersonalInformation\Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Crystal\Configuration\Crystal.Configuration.Component\Crystal.Configuration.Component.csproj">
+      <Project>{2c1a698f-760a-4b91-8f91-4f3a579d7d12}</Project>
+      <Name>Crystal.Configuration.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\School\Sparkle.School.Component\Sparkle.School.Component.csproj">
+      <Project>{46b8cd01-7963-45c4-b168-2add149c7dad}</Project>
+      <Name>Sparkle.School.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
+      <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
+      <Name>Sparkle.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

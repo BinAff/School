@@ -36,10 +36,10 @@ namespace Sparkle.Student.Facade
             dto.FirstName = data.FirstName;
             dto.MiddleName = data.MiddleName;
             dto.LastName = data.LastName;
-            dto.Address = data.Address;
-            dto.State = new StateFac.Server(null).Convert(data.State) as StateFac.Dto;
-            dto.City = data.City;
-            dto.Pin = data.Pin;
+            dto.Address = data.ResidentialAddress.Address;
+            dto.State = new StateFac.Server(null).Convert(data.ResidentialAddress.State) as StateFac.Dto;
+            dto.City = data.ResidentialAddress.City;
+            dto.Pin = data.ResidentialAddress.Pin;
         }
 
         public override void AssignData()
@@ -50,10 +50,10 @@ namespace Sparkle.Student.Facade
             data.FirstName = dto.FirstName;
             data.MiddleName = dto.MiddleName;
             data.LastName = dto.LastName;
-            data.Address = dto.Address;
-            data.State = new StateFac.Server(null).Convert(dto.State) as StateComp.Data;
-            data.City = dto.City;
-            data.Pin = dto.Pin;
+            data.ResidentialAddress.Address = dto.Address;
+            data.ResidentialAddress.State = new StateFac.Server(null).Convert(dto.State) as StateComp.Data;
+            data.ResidentialAddress.City = dto.City;
+            data.ResidentialAddress.Pin = dto.Pin;
         }
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)
@@ -65,10 +65,11 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                Address = dt.Address,
-                State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data,
-                City = dt.City,
-                Pin = dt.Pin,
+                //ResidentialAddress = 
+                //Address = dt.Address,
+                //State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data,
+                //City = dt.City,
+                //Pin = dt.Pin,
             };
         }
 
@@ -81,10 +82,10 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                Address = dt.Address,
-                State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto,
-                City = dt.City,
-                Pin = dt.Pin,
+                //Address = dt.Address,
+                //State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto,
+                //City = dt.City,
+                //Pin = dt.Pin,
             };
         }
 
