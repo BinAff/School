@@ -298,8 +298,15 @@
     <Build Include="Configuration\Stored Procedures\GenderReadAll.sql" />
     <Build Include="Configuration\Stored Procedures\GenderReadDuplicate.sql" />
     <Build Include="Configuration\Stored Procedures\GenderUpdate.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryDelete.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryInsert.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryUpdate.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryReadDuplicate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Database.refactorlog" />
   </ItemGroup>
 </Project>
