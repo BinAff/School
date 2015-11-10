@@ -36,10 +36,6 @@
     <Reference Include="BinAff.Utility">
       <HintPath>..\..\..\Reference\BinAff.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="Crystal.Configuration.Component - Old, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Reference\Crystal.Configuration.Component - Old.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -47,10 +43,18 @@
   <ItemGroup>
     <Compile Include="Caste\Data.cs" />
     <Compile Include="ContactInformation\Data.cs" />
+    <Compile Include="Country\Dao.cs" />
+    <Compile Include="Country\Data.cs" />
+    <Compile Include="Country\Server.cs" />
+    <Compile Include="Country\Validator.cs" />
     <Compile Include="Gender\Dao.cs" />
     <Compile Include="Gender\Data.cs" />
     <Compile Include="Gender\Server.cs" />
     <Compile Include="Gender\Validator.cs" />
+    <Compile Include="IdentityProofType\Dao.cs" />
+    <Compile Include="IdentityProofType\Data.cs" />
+    <Compile Include="IdentityProofType\Server.cs" />
+    <Compile Include="IdentityProofType\Validator.cs" />
     <Compile Include="Landline\Data.cs" />
     <Compile Include="Mobile\Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,9 +62,12 @@
     <Compile Include="Religion\Data.cs" />
     <Compile Include="Religion\Server.cs" />
     <Compile Include="Religion\Validator.cs" />
+    <Compile Include="State\Dao.cs" />
+    <Compile Include="State\Data.cs" />
+    <Compile Include="State\Server.cs" />
+    <Compile Include="State\Validator.cs" />
     <Compile Include="SubCaste\Data.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
