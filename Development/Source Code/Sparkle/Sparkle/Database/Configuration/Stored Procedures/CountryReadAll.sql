@@ -2,7 +2,7 @@
 AS
 BEGIN
 	
-	SELECT Id, Name
+	SELECT Id, Name,Code,IsdCode
 	FROM Configuration.Country WITH (NOLOCK)
    
 END
