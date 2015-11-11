@@ -17,20 +17,20 @@ namespace Crystal.Configuration.Component.Religion
 
         protected override List<BinAff.Core.Message> Validate()
         {
-            List<Message> msg = new List<Message>();
+            List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                msg.Add(new Message("Religion name cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Religion name cannot be empty.", Message.Type.Error));
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
             {
-                msg.Add(new Message("Religion already exists.", Message.Type.Error));
+                retMsg.Add(new Message("Religion already exists.", Message.Type.Error));
             }
 
-            return msg;
+            return retMsg;
         }
 
     }

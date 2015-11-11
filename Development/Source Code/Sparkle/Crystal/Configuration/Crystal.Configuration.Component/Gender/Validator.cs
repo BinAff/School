@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
@@ -17,19 +18,19 @@ namespace Crystal.Configuration.Component.Gender
 
         protected override List<BinAff.Core.Message> Validate()
         {
-            List<Message> msg = new List<Message>();
+            List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                msg.Add(new Message("Gender cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Gender cannot be empty.", Message.Type.Error));
             }
             
             if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
             {
-                msg.Add(new Message("Gender already exists.", Message.Type.Error));
+                retMsg.Add(new Message("Gender already exists.", Message.Type.Error));
             }
-            return msg;
+            return retMsg;
         }
 
     }
