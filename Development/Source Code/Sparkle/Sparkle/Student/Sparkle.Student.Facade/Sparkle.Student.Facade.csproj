@@ -40,10 +40,6 @@
     <Reference Include="BinAff.Facade.Library">
       <HintPath>..\..\..\Reference\BinAff.Facade.Library.dll</HintPath>
     </Reference>
-    <Reference Include="Crystal.Configuration.Component - Old, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Reference\Crystal.Configuration.Component - Old.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="Vanilla.Configuration.Facade">
