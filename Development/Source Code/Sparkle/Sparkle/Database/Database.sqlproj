@@ -316,6 +316,13 @@
     <Build Include="Configuration\Stored Procedures\SubCasteReadAll.sql" />
     <Build Include="Configuration\Stored Procedures\SubCasteReadDuplicate.sql" />
     <Build Include="Configuration\Stored Procedures\SubCasteUpdate.sql" />
+    <Build Include="Student\Tables\Category.sql" />
+    <Build Include="Student\Stored Procedures\CategoryDelete.sql" />
+    <Build Include="Student\Stored Procedures\CategoryInsert.sql" />
+    <Build Include="Student\Stored Procedures\CategoryRead.sql" />
+    <Build Include="Student\Stored Procedures\CategoryReadAll.sql" />
+    <Build Include="Student\Stored Procedures\CategoryUpdate.sql" />
+    <Build Include="Student\Stored Procedures\CategoryReadDuplicate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
