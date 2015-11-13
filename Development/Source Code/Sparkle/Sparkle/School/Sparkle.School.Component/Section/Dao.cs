@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 
-
-namespace Crystal.Configuration.Component.Section
+namespace Sparkle.School.Component.Section
 {
+
     public class Dao : BinAff.Core.Dao
     {
 
@@ -59,4 +59,5 @@ namespace Crystal.Configuration.Component.Section
         }
 
     }
+
 }

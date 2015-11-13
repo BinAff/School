@@ -1,5 +1,6 @@
-﻿namespace Crystal.Configuration.Component.Class
+﻿namespace Sparkle.School.Component.Class
 {
+
     public class Server : BinAff.Core.Crud
     {
 
@@ -27,5 +28,5 @@
         }
 
     }
-     
+
 }

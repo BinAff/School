@@ -49,10 +49,6 @@
     <Compile Include="Category\Data.cs" />
     <Compile Include="Category\Server.cs" />
     <Compile Include="Category\Validator.cs" />
-    <Compile Include="Class\Dao.cs" />
-    <Compile Include="Class\Data.cs" />
-    <Compile Include="Class\Server.cs" />
-    <Compile Include="Class\Validator.cs" />
     <Compile Include="ContactInformation\Dao.cs" />
     <Compile Include="ContactInformation\Data.cs" />
     <Compile Include="ContactInformation\Server.cs" />
@@ -82,10 +78,6 @@
     <Compile Include="Religion\Data.cs" />
     <Compile Include="Religion\Server.cs" />
     <Compile Include="Religion\Validator.cs" />
-    <Compile Include="Section\Dao.cs" />
-    <Compile Include="Section\Data.cs" />
-    <Compile Include="Section\Server.cs" />
-    <Compile Include="Section\Validator.cs" />
     <Compile Include="State\Dao.cs" />
     <Compile Include="State\Data.cs" />
     <Compile Include="State\Server.cs" />
