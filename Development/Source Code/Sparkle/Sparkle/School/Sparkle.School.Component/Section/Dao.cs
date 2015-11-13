@@ -17,12 +17,12 @@ namespace Sparkle.School.Component.Section
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Configuration.SectionInsert";
-            base.ReadStoredProcedure = "Configuration.SectionRead";
-            base.ReadAllStoredProcedure = "Configuration.SectionReadAll";
-            base.UpdateStoredProcedure = "Configuration.SectionUpdate";
+            base.CreateStoredProcedure = "School.SectionInsert";
+            base.ReadStoredProcedure = "School.SectionRead";
+            base.ReadAllStoredProcedure = "School.SectionReadAll";
+            base.UpdateStoredProcedure = "School.SectionUpdate";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "Configuration.SectionDelete";
+            base.DeleteStoredProcedure = "School.SectionDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
@@ -44,7 +44,7 @@ namespace Sparkle.School.Component.Section
 
         internal Data ReadDuplicate()
         {
-            this.CreateCommand("Configuration.SectionReadDuplicate");
+            this.CreateCommand("School.SectionReadDuplicate");
             this.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
             DataTable dt = this.ExecuteDataTable();
             this.CloseConnection();
