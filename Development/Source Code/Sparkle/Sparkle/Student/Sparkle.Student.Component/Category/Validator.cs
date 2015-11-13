@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
 
-namespace Crystal.Configuration.Component.Category
+namespace Sparkle.Student.Component.Category
 {
+
     public class Validator : BinAff.Core.Validator
     {
 
@@ -33,4 +33,5 @@ namespace Crystal.Configuration.Component.Category
         }
 
     }
+
 }

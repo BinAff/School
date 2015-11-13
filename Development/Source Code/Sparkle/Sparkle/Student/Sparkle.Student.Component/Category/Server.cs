@@ -1,5 +1,6 @@
-﻿namespace Crystal.Configuration.Component.Category
+﻿namespace Sparkle.Student.Component.Category
 {
+
     public class Server : BinAff.Core.Crud
     {
 
@@ -11,7 +12,7 @@
 
         protected override void Compose()
         {
-            base.Name = "Category";
+            base.Name = "Student Category";
             base.Validator = new Validator(this.Data as Data);
             base.DataAccess = new Dao(this.Data as Data);
         }
@@ -27,4 +28,5 @@
         }
 
     }
+
 }

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data;
 
-namespace Crystal.Configuration.Component.Category
+namespace Sparkle.Student.Component.Category
 {
+
     public class Dao : BinAff.Core.Dao
     {
 
@@ -16,12 +17,12 @@ namespace Crystal.Configuration.Component.Category
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Configuration.CategoryInsert";
-            base.ReadStoredProcedure = "Configuration.CategoryRead";
-            base.ReadAllStoredProcedure = "Configuration.CategoryReadAll";
-            base.UpdateStoredProcedure = "Configuration.CategoryUpdate";
+            base.CreateStoredProcedure = "Student.CategoryInsert";
+            base.ReadStoredProcedure = "Student.CategoryRead";
+            base.ReadAllStoredProcedure = "Student.CategoryReadAll";
+            base.UpdateStoredProcedure = "Student.CategoryUpdate";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "Configuration.CategoryDelete";
+            base.DeleteStoredProcedure = "Student.CategoryDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
@@ -43,7 +44,7 @@ namespace Crystal.Configuration.Component.Category
 
         internal Data ReadDuplicate()
         {
-            this.CreateCommand("Configuration.CategoryReadDuplicate");
+            this.CreateCommand("Student.CategoryReadDuplicate");
             this.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
             DataTable dt = this.ExecuteDataTable();
             this.CloseConnection();
@@ -58,4 +59,5 @@ namespace Crystal.Configuration.Component.Category
         }
 
     }
+
 }

@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\Dao.cs" />
     <Compile Include="Category\Data.cs" />
+    <Compile Include="Category\Server.cs" />
+    <Compile Include="Category\Validator.cs" />
     <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="PersonalInformation\Data.cs" />
