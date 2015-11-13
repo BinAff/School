@@ -302,6 +302,20 @@
     <Build Include="Configuration\Stored Procedures\CountryInsert.sql" />
     <Build Include="Configuration\Stored Procedures\CountryUpdate.sql" />
     <Build Include="Configuration\Stored Procedures\CountryReadDuplicate.sql" />
+    <Build Include="Configuration\Tables\Caste.sql" />
+    <Build Include="Configuration\Tables\SubCaste.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteDelete.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteInsert.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteRead.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteReadAll.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteReadDuplicate.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteUpdate.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteDelete.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteInsert.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteRead.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteReadAll.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteReadDuplicate.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteUpdate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />

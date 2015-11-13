@@ -5,6 +5,3 @@
     CONSTRAINT [PK_State] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_State_State] FOREIGN KEY ([CountryId]) REFERENCES [Configuration].[Country] ([Id])
 );
-
-
-
