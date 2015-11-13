@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\Category.cs" />
+    <Compile Include="Category\Data.cs" />
     <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="PersonalInformation\Data.cs" />
