@@ -1,0 +1,21 @@
+﻿CREATE TABLE [Student].[PersonalInformation] (
+    [Id]        BIGINT       IDENTITY (1, 1) NOT NULL,
+    [StudId]      BIGINT NOT NULL,
+	[DateOfBirth]      DATE NOT NULL,
+	[BirthPlace] VARCHAR(100) NULL,
+	[MothertongueId] BIGINT NULL,
+	[ReligionId] BIGINT NULL,
+	[CasteId] BIGINT NULL,
+	[SubCasteId] BIGINT NULL,
+	[GenderId] BIGINT NULL,
+	[PresentAddressId] BIGINT NULL,
+	[PermananentAddressId] BIGINT NULL,
+    CONSTRAINT [PK_PersonalInformation] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_PI_MotherTongue] FOREIGN KEY ([MotherTongueId]) REFERENCES [Configuration].[MotherTongue] ([Id]),
+	CONSTRAINT [FK_PI_Religion] FOREIGN KEY ([ReligionId]) REFERENCES [Configuration].[Religion] ([Id]),
+	CONSTRAINT [FK_PI_Caste] FOREIGN KEY ([CasteId]) REFERENCES [Configuration].[Caste] ([Id]),
+	CONSTRAINT [FK_PI_SubCaste] FOREIGN KEY ([SubCasteId]) REFERENCES [Configuration].[SubCaste] ([Id]),
+	CONSTRAINT [FK_PI_Gender] FOREIGN KEY ([GenderId]) REFERENCES [Configuration].[Gender] ([Id]),
+	CONSTRAINT [FK_PI_PresentAddress] FOREIGN KEY ([PresentAddressId]) REFERENCES [Configuration].[ContactInformation] ([Id]),
+	CONSTRAINT [FK_PI_PermananentAddress] FOREIGN KEY ([PermananentAddressId]) REFERENCES [Configuration].[ContactInformation] ([Id])
+);

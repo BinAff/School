@@ -323,6 +323,18 @@
     <Build Include="Student\Stored Procedures\CategoryReadAll.sql" />
     <Build Include="Student\Stored Procedures\CategoryUpdate.sql" />
     <Build Include="Student\Stored Procedures\CategoryReadDuplicate.sql" />
+    <Build Include="Configuration\Tables\Occupation.sql" />
+    <Build Include="Student\Tables\Mobile.sql" />
+    <Build Include="Organization\Tables\Standard.sql" />
+    <Build Include="Organization\Tables\Section.sql" />
+    <Build Include="Configuration\Tables\MotherTongue.sql" />
+    <Build Include="Organization\Tables\Class.sql" />
+    <Build Include="Configuration\Tables\District.sql" />
+    <Build Include="Configuration\Tables\Relationship.sql" />
+    <Build Include="Configuration\Tables\ContactInformation.sql" />
+    <Build Include="Student\Tables\GuardianProfile.sql" />
+    <Build Include="Student\Tables\Guardian.sql" />
+    <Build Include="Student\Tables\PersonalInformation.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
