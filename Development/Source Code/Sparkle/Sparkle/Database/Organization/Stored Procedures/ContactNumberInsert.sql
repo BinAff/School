@@ -7,7 +7,7 @@
 AS
 BEGIN	
 	
-	INSERT INTO [Organization].ContactNumber(ContactNumber,[OrganizationId])
+	INSERT INTO [Organization].ContactNumber(ContactNumber,OrganizationId)
 	VALUES(@ContactNumber,@OrganizationId)
    
 	SET @Id = @@IDENTITY

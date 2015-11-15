@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.GenderRead
+﻿CREATE PROCEDURE [Configuration].[GenderRead]
 (
    @Id Numeric(10,0)
 )

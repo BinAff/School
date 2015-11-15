@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Student].[StudentReadAll]
+﻿CREATE PROCEDURE [Student].[CategoryReadAll]
 As
 BEGIN
 

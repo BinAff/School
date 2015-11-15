@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.CountryInsert
+﻿CREATE PROCEDURE [Configuration].[CountryInsert]
 (  
 	@Name Varchar(50),
 	@Code Varchar(50),

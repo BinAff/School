@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.SubCasteDelete
+﻿CREATE PROCEDURE [Configuration].[SubCasteDelete]
 (
 	@Id Numeric(10,0)
 )

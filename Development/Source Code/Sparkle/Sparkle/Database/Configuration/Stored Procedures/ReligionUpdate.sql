@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.ReligionUpdate
+﻿CREATE PROCEDURE [Configuration].[ReligionUpdate]
 (
 	@Id Numeric(10,0),
 	@Name Varchar(50)

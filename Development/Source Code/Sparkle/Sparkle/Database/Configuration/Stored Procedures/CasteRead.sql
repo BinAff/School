@@ -5,7 +5,7 @@
 AS
 BEGIN
 	
-   SELECT Id, Name,ReligionId
+   SELECT Id, Name
    FROM Configuration.Caste WITH (NOLOCK)
    WHERE Id = @Id
    

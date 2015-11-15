@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.GenderDelete
+﻿CREATE PROCEDURE [Configuration].[GenderDelete]
 (
 	@Id Numeric(10,0)
 )

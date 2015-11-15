@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.GenderInsert
+﻿CREATE PROCEDURE [Configuration].[GenderInsert]
 (  
 	@Name Varchar(50),
 	@Id  Numeric(10,0) OUTPUT

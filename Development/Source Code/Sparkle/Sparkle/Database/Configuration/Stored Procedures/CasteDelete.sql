@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.CasteDelete
+﻿CREATE PROCEDURE [Configuration].[CasteDelete]
 (
 	@Id Numeric(10,0)
 )

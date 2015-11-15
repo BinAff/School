@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.ReligionRead
+﻿CREATE PROCEDURE [Configuration].[ReligionRead]
 (
    @Id Numeric(10,0)
 )

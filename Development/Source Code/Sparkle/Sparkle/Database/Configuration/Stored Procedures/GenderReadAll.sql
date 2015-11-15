@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.GenderReadAll
+﻿CREATE PROCEDURE [Configuration].[GenderReadAll]
 AS
 BEGIN
 	

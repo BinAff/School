@@ -1,13 +1,11 @@
-﻿CREATE PROCEDURE Configuration.CasteReadDuplicate
+﻿CREATE PROCEDURE [Configuration].[CasteReadDuplicate]
 (
 	@Name Varchar(50)
-	
-
 )
 AS
 BEGIN
 
-	SELECT Id	
+	SELECT Id
 	FROM Configuration.Caste WITH (NOLOCK)
 	WHERE Name = @Name
 				

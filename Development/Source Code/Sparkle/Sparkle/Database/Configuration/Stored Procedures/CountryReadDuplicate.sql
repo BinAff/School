@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.CountryReadDuplicate
+﻿CREATE PROCEDURE [Configuration].[CountryReadDuplicate]
 (
 	@Name Varchar(50),
 	@Code Varchar(50),

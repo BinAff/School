@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.ReligionReadAll
+﻿CREATE PROCEDURE [Configuration].[ReligionReadAll]
 AS
 BEGIN
 	

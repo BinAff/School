@@ -1,8 +1,6 @@
-﻿CREATE PROCEDURE Student.CategoryReadDuplicate
+﻿CREATE PROCEDURE [Student].[CategoryReadDuplicate]
 (
 	@Name Varchar(50)
-	
-
 )
 AS
 BEGIN

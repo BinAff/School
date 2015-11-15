@@ -1,19 +1,21 @@
 ﻿CREATE PROCEDURE [Student].[StudentInsert]
 (
-	@FirstName Varchar(50),
-	@MiddleName Varchar(50),
-	@LastName Varchar(50),
-	@Address Varchar(256),
-	@StateId Bigint,
-	@City Varchar(50),
-	@Pin Int,
+	@StudentId Bigint,
+	@FirstName Varchar(100),
+	@MiddleName Varchar(100),
+	@LastName Varchar(100),
+	@RollNumber Varchar(50),
+	@Photo Varbinary (1024),
+	@CategoryId Bigint,
+	@ClassId BigInt,
 	@Id  Bigint OUTPUT
 )
 AS
 BEGIN
 
-	INSERT INTO Student.Student(FirstName, MiddleName, LastName, Address, StateId, City, Pin)
-	VALUES(@FirstName, @MiddleName, @LastName, @Address, @StateId, @City, @Pin)   
+	INSERT INTO Student.Student
+	(StudentId,FirstName,MiddleName,LastName,RollNumber,Photo,CategoryId,ClassId)
+		VALUES(@StudentId, @FirstName, @MiddleName,@LastName,@RollNumber,@Photo,@CategoryId,@ClassId)   
 	SET @Id = @@IDENTITY
 	
 END

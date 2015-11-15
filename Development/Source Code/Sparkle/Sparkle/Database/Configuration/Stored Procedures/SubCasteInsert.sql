@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.SubCasteInsert
+﻿CREATE PROCEDURE [Configuration].[SubCasteInsert]
 (  
 	@Name Varchar(50),
 	@Id  Numeric(10,0) OUTPUT

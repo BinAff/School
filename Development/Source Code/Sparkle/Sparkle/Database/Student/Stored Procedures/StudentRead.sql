@@ -5,9 +5,7 @@
 As
 BEGIN
 
-	SELECT  Id,
-		FirstName, MiddleName, LastName,
-		Address, StateId, City, Pin
+	SELECT  Id,StudentId,FirstName,MiddleName,LastName,RollNumber,Photo,CategoryId,ClassId
 	FROM Student.Student WITH (NOLOCK)
 	WHERE Id = @Id
 	

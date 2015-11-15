@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.SubCasteReadDuplicate
+﻿CREATE PROCEDURE [Configuration].[SubCasteReadDuplicate]
 (
 	@Name Varchar(50)
 	

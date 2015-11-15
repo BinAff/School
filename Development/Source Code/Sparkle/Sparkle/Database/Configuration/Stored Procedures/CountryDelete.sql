@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Configuration.CountryDelete
+﻿CREATE PROCEDURE [Configuration].[CountryDelete]
 (
 	@Id Numeric(10,0)
 )
