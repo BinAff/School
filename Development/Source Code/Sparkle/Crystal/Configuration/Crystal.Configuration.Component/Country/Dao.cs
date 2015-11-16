@@ -45,10 +45,10 @@ namespace Crystal.Configuration.Component.Country
 
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.CountryReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.CountryReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

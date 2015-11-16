@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
@@ -19,7 +18,7 @@ namespace Crystal.Configuration.Component.Country
         protected override List<Message> Validate()
         {
             List<Message> retMsg = new List<Message>();
-            Data data = (Data)base.Data;
+            Data data = base.Data as Data;
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
@@ -29,15 +28,13 @@ namespace Crystal.Configuration.Component.Country
             {
                 retMsg.Add(new Message("Country name cannot be more than 50 characters.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if (data.Id == 0 && (this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Same Country already exists.", Message.Type.Error));
             }
 
             return retMsg;
         }
-
-        
 
     }
 
