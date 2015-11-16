@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Configuration].[CounrtyUpdate]
+﻿CREATE PROCEDURE Configuration.CountryUpdate
 (
 	@Id Numeric(10,0),
 	@Name Varchar(50),
