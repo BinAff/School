@@ -1,11 +1,9 @@
 ﻿using StateComp = Crystal.Configuration.Component.State;
-using CountryComp = Crystal.Configuration.Component.Country;
 
 using StateFac = Vanilla.Configuration.Facade.State;
 using CountryFac = Vanilla.Configuration.Facade.Country;
 
 using Comp = Sparkle.Student.Component;
-using System.Collections.Generic;
 
 namespace Sparkle.Student.Facade
 {

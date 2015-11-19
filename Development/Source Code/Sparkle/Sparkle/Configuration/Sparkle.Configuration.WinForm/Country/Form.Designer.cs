@@ -1,13 +1,13 @@
-﻿namespace Sparkle.Core.Presentation
+﻿namespace Sparkle.Configuration.WinForm.Country
 {
-    partial class FormControl
+    partial class Form
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,35 +20,36 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
+            this.spcMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // errorProvider
+            // spcMain
             // 
-            this.errorProvider.ContainerControl = this;
+            this.spcMain.Size = new System.Drawing.Size(524, 314);
+            this.spcMain.SplitterDistance = 171;
             // 
-            // FormControl
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "FormControl";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.ClientSize = new System.Drawing.Size(524, 349);
+            this.Name = "Form";
+            ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
+            this.spcMain.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

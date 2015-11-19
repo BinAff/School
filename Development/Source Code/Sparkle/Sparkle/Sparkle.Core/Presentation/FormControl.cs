@@ -11,6 +11,14 @@ namespace Sparkle.Core.Presentation
 
         protected internal FormDto FormDto { get; internal set; }
 
+        protected ErrorProvider ErrorProvider
+        {
+            get
+            {
+                return this.errorProvider;
+            }
+        }
+
         public FormControl()
         {
             InitializeComponent();
@@ -32,6 +40,11 @@ namespace Sparkle.Core.Presentation
         }
 
         protected internal virtual Boolean ValidateForm()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected internal virtual void ResetForm()
         {
             throw new System.NotImplementedException();
         }

@@ -54,12 +54,11 @@ namespace Sparkle.Core.Presentation
         {
             if (DesignMode) return;
             this.Bind();
-            this.cboList.Bind((this.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
         }
 
         private void btnRefresh_Click(object sender, System.EventArgs e)
         {
-
+            this.Reset();
         }
 
         private void btnSave_Click(object sender, System.EventArgs e)
@@ -79,6 +78,30 @@ namespace Sparkle.Core.Presentation
                 {
                     this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
                 }
+                this.formControl.ResetForm();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.ValidateForm())
+            {
+                this.AssignDto();
+                this.Facade.Change();
+                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                this.formControl.ResetForm();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.cboList.SelectedItem == null) return;
+            if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Facade.Delete();
+                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
+                this.formControl.ResetForm();
             }
         }
 
@@ -91,45 +114,33 @@ namespace Sparkle.Core.Presentation
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (this.ValidateForm())
-            {
-                this.AssignDto();
-                this.Facade.Change();
-                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (this.cboList.SelectedItem == null) return;
-            if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
-            {
-                this.Facade.Delete();
-                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
-                this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
-            }
-        }
-
         #endregion
 
-        protected virtual void Bind()
+        protected void Reset()
         {
-            this.formControl.Bind();
+            this.Bind();
+            this.cboList.SelectedIndex = -1;
+            this.cboList.Text = String.Empty;
+            this.formControl.ResetForm();
         }
 
-        protected virtual void AssignDto()
+        protected void Bind()
+        {
+            this.formControl.Bind();
+            this.cboList.Bind((this.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
+        }
+
+        protected void AssignDto()
         {
             this.formControl.AssignDto();
         }
 
-        protected virtual void AssignFormControls()
+        protected void AssignFormControls()
         {
             this.formControl.AssignFormControls();
         }
 
-        protected virtual Boolean ValidateForm()
+        protected Boolean ValidateForm()
         {
             return this.formControl.ValidateForm();
         }
