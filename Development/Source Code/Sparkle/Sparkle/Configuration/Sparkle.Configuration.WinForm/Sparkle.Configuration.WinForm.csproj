@@ -73,6 +73,18 @@
     <Compile Include="Country\FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="District\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="District\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="District\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="District\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gender\Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,9 @@
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Country\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="District\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gender\Form.resx">

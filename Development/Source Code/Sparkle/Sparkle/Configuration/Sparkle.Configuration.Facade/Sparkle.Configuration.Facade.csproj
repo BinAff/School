@@ -45,6 +45,9 @@
     <Compile Include="Country\Dto.cs" />
     <Compile Include="Country\FormDto.cs" />
     <Compile Include="Country\Server.cs" />
+    <Compile Include="District\Dto.cs" />
+    <Compile Include="District\FormDto.cs" />
+    <Compile Include="District\Server.cs" />
     <Compile Include="Gender\Dto.cs" />
     <Compile Include="Gender\FormDto.cs" />
     <Compile Include="Gender\Server.cs" />

@@ -34,6 +34,7 @@
             this.btnReligionManagement = new System.Windows.Forms.Button();
             this.btnSubCasteManagement = new System.Windows.Forms.Button();
             this.btnGenderManagement = new System.Windows.Forms.Button();
+            this.btnDistrictManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -102,11 +103,23 @@
             this.btnGenderManagement.UseVisualStyleBackColor = true;
             this.btnGenderManagement.Click += new System.EventHandler(this.btnGenderManagement_Click);
             // 
+            // btnDistrictManagement
+            // 
+            this.btnDistrictManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDistrictManagement.Location = new System.Drawing.Point(12, 112);
+            this.btnDistrictManagement.Name = "btnDistrictManagement";
+            this.btnDistrictManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnDistrictManagement.TabIndex = 7;
+            this.btnDistrictManagement.Text = "District Management";
+            this.btnDistrictManagement.UseVisualStyleBackColor = true;
+            this.btnDistrictManagement.Click += new System.EventHandler(this.btnDistrictManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 113);
+            this.ClientSize = new System.Drawing.Size(611, 215);
+            this.Controls.Add(this.btnDistrictManagement);
             this.Controls.Add(this.btnReligionManagement);
             this.Controls.Add(this.btnSubCasteManagement);
             this.Controls.Add(this.btnGenderManagement);
@@ -127,6 +140,7 @@
         private System.Windows.Forms.Button btnReligionManagement;
         private System.Windows.Forms.Button btnSubCasteManagement;
         private System.Windows.Forms.Button btnGenderManagement;
+        private System.Windows.Forms.Button btnDistrictManagement;
 
     }
 }

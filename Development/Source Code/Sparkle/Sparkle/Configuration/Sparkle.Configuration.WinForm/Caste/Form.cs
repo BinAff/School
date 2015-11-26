@@ -1,4 +1,6 @@
-﻿using Fac = Sparkle.Core.Facade;
+﻿using FacLib = Sparkle.Core.Facade;
+
+using Fac = Sparkle.Configuration.Facade.Caste;
 
 namespace Sparkle.Configuration.WinForm.Caste
 {
@@ -16,17 +18,17 @@ namespace Sparkle.Configuration.WinForm.Caste
 
         #region Framework
 
-        protected override Fac.FormDto InstantiateFormDto()
+        protected override FacLib.FormDto InstantiateFormDto()
         {
-            return new Facade.Caste.FormDto
+            return new Fac.FormDto
             {
-                Dto = new Facade.Caste.Dto(),
+                Dto = new Fac.Dto(),
             };
         }
 
-        protected override Sparkle.Core.Facade.Server InstantiateFacade()
+        protected override FacLib.Server InstantiateFacade()
         {
-            return new Facade.Caste.Server(base.FormDto as Facade.Caste.FormDto);
+            return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
         #endregion

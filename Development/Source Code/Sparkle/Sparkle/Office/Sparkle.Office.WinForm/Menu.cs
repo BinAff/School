@@ -48,6 +48,12 @@ namespace Sparkle.Office.WinForm
             this.Close();
         }
 
+        private void btnDistrictManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.District.Form().Show();
+            this.Close();
+        }
+
     }
 
 }

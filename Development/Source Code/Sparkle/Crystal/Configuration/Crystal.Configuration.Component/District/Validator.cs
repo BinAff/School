@@ -3,7 +3,7 @@
 using BinAff.Core;
 using BinAff.Utility;
 
-namespace Crystal.Configuration.Component.State
+namespace Crystal.Configuration.Component.District
 {
 
     public class Validator : BinAff.Core.Validator
@@ -22,15 +22,15 @@ namespace Crystal.Configuration.Component.State
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                retMsg.Add(new Message("State name cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("District name cannot be empty.", Message.Type.Error));
             }
             else if (data.Name.Length > 50)
             {
-                retMsg.Add(new Message("State name cannot be more than 50 characters.", Message.Type.Error));
+                retMsg.Add(new Message("District name cannot be more than 50 characters.", Message.Type.Error));
             }
             if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
-                retMsg.Add(new Message("Same State already exists.", Message.Type.Error));
+                retMsg.Add(new Message("Same District already exists.", Message.Type.Error));
             }
 
             return retMsg;

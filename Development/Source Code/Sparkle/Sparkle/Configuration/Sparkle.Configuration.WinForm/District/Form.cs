@@ -1,8 +1,8 @@
 ﻿using FacLib = Sparkle.Core.Facade;
 
-using Fac = Sparkle.Configuration.Facade.Religion;
+using Fac = Sparkle.Configuration.Facade.District;
 
-namespace Sparkle.Configuration.WinForm.Religion
+namespace Sparkle.Configuration.WinForm.District
 {
 
     public partial class Form : Sparkle.Core.Presentation.Form
@@ -13,7 +13,7 @@ namespace Sparkle.Configuration.WinForm.Religion
             base.FormControl = new FormControl();
             InitializeComponent();
             base.ListDisplayName = "Name";
-            base.FormName = "Religion";
+            base.FormName = "District";
         }
 
         #region Framework

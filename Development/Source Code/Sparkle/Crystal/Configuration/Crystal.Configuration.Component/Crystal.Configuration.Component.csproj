@@ -53,6 +53,10 @@
     <Compile Include="Country\Data.cs" />
     <Compile Include="Country\Server.cs" />
     <Compile Include="Country\Validator.cs" />
+    <Compile Include="District\Dao.cs" />
+    <Compile Include="District\Data.cs" />
+    <Compile Include="District\Server.cs" />
+    <Compile Include="District\Validator.cs" />
     <Compile Include="Gender\Dao.cs" />
     <Compile Include="Gender\Data.cs" />
     <Compile Include="Gender\Server.cs" />
