@@ -68,17 +68,20 @@ namespace Sparkle.Core.Presentation
                 this.AssignDto();
                 this.FormDto.Dto.Id = 0;
                 this.Facade.Add();
+                if (!this.Facade.IsError)
+                {
+                    this.FormDto.DtoList.Add(this.FormDto.Dto);
+                    if (this.cboList.Items.Count > 0)
+                    {
+                        this.cboList.Items.Add(this.FormDto.Dto);
+                    }
+                    else
+                    {
+                        this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                    }
+                    this.formControl.ResetForm();
+                }
                 new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
-                this.FormDto.DtoList.Add(this.FormDto.Dto);
-                if (this.cboList.Items.Count > 0)
-                {
-                    this.cboList.Items.Add(this.FormDto.Dto);
-                }
-                else
-                {
-                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
-                }
-                this.formControl.ResetForm();
             }
         }
 
@@ -88,8 +91,12 @@ namespace Sparkle.Core.Presentation
             {
                 this.AssignDto();
                 this.Facade.Change();
+                if (!this.Facade.IsError)
+                {
+                    this.formControl.ResetForm();
+                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                }
                 new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
-                this.formControl.ResetForm();
             }
         }
 
@@ -99,9 +106,13 @@ namespace Sparkle.Core.Presentation
             if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
             {
                 this.Facade.Delete();
+                if (!this.Facade.IsError)
+                {
+                    this.FormDto.DtoList.Remove(this.cboList.SelectedItem as Dto);
+                    this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
+                    this.formControl.ResetForm();
+                }
                 new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
-                this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
-                this.formControl.ResetForm();
             }
         }
 
