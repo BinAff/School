@@ -36,6 +36,7 @@
             this.btnGenderManagement = new System.Windows.Forms.Button();
             this.btnDistrictManagement = new System.Windows.Forms.Button();
             this.btnRelationshipManagement = new System.Windows.Forms.Button();
+            this.btnMotherTongueManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -126,11 +127,23 @@
             this.btnRelationshipManagement.UseVisualStyleBackColor = true;
             this.btnRelationshipManagement.Click += new System.EventHandler(this.btnRelationshipManagement_Click);
             // 
+            // btnMotherTongueManagement
+            // 
+            this.btnMotherTongueManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotherTongueManagement.Location = new System.Drawing.Point(212, 112);
+            this.btnMotherTongueManagement.Name = "btnMotherTongueManagement";
+            this.btnMotherTongueManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnMotherTongueManagement.TabIndex = 9;
+            this.btnMotherTongueManagement.Text = "Mother Tongue Management";
+            this.btnMotherTongueManagement.UseVisualStyleBackColor = true;
+            this.btnMotherTongueManagement.Click += new System.EventHandler(this.btnMotherTongueManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 215);
+            this.Controls.Add(this.btnMotherTongueManagement);
             this.Controls.Add(this.btnRelationshipManagement);
             this.Controls.Add(this.btnDistrictManagement);
             this.Controls.Add(this.btnReligionManagement);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button btnGenderManagement;
         private System.Windows.Forms.Button btnDistrictManagement;
         private System.Windows.Forms.Button btnRelationshipManagement;
+        private System.Windows.Forms.Button btnMotherTongueManagement;
 
     }
 }

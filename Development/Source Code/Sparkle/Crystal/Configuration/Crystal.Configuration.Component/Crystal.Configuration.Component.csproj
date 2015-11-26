@@ -73,6 +73,10 @@
     <Compile Include="Mobile\Data.cs" />
     <Compile Include="Mobile\Server.cs" />
     <Compile Include="Mobile\Validator.cs" />
+    <Compile Include="MotherTongue\Dao.cs" />
+    <Compile Include="MotherTongue\Data.cs" />
+    <Compile Include="MotherTongue\Server.cs" />
+    <Compile Include="MotherTongue\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationship\Dao.cs" />
     <Compile Include="Relationship\Data.cs" />

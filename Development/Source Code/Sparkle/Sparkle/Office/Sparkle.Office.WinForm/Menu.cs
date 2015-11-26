@@ -60,6 +60,12 @@ namespace Sparkle.Office.WinForm
             this.Close();
         }
 
+        private void btnMotherTongueManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.MotherTongue.Form().Show();
+            this.Close();
+        }
+
     }
 
 }

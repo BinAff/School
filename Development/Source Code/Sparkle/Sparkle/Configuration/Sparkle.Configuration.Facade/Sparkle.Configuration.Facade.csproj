@@ -54,6 +54,9 @@
     <Compile Include="IdentityProofType\Dto.cs" />
     <Compile Include="IdentityProofType\FormDto.cs" />
     <Compile Include="IdentityProofType\Server.cs" />
+    <Compile Include="MotherTongue\Dto.cs" />
+    <Compile Include="MotherTongue\FormDto.cs" />
+    <Compile Include="MotherTongue\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationship\Dto.cs" />
     <Compile Include="Relationship\FormDto.cs" />
@@ -78,6 +81,7 @@
       <Name>Sparkle.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

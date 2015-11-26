@@ -97,6 +97,18 @@
     <Compile Include="Gender\FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MotherTongue\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotherTongue\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotherTongue\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MotherTongue\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationship\Form.cs">
       <SubType>Form</SubType>
@@ -167,6 +179,12 @@
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gender\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotherTongue\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotherTongue\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relationship\Form.resx">
