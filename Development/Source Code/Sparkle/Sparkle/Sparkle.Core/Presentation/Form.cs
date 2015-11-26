@@ -15,6 +15,7 @@ namespace Sparkle.Core.Presentation
         protected Server Facade { get; private set; }
 
         protected String ListDisplayName { get; set; }
+        protected String FormName { get; set; }
 
         private FormControl formControl;
         protected FormControl FormControl
@@ -47,9 +48,10 @@ namespace Sparkle.Core.Presentation
             this.FormDto = this.InstantiateFormDto();
             this.Facade = this.InstantiateFacade();
             this.FormControl.FormDto = this.FormDto;
+            if (!String.IsNullOrEmpty(this.FormName)) this.Name = this.FormName;
             this.Facade.LoadForm();
         }
-        
+
         private void Form_Shown(object sender, System.EventArgs e)
         {
             if (DesignMode) return;
