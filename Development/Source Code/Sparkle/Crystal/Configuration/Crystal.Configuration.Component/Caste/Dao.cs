@@ -3,8 +3,10 @@ using System.Data;
 
 namespace Crystal.Configuration.Component.Caste
 {
+
     public class Dao : BinAff.Core.Dao
     {
+
         public Dao(Data data)
             : base(data)
         {
@@ -26,7 +28,6 @@ namespace Crystal.Configuration.Component.Caste
         protected override void AssignParameter(string procedureName)
         {
             base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
-            base.AddInParameter("@ReligionId", DbType.Int64, (this.Data as Data).Religion.Id);
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
@@ -34,11 +35,6 @@ namespace Crystal.Configuration.Component.Caste
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
-            dt.Religion = new Religion.Data
-            {
-                Id = Convert.IsDBNull(dr["ReligionId"]) ? 0 : Convert.ToInt64(dr["ReligionId"]),
-            };
             return dt;
         }
 
@@ -46,7 +42,7 @@ namespace Crystal.Configuration.Component.Caste
         {
             Data data = (Data)this.Data;
             this.CreateConnection();
-            this.CreateCommand("Configuration.ReligionReadDuplicate");
+            this.CreateCommand("Configuration.CasteReadDuplicate");
             this.AddInParameter("@Name", DbType.String, data.Name);
 
             DataSet ds = this.ExecuteDataSet();
@@ -61,5 +57,7 @@ namespace Crystal.Configuration.Component.Caste
 
             return false;
         }
+
     }
+
 }

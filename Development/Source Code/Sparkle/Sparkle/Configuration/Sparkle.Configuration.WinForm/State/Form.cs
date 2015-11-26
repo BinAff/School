@@ -11,6 +11,7 @@ namespace Sparkle.Configuration.WinForm.State
             base.FormControl = new FormControl();
             InitializeComponent();
             base.ListDisplayName = "Name";
+            base.FormName = "State";
         }
 
         #region Framework

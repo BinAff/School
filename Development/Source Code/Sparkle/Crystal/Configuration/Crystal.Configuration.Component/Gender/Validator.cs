@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
@@ -26,7 +25,7 @@ namespace Crystal.Configuration.Component.Gender
                 retMsg.Add(new Message("Gender cannot be empty.", Message.Type.Error));
             }
             
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Gender already exists.", Message.Type.Error));
             }

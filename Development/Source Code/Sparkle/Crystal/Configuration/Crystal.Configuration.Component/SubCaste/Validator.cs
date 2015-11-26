@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
 
 namespace Crystal.Configuration.Component.SubCaste
 {
+
     public class Validator : BinAff.Core.Validator
     {
 
@@ -28,7 +28,7 @@ namespace Crystal.Configuration.Component.SubCaste
             {
                 retMsg.Add(new Message("SubCaste name cannot be more than 50 characters.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("SubCaste name already exists.", Message.Type.Error));
             }
@@ -36,4 +36,5 @@ namespace Crystal.Configuration.Component.SubCaste
         }
 
     }
+
 }

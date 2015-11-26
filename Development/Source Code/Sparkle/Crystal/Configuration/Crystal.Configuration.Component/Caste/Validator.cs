@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using BinAff.Core;
 using BinAff.Utility;
@@ -7,8 +6,10 @@ using BinAff.Utility;
 
 namespace Crystal.Configuration.Component.Caste
 {
+
     public class Validator : BinAff.Core.Validator
     {
+
         public Validator(Data data)
             : base(data)
         {
@@ -28,14 +29,14 @@ namespace Crystal.Configuration.Component.Caste
             {
                 retMsg.Add(new Message("Caste name cannot be more than 50 characters.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Same Caste already exists.", Message.Type.Error));
             }
 
             return retMsg;
         }
- 
 
     }
+
 }

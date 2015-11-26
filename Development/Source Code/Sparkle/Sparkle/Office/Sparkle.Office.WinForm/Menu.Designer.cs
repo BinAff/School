@@ -30,6 +30,10 @@
         {
             this.btnStateManagement = new System.Windows.Forms.Button();
             this.btnCountryManagement = new System.Windows.Forms.Button();
+            this.btnCasteManagement = new System.Windows.Forms.Button();
+            this.btnReligionManagement = new System.Windows.Forms.Button();
+            this.btnSubCasteManagement = new System.Windows.Forms.Button();
+            this.btnGenderManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -54,11 +58,59 @@
             this.btnCountryManagement.UseVisualStyleBackColor = true;
             this.btnCountryManagement.Click += new System.EventHandler(this.btnCountryManagement_Click);
             // 
+            // btnCasteManagement
+            // 
+            this.btnCasteManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCasteManagement.Location = new System.Drawing.Point(212, 12);
+            this.btnCasteManagement.Name = "btnCasteManagement";
+            this.btnCasteManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnCasteManagement.TabIndex = 3;
+            this.btnCasteManagement.Text = "Caste Management";
+            this.btnCasteManagement.UseVisualStyleBackColor = true;
+            this.btnCasteManagement.Click += new System.EventHandler(this.btnCasteManagement_Click);
+            // 
+            // btnReligionManagement
+            // 
+            this.btnReligionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReligionManagement.Location = new System.Drawing.Point(512, 12);
+            this.btnReligionManagement.Name = "btnReligionManagement";
+            this.btnReligionManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnReligionManagement.TabIndex = 6;
+            this.btnReligionManagement.Text = "Religion Management";
+            this.btnReligionManagement.UseVisualStyleBackColor = true;
+            this.btnReligionManagement.Click += new System.EventHandler(this.btnReligionManagement_Click);
+            // 
+            // btnSubCasteManagement
+            // 
+            this.btnSubCasteManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubCasteManagement.Location = new System.Drawing.Point(312, 12);
+            this.btnSubCasteManagement.Name = "btnSubCasteManagement";
+            this.btnSubCasteManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnSubCasteManagement.TabIndex = 4;
+            this.btnSubCasteManagement.Text = "Sub Caste Management";
+            this.btnSubCasteManagement.UseVisualStyleBackColor = true;
+            this.btnSubCasteManagement.Click += new System.EventHandler(this.btnSubCasteManagement_Click);
+            // 
+            // btnGenderManagement
+            // 
+            this.btnGenderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenderManagement.Location = new System.Drawing.Point(412, 12);
+            this.btnGenderManagement.Name = "btnGenderManagement";
+            this.btnGenderManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnGenderManagement.TabIndex = 5;
+            this.btnGenderManagement.Text = "Gender Management";
+            this.btnGenderManagement.UseVisualStyleBackColor = true;
+            this.btnGenderManagement.Click += new System.EventHandler(this.btnGenderManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 118);
+            this.ClientSize = new System.Drawing.Size(611, 113);
+            this.Controls.Add(this.btnReligionManagement);
+            this.Controls.Add(this.btnSubCasteManagement);
+            this.Controls.Add(this.btnGenderManagement);
+            this.Controls.Add(this.btnCasteManagement);
             this.Controls.Add(this.btnCountryManagement);
             this.Controls.Add(this.btnStateManagement);
             this.Name = "Menu";
@@ -71,6 +123,10 @@
 
         private System.Windows.Forms.Button btnStateManagement;
         private System.Windows.Forms.Button btnCountryManagement;
+        private System.Windows.Forms.Button btnCasteManagement;
+        private System.Windows.Forms.Button btnReligionManagement;
+        private System.Windows.Forms.Button btnSubCasteManagement;
+        private System.Windows.Forms.Button btnGenderManagement;
 
     }
 }

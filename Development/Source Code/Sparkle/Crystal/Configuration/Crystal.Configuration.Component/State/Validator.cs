@@ -29,7 +29,7 @@ namespace Crystal.Configuration.Component.State
             {
                 retMsg.Add(new Message("State name cannot be more than 50 characters.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Same State already exists.", Message.Type.Error));
             }

@@ -8,8 +8,6 @@ namespace Crystal.Configuration.Component.Caste
 
         public String Name { get; set; }
 
-        public Religion.Data Religion { get; set; }
-
     }
 
 }

@@ -1,5 +1,6 @@
 ﻿namespace Crystal.Configuration.Component.SubCaste
 {
+
     public class Server : BinAff.Core.Crud
     {
 
@@ -27,4 +28,5 @@
         }
 
     }
+
 }

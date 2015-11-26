@@ -1,12 +1,15 @@
 ﻿namespace Crystal.Configuration.Component.Caste
 {
+
     public class Server : BinAff.Core.Observer.SubjectCrud
     {
+
         public Server(Data data)
             : base(data)
         {
 
         }
+
         protected override void Compose()
         {
             this.Name = "Caste";
@@ -24,13 +27,6 @@
             return new Server(data as Data);
         }
 
-        protected override void CreateChildren()
-        {
-            base.AddChild(new Religion.Server((this.Data as Data).Religion)
-            {
-                IsReadOnly = true,
-                Type = ChildType.Independent
-            });
-        }
     }
+
 }

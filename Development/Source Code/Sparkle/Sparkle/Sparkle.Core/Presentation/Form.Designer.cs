@@ -124,6 +124,7 @@
             this.cboList.Location = new System.Drawing.Point(0, 0);
             this.cboList.Name = "cboList";
             this.cboList.Size = new System.Drawing.Size(95, 236);
+            this.cboList.Sorted = true;
             this.cboList.TabIndex = 0;
             this.cboList.Click += new System.EventHandler(this.cboList_Click);
             // 

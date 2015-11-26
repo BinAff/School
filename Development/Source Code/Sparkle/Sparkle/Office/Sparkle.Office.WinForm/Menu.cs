@@ -24,6 +24,30 @@ namespace Sparkle.Office.WinForm
             this.Close();
         }
 
+        private void btnCasteManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.Caste.Form().Show();
+            this.Close();
+        }
+
+        private void btnSubCasteManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.SubCaste.Form().Show();
+            this.Close();
+        }
+
+        private void btnGenderManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.Gender.Form().Show();
+            this.Close();
+        }
+
+        private void btnReligionManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.Religion.Form().Show();
+            this.Close();
+        }
+
     }
 
 }

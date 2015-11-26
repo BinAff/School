@@ -28,7 +28,7 @@ namespace Crystal.Configuration.Component.Country
             {
                 retMsg.Add(new Message("Country name cannot be more than 50 characters.", Message.Type.Error));
             }
-            if (data.Id == 0 && (this.Server.DataAccess as Dao).ReadDuplicate())
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Same Country already exists.", Message.Type.Error));
             }

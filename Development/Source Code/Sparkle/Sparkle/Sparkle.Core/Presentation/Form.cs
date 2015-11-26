@@ -48,7 +48,10 @@ namespace Sparkle.Core.Presentation
             this.FormDto = this.InstantiateFormDto();
             this.Facade = this.InstantiateFacade();
             this.FormControl.FormDto = this.FormDto;
-            if (!String.IsNullOrEmpty(this.FormName)) this.Name = this.FormName;
+            if (!String.IsNullOrEmpty(this.FormName))
+            {
+                this.Name = this.FormName.Trim() + " Manager" ;
+            }
             this.Facade.LoadForm();
         }
 
