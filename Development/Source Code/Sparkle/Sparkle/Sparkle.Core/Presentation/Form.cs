@@ -100,6 +100,8 @@ namespace Sparkle.Core.Presentation
                 {
                     this.formControl.ResetForm();
                     this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                    this.cboList.Text = String.Empty;
+                    this.cboList.SelectedIndex = -1;
                 }
                 new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
             }
