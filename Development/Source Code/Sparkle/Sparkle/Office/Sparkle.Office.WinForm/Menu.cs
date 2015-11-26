@@ -14,7 +14,7 @@ namespace Sparkle.Office.WinForm
 
         private void btnStateManagement_Click(object sender, EventArgs e)
         {
-            //new Sparkle.Configuration.WinForm.State().Show();
+            new Sparkle.Configuration.WinForm.State.Form().Show();
             this.Close();
         }
 
