@@ -2,6 +2,8 @@
 
 using BinAff.Presentation.Library.Extension;
 
+using Fac = Sparkle.Configuration.Facade.District;
+
 namespace Sparkle.Configuration.WinForm.District
 {
 
@@ -15,7 +17,7 @@ namespace Sparkle.Configuration.WinForm.District
 
         protected override void Bind()
         {
-            this.cboState.Bind((this.FormDto as Facade.District.FormDto).StateList, "Name");
+            this.cboState.Bind((this.FormDto as Fac.FormDto).StateList, "Name");
         }
 
         protected override void ResetForm()
@@ -28,16 +30,16 @@ namespace Sparkle.Configuration.WinForm.District
 
         protected override void AssignDto()
         {
-            Facade.District.Dto dto = base.FormDto.Dto as Facade.District.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
             dto.State = this.cboState.SelectedItem as Facade.State.Dto;
         }
 
         protected override void AssignFormControls()
         {
-            Facade.District.Dto dto = base.FormDto.Dto as Facade.District.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
-            this.cboState.SelectedItem = (this.FormDto as Facade.District.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
+            this.cboState.SelectedItem = (this.FormDto as Fac.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
         }
 
         protected override Boolean ValidateForm()

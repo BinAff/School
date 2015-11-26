@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Fac = Sparkle.Configuration.Facade.Caste;
+
 namespace Sparkle.Configuration.WinForm.Caste
 {
 
@@ -24,13 +26,13 @@ namespace Sparkle.Configuration.WinForm.Caste
 
         protected override void AssignDto()
         {
-            Facade.Caste.Dto dto = base.FormDto.Dto as Facade.Caste.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
         }
 
         protected override void AssignFormControls()
         {
-            Facade.Caste.Dto dto = base.FormDto.Dto as Facade.Caste.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
         }
 

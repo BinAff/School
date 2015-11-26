@@ -35,6 +35,7 @@
             this.btnSubCasteManagement = new System.Windows.Forms.Button();
             this.btnGenderManagement = new System.Windows.Forms.Button();
             this.btnDistrictManagement = new System.Windows.Forms.Button();
+            this.btnRelationshipManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -114,11 +115,23 @@
             this.btnDistrictManagement.UseVisualStyleBackColor = true;
             this.btnDistrictManagement.Click += new System.EventHandler(this.btnDistrictManagement_Click);
             // 
+            // btnRelationshipManagement
+            // 
+            this.btnRelationshipManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelationshipManagement.Location = new System.Drawing.Point(112, 112);
+            this.btnRelationshipManagement.Name = "btnRelationshipManagement";
+            this.btnRelationshipManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnRelationshipManagement.TabIndex = 8;
+            this.btnRelationshipManagement.Text = "Relationship Management";
+            this.btnRelationshipManagement.UseVisualStyleBackColor = true;
+            this.btnRelationshipManagement.Click += new System.EventHandler(this.btnRelationshipManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 215);
+            this.Controls.Add(this.btnRelationshipManagement);
             this.Controls.Add(this.btnDistrictManagement);
             this.Controls.Add(this.btnReligionManagement);
             this.Controls.Add(this.btnSubCasteManagement);
@@ -141,6 +154,7 @@
         private System.Windows.Forms.Button btnSubCasteManagement;
         private System.Windows.Forms.Button btnGenderManagement;
         private System.Windows.Forms.Button btnDistrictManagement;
+        private System.Windows.Forms.Button btnRelationshipManagement;
 
     }
 }

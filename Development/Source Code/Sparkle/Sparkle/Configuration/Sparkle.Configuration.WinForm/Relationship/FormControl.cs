@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Fac = Sparkle.Configuration.Facade.Country;
+using Fac = Sparkle.Configuration.Facade.Relationship;
 
-namespace Sparkle.Configuration.WinForm.Country
+namespace Sparkle.Configuration.WinForm.Relationship
 {
 
     public partial class FormControl : Sparkle.Core.Presentation.FormControl
@@ -21,8 +21,6 @@ namespace Sparkle.Configuration.WinForm.Country
         protected override void ResetForm()
         {
             this.txtName.Text = String.Empty;
-            this.txtCode.Text = String.Empty;
-            this.txtIsdCode.Text = String.Empty;
             this.txtName.Focus();
         }
 
@@ -30,16 +28,12 @@ namespace Sparkle.Configuration.WinForm.Country
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
-            dto.Code = this.txtCode.Text;
-            dto.IsdCode = Convert.ToInt16(this.txtIsdCode.Text);
         }
 
         protected override void AssignFormControls()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
-            this.txtCode.Text = dto.Code;
-            this.txtIsdCode.Text = dto.IsdCode.ToString();
         }
 
         protected override Boolean ValidateForm()

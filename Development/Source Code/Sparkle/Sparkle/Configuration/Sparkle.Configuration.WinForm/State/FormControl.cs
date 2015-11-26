@@ -2,6 +2,8 @@
 
 using BinAff.Presentation.Library.Extension;
 
+using Fac = Sparkle.Configuration.Facade.State;
+
 namespace Sparkle.Configuration.WinForm.State
 {
 
@@ -15,7 +17,7 @@ namespace Sparkle.Configuration.WinForm.State
 
         protected override void Bind()
         {
-            this.cboCountry.Bind((this.FormDto as Facade.State.FormDto).CountryList, "Name");
+            this.cboCountry.Bind((this.FormDto as Fac.FormDto).CountryList, "Name");
         }
 
         protected override void ResetForm()
@@ -28,16 +30,16 @@ namespace Sparkle.Configuration.WinForm.State
 
         protected override void AssignDto()
         {
-            Facade.State.Dto dto = base.FormDto.Dto as Facade.State.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
             dto.Country = this.cboCountry.SelectedItem as Facade.Country.Dto;
         }
 
         protected override void AssignFormControls()
         {
-            Facade.State.Dto dto = base.FormDto.Dto as Facade.State.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
-            this.cboCountry.SelectedItem = (this.FormDto as Facade.State.FormDto).CountryList.FindLast((p) => { return p.Id == dto.Country.Id; });
+            this.cboCountry.SelectedItem = (this.FormDto as Fac.FormDto).CountryList.FindLast((p) => { return p.Id == dto.Country.Id; });
         }
 
         protected override Boolean ValidateForm()

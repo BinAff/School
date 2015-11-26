@@ -54,6 +54,12 @@ namespace Sparkle.Office.WinForm
             this.Close();
         }
 
+        private void btnRelationshipManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.Relationship.Form().Show();
+            this.Close();
+        }
+
     }
 
 }

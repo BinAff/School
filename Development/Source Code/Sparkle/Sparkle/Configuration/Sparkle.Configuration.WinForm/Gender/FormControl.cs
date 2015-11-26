@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Fac = Sparkle.Configuration.Facade.Gender;
+
 namespace Sparkle.Configuration.WinForm.Gender
 {
 
@@ -24,13 +26,13 @@ namespace Sparkle.Configuration.WinForm.Gender
 
         protected override void AssignDto()
         {
-            Facade.Gender.Dto dto = base.FormDto.Dto as Facade.Gender.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
         }
 
         protected override void AssignFormControls()
         {
-            Facade.Gender.Dto dto = base.FormDto.Dto as Facade.Gender.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
         }
 

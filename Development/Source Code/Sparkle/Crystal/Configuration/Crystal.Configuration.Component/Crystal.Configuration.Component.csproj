@@ -74,6 +74,10 @@
     <Compile Include="Mobile\Server.cs" />
     <Compile Include="Mobile\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relationship\Dao.cs" />
+    <Compile Include="Relationship\Data.cs" />
+    <Compile Include="Relationship\Server.cs" />
+    <Compile Include="Relationship\Validator.cs" />
     <Compile Include="Religion\Dao.cs" />
     <Compile Include="Religion\Data.cs" />
     <Compile Include="Religion\Server.cs" />

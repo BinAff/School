@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Fac = Sparkle.Configuration.Facade.Religion;
+
 namespace Sparkle.Configuration.WinForm.Religion
 {
 
@@ -24,13 +26,13 @@ namespace Sparkle.Configuration.WinForm.Religion
 
         protected override void AssignDto()
         {
-            Facade.Religion.Dto dto = base.FormDto.Dto as Facade.Religion.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             dto.Name = this.txtName.Text;
         }
 
         protected override void AssignFormControls()
         {
-            Facade.Religion.Dto dto = base.FormDto.Dto as Facade.Religion.Dto;
+            Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
             this.txtName.Text = dto.Name;
         }
 
