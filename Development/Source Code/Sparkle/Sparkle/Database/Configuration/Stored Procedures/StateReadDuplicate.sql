@@ -1,12 +1,13 @@
-﻿CREATE PROCEDURE [Configuration].[StateReadDuplicate]
+﻿CREATE PROCEDURE Configuration.StateReadDuplicate
 (
-	@Name VARCHAR(50)		
+	@Name Varchar(50),
+	@CountryId Bigint
 )
 AS
 BEGIN
 
 	SELECT Id	
 	FROM Configuration.State WITH (NOLOCK)
-	WHERE Name = @Name	
+	WHERE Name = @Name AND CountryId = @CountryId
 				
 END
