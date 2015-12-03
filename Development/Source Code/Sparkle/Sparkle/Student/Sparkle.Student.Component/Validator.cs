@@ -28,14 +28,14 @@ namespace Sparkle.Student.Component
             {
                 msg.Add(new Message("Address cannot be empty.", Message.Type.Error));
             }
-            if (data.ResidentialAddress.State == null || data.ResidentialAddress.State.Id == 0)
-            {
-                msg.Add(new Message("State has to be selected.", Message.Type.Error));
-            }
-            if (ValidationRule.IsNullOrEmpty(data.ResidentialAddress.City))
-            {
-                msg.Add(new Message("City cannot be empty.", Message.Type.Error));
-            }
+            //if (data.ResidentialAddress.State == null || data.ResidentialAddress.State.Id == 0)
+            //{
+            //    msg.Add(new Message("State has to be selected.", Message.Type.Error));
+            //}
+            //if (ValidationRule.IsNullOrEmpty(data.ResidentialAddress.City))
+            //{
+            //    msg.Add(new Message("City cannot be empty.", Message.Type.Error));
+            //}
             if (data.ResidentialAddress.Pin == 0)
             {
                 msg.Add(new Message("Pin cannot be zero.", Message.Type.Error));

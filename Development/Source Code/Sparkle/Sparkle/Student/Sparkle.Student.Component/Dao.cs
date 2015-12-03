@@ -34,11 +34,11 @@ namespace Sparkle.Student.Component
             
             //This place has to change...
             dt.ResidentialAddress.Address = Convert.IsDBNull(dr["Address"]) ? String.Empty : Convert.ToString(dr["Address"]);
-            dt.ResidentialAddress.State = new Crystal.Configuration.Component.State.Data
-            {
-                Id = Convert.IsDBNull(dr["StateId"]) ? 0 : Convert.ToInt64(dr["StateId"]),
-            };
-            dt.ResidentialAddress.City = Convert.IsDBNull(dr["City"]) ? String.Empty : Convert.ToString(dr["City"]);
+            //dt.ResidentialAddress.State = new Crystal.Configuration.Component.State.Data
+            //{
+            //    Id = Convert.IsDBNull(dr["StateId"]) ? 0 : Convert.ToInt64(dr["StateId"]),
+            //};
+            //dt.ResidentialAddress.City = Convert.IsDBNull(dr["City"]) ? String.Empty : Convert.ToString(dr["City"]);
             dt.ResidentialAddress.Pin = Convert.IsDBNull(dr["Pin"]) ? 0 : Convert.ToInt32(dr["Pin"]);
             //...
             return dt;
@@ -51,8 +51,8 @@ namespace Sparkle.Student.Component
             base.AddInParameter("@LastName", DbType.String, (this.Data as Data).LastName);
 
             base.AddInParameter("@Address", DbType.String, (this.Data as Data).ResidentialAddress.Address);
-            base.AddInParameter("@StateId", DbType.Int64, (this.Data as Data).ResidentialAddress.State.Id);
-            base.AddInParameter("@City", DbType.String, (this.Data as Data).ResidentialAddress.City);
+            //base.AddInParameter("@StateId", DbType.Int64, (this.Data as Data).ResidentialAddress.State.Id);
+            //base.AddInParameter("@City", DbType.String, (this.Data as Data).ResidentialAddress.City);
             base.AddInParameter("@Pin", DbType.Int32, (this.Data as Data).ResidentialAddress.Pin);
         }
 
