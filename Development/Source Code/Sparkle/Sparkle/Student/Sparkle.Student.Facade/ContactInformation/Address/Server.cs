@@ -14,6 +14,16 @@ namespace Sparkle.Student.Facade.ContactInformation.Address
 
         }
 
+        protected override Core.Facade.Server InstantiateFacade()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override Core.Facade.FormDto InstantiateFormDto()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void Instantiate()
         {
             //base.ComponentData = new Comp.Data();
@@ -36,11 +46,6 @@ namespace Sparkle.Student.Facade.ContactInformation.Address
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void LoadForm()
         {
             throw new NotImplementedException();
         }
