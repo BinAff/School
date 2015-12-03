@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Student].[GuardianProfileUpdate]
+﻿CREATE PROCEDURE Configuration.ProfileUpdate
 (  
 	@Id  Bigint,
 	@FirstName Varchar(50),
@@ -10,7 +10,7 @@
 AS
 BEGIN
 
-	UPDATE Student.GuardianProfile
+	UPDATE Configuration.Profile
 	SET
 		FirstName = @FirstName,
 		MiddleName = @MiddleName,

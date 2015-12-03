@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Student].[GuardianProfileInsert]
+﻿CREATE PROCEDURE Configuration.ProfileInsert
 (
 	@FirstName Varchar(100),
 	@MiddleName Varchar(100),
@@ -10,7 +10,7 @@
 AS
 BEGIN
 
-	INSERT INTO Student.GuardianProfile(FirstName,MiddleName,LastName,OccupationId,ContactInformationId)
+	INSERT INTO Configuration.Profile(FirstName, MiddleName, LastName, OccupationId, ContactInformationId)
 	VALUES(@FirstName,@MiddleName,@LastName,@OccupationId,@ContactInformationId)   
 	SET @Id = @@IDENTITY
 	

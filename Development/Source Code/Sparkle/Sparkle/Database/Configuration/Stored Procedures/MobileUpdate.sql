@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Student].[MobileUpdate]
+﻿CREATE PROCEDURE Configuration.MobileUpdate
 (  
 	@Id  Bigint,
 	@MobileNumber Bigint,
@@ -8,7 +8,7 @@
 AS
 BEGIN
 
-	UPDATE Student.Mobile
+	UPDATE Configuration.Mobile
 	SET
 		MobileNumber = @MobileNumber,
 		GuardianProfileId = @GuardianProfileId,
