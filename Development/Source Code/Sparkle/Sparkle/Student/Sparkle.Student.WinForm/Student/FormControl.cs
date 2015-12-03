@@ -4,6 +4,8 @@ using BinAff.Presentation.Library.Extension;
 
 using StateFac = Vanilla.Configuration.Facade.State;
 
+using Fac = Sparkle.Student.Facade;
+
 namespace Sparkle.Student.WinForm.Student
 {
 
@@ -13,6 +15,11 @@ namespace Sparkle.Student.WinForm.Student
         public FormControl()
         {
             InitializeComponent();
+        }
+
+        protected override Core.Facade.Server InstantiateFacade()
+        {
+            return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
         protected override void Bind()

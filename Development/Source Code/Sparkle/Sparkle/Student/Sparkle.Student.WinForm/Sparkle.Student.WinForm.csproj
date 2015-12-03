@@ -46,6 +46,11 @@
     <Reference Include="BinAff.Presentation.Library">
       <HintPath>..\..\..\Reference\BinAff.Presentation.Library.dll</HintPath>
     </Reference>
+    <Reference Include="Sparkle.Configuration.Facade, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Sparkle.Configuration.WinForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Output\Sparkle.Configuration.WinForm.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

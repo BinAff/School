@@ -107,6 +107,7 @@
             this.tbpPastEducation = new System.Windows.Forms.TabPage();
             this.tbpBilling = new System.Windows.Forms.TabPage();
             this.tbpResult = new System.Windows.Forms.TabPage();
+            this.ucProfile = new Sparkle.Configuration.WinForm.Profile.FormControl();
             this.tlpMain.SuspendLayout();
             this.tbcMain.SuspendLayout();
             this.tbpGeneral.SuspendLayout();
@@ -116,6 +117,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tbpAdmission.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tbpResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -1002,12 +1004,21 @@
             // 
             // tbpResult
             // 
+            this.tbpResult.Controls.Add(this.ucProfile);
             this.tbpResult.Location = new System.Drawing.Point(4, 22);
             this.tbpResult.Name = "tbpResult";
             this.tbpResult.Size = new System.Drawing.Size(556, 444);
             this.tbpResult.TabIndex = 6;
             this.tbpResult.Text = "Result";
             this.tbpResult.UseVisualStyleBackColor = true;
+            // 
+            // ucProfile
+            // 
+            this.ucProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProfile.Location = new System.Drawing.Point(0, 0);
+            this.ucProfile.Name = "ucProfile";
+            this.ucProfile.Size = new System.Drawing.Size(556, 444);
+            this.ucProfile.TabIndex = 0;
             // 
             // FormControl
             // 
@@ -1029,6 +1040,7 @@
             this.tbpAdmission.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tbpResult.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1052,7 +1064,6 @@
         private System.Windows.Forms.TabPage tbpAdmission;
         private System.Windows.Forms.TabPage tbpPastEducation;
         private System.Windows.Forms.TabPage tbpBilling;
-        private System.Windows.Forms.TabPage tbpResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -1114,5 +1125,7 @@
         private System.Windows.Forms.ComboBox cboAdmissionRank;
         private System.Windows.Forms.DateTimePicker dtpAdmissionDate;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TabPage tbpResult;
+        private Configuration.WinForm.Profile.FormControl ucProfile;
     }
 }
