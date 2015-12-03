@@ -12,7 +12,6 @@ namespace Sparkle.Core.Presentation
     {
 
         protected FormDto FormDto { get; private set; }
-        protected Server Facade { get; private set; }
 
         protected String ListDisplayName { get; set; }
         protected String FormName { get; set; }
@@ -38,6 +37,10 @@ namespace Sparkle.Core.Presentation
             : base()
         {
             InitializeComponent();
+            if (!String.IsNullOrEmpty(this.FormName))
+            {
+                this.Name = this.FormName.Trim() + " Manager";
+            }
         }
 
         #region Events
@@ -45,19 +48,15 @@ namespace Sparkle.Core.Presentation
         private void Form_Load(object sender, System.EventArgs e)
         {
             if (DesignMode) return;
-            this.FormDto = this.InstantiateFormDto();
-            this.Facade = this.InstantiateFacade();
-            this.FormControl.FormDto = this.FormDto;
-            if (!String.IsNullOrEmpty(this.FormName))
-            {
-                this.Name = this.FormName.Trim() + " Manager" ;
-            }
-            this.Facade.LoadForm();
+            this.InstantiateFormControl();
         }
 
         private void Form_Shown(object sender, System.EventArgs e)
         {
             if (DesignMode) return;
+            this.formControl.LoadForm();
+            this.formControl.Facade.LoadForm();
+            this.FormDto = this.FormControl.FormDto as FormDto;
             this.Bind();
         }
 
@@ -68,43 +67,34 @@ namespace Sparkle.Core.Presentation
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            if (this.ValidateForm())
+            if (!this.formControl.Save()) return;
+            if (!this.formControl.Facade.IsError)
             {
-                this.AssignDto();
-                this.FormDto.Dto.Id = 0;
-                this.Facade.Add();
-                if (!this.Facade.IsError)
+                this.FormDto.DtoList.Add(this.FormDto.Dto);
+                if (this.cboList.Items.Count > 0)
                 {
-                    this.FormDto.DtoList.Add(this.FormDto.Dto);
-                    if (this.cboList.Items.Count > 0)
-                    {
-                        this.cboList.Items.Add(this.FormDto.Dto);
-                    }
-                    else
-                    {
-                        this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
-                    }
-                    this.formControl.ResetForm();
+                    this.cboList.Items.Add(this.FormDto.Dto);
                 }
-                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                else
+                {
+                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                }
+                this.formControl.ResetForm();
             }
+            new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.ValidateForm())
+            if (!this.formControl.Change()) return;
+            if (!this.formControl.Facade.IsError)
             {
-                this.AssignDto();
-                this.Facade.Change();
-                if (!this.Facade.IsError)
-                {
-                    this.formControl.ResetForm();
-                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
-                    this.cboList.Text = String.Empty;
-                    this.cboList.SelectedIndex = -1;
-                }
-                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                this.formControl.ResetForm();
+                this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                this.cboList.Text = String.Empty;
+                this.cboList.SelectedIndex = -1;
             }
+            new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -112,14 +102,14 @@ namespace Sparkle.Core.Presentation
             if (this.cboList.SelectedItem == null) return;
             if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
             {
-                this.Facade.Delete();
-                if (!this.Facade.IsError)
+                this.formControl.Facade.Delete();
+                if (!this.formControl.Facade.IsError)
                 {
                     this.FormDto.DtoList.Remove(this.cboList.SelectedItem as Dto);
                     this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
                     this.formControl.ResetForm();
                 }
-                new Lib.MessageBox().Show(this.Facade.DisplayMessageList);
+                new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
             }
         }
 
@@ -128,7 +118,7 @@ namespace Sparkle.Core.Presentation
             if (this.cboList.SelectedItem != null)
             {
                 this.FormDto.Dto = this.cboList.SelectedItem as Dto;
-                this.AssignFormControls();
+                this.formControl.AssignFormControls();
             }
         }
 
@@ -144,35 +134,14 @@ namespace Sparkle.Core.Presentation
 
         protected void Bind()
         {
-            this.formControl.Bind();
             this.cboList.Bind((this.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
         }
-
-        protected void AssignDto()
-        {
-            this.formControl.AssignDto();
-        }
-
-        protected void AssignFormControls()
-        {
-            this.formControl.AssignFormControls();
-        }
-
-        protected Boolean ValidateForm()
-        {
-            return this.formControl.ValidateForm();
-        }
-
+        
         #region Mandatory Hook
 
-        protected virtual FormDto InstantiateFormDto()
+        protected virtual void InstantiateFormControl()
         {
-            throw new System.NotImplementedException();
-        }
-
-        protected virtual Server InstantiateFacade()
-        {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         #endregion

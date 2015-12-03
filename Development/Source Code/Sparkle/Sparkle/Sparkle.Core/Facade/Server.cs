@@ -12,12 +12,29 @@ namespace Sparkle.Core.Facade
         public Server(FormDto formDto)
             : base(formDto)
         {
+            this.FormDto = this.InstantiateFormDto();
             this.Instantiate();
         }
+
+        protected abstract void Instantiate();
+
+        protected abstract FormDto InstantiateFormDto();
+
+        protected abstract Server InstantiateFacade();
 
         public abstract void AssignDto();
 
         public abstract void AssignData();
+
+        public virtual void LoadControl()
+        {
+
+        }
+
+        public override sealed void LoadForm()
+        {
+            (this.FormDto as FormDto).DtoList = this.ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
+        }
         
         public override void Add()
         {
@@ -61,8 +78,6 @@ namespace Sparkle.Core.Facade
             if (ret.Value) (this.FormDto as FormDto).Dto.Id = this.ComponentData.Id;
             this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
         }
-
-        protected abstract void Instantiate();
 
     }
 

@@ -79,6 +79,9 @@
     <EmbeddedResource Include="Presentation\Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PopupMenu.resx">
       <DependentUpon>PopupMenu.cs</DependentUpon>
     </EmbeddedResource>
