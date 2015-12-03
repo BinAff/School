@@ -39,15 +39,15 @@ namespace Crystal.Configuration.Component.Gender
         {
             base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
         }
-       
+
         #endregion
 
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.GenderReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.GenderReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

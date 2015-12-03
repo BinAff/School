@@ -44,10 +44,10 @@ namespace Crystal.Configuration.Component.SubCaste
 
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.SubCasteReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.SubCasteReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

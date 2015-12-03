@@ -10,9 +10,11 @@ namespace Crystal.Configuration.Component.IdentityProofType
 
         public Dao(Data data)
             : base(data) 
-        { 
+        {
 
         }
+
+        #region Framework
 
         protected override void Compose()
         {
@@ -40,14 +42,16 @@ namespace Crystal.Configuration.Component.IdentityProofType
             };
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.IdentityProofTypeReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.IdentityProofTypeReadDuplicate");
 
-            DataSet ds = this.ExecuteDataSet();           
+            DataSet ds = this.ExecuteDataSet();
 
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {

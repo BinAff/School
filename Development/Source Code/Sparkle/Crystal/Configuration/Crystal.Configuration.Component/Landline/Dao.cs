@@ -3,13 +3,17 @@ using System.Data;
 
 namespace Crystal.Configuration.Component.Landline
 {
+
     public class Dao : BinAff.Core.Dao
     {
+
         public Dao(Data data)
             : base(data)
         {
 
         }
+
+        #region Framework
 
         protected override void Compose()
         {
@@ -43,13 +47,14 @@ namespace Crystal.Configuration.Component.Landline
             return dt;
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.LandlineReadDuplicate");
-            this.AddInParameter("@StdCode", DbType.Int64, data.StdCode);
-            this.AddInParameter("@Number", DbType.Int64, data.Number);
+            this.AssignParameter("Configuration.LandlineReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

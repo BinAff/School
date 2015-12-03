@@ -9,9 +9,11 @@ namespace Crystal.Configuration.Component.District
 
         public Dao(Data data)
             : base(data) 
-        { 
+        {
 
         }
+
+        #region Framework
 
         protected override void Compose()
         {
@@ -43,15 +45,16 @@ namespace Crystal.Configuration.Component.District
             return dt;
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.DistrictReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
-            this.AddInParameter("@StateId", DbType.String, data.State.Id);
+            this.AssignParameter("Configuration.DistrictReadDuplicate");
 
-            DataSet ds = this.ExecuteDataSet();           
+            DataSet ds = this.ExecuteDataSet();
 
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {

@@ -13,6 +13,8 @@ namespace Crystal.Configuration.Component.Relationship
 
         }
 
+        #region Framework
+
         protected override void Compose()
         {
             base.CreateStoredProcedure = "Configuration.RelationshipInsert";
@@ -38,12 +40,14 @@ namespace Crystal.Configuration.Component.Relationship
             return dt;
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.RelationshipReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.RelationshipReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

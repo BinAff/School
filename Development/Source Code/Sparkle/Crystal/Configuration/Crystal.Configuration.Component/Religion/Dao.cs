@@ -41,21 +41,25 @@ namespace Crystal.Configuration.Component.Religion
         }
 
         #endregion
-        
-        internal Data ReadDuplicate()
+
+        internal Boolean ReadDuplicate()
         {
+            Data data = this.Data as Data;
+            this.CreateConnection();
             this.CreateCommand("Configuration.ReligionReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
-            DataTable dt = this.ExecuteDataTable();
-            this.CloseConnection();
-            Int64 Id = 0;
-            if (dt != null && dt.Rows.Count > 0 && (Id = Convert.IsDBNull(dt.Rows[0]["Id"]) ? 0 : Convert.ToInt64(dt.Rows[0]["Id"])) > 0)
+            this.AssignParameter("Configuration.ReligionReadDuplicate");
+
+            DataSet ds = this.ExecuteDataSet();
+
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                Data data = new Data();
-                new Dao(data).Read();
-                return data;
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    if (!Convert.IsDBNull(dr["Id"]) && Convert.ToInt64(dr["Id"]) != this.Data.Id) return true;
+                }
             }
-            return null;
+
+            return false;
         }
 
     }

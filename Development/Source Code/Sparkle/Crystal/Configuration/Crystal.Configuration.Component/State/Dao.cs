@@ -13,6 +13,8 @@ namespace Crystal.Configuration.Component.State
 
         }
 
+        #region Framework
+
         protected override void Compose()
         {
             base.CreateStoredProcedure = "Configuration.StateInsert";
@@ -44,14 +46,16 @@ namespace Crystal.Configuration.Component.State
             return dt;
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.StateReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.StateReadDuplicate");
 
-            DataSet ds = this.ExecuteDataSet();           
+            DataSet ds = this.ExecuteDataSet();
 
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {

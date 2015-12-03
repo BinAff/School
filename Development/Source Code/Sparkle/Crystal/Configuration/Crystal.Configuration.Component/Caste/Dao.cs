@@ -13,6 +13,8 @@ namespace Crystal.Configuration.Component.Caste
 
         }
 
+        #region Framework
+
         protected override void Compose()
         {
             base.CreateStoredProcedure = "Configuration.CasteInsert";
@@ -25,7 +27,7 @@ namespace Crystal.Configuration.Component.Caste
             base.NumberOfRowsAffectedInDelete = -1;
         }
 
-        protected override void AssignParameter(string procedureName)
+        protected override void AssignParameter(String procedureName)
         {
             base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
         }
@@ -38,12 +40,14 @@ namespace Crystal.Configuration.Component.Caste
             return dt;
         }
 
+        #endregion
+
         internal Boolean ReadDuplicate()
         {
-            Data data = (Data)this.Data;
+            Data data = this.Data as Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.CasteReadDuplicate");
-            this.AddInParameter("@Name", DbType.String, data.Name);
+            this.AssignParameter("Configuration.CasteReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 
