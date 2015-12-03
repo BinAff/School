@@ -1,15 +1,15 @@
-﻿CREATE PROCEDURE [Student].[GuardianInsert]
+﻿CREATE PROCEDURE Student.GuardianInsert
 (
-	@PersonalInformationId Numeric (10,0),
-	@GuardianProfileId Numeric (10,0),
-	@RelationshipId Numeric (10,0),
+	@PersonalInformationId Bigint,
+	@ProfileId Bigint,
+	@RelationshipId Bigint,
 	@Id  Bigint OUTPUT
 )
 AS
 BEGIN
 
-	INSERT INTO Student.Guardian(PersonalInformationId,GuardianProfileId,RelationshipId)
-	VALUES(@PersonalInformationId,@GuardianProfileId,@RelationshipId)   
+	INSERT INTO Student.Guardian(PersonalInformationId, ProfileId, RelationshipId)
+	VALUES(@PersonalInformationId, @ProfileId, @RelationshipId)   
 	SET @Id = @@IDENTITY
 	
 END

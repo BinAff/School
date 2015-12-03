@@ -1,12 +1,12 @@
 ﻿CREATE PROCEDURE [Student].[GuardianRead]
 (
-	@Id Numeric(10,0)
+	@Id Bigint
 )
 As
 BEGIN
 
-	SELECT  Id,PersonalInformationId,GuardianProfileId,RelationshipId
-		Name FROM Student.Guardian WITH (NOLOCK)
+	SELECT  Id, PersonalInformationId, ProfileId, RelationshipId
+	FROM Student.Guardian WITH (NOLOCK)
 	WHERE Id = @Id
 	
 END

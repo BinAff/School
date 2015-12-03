@@ -1,16 +1,16 @@
 ﻿CREATE PROCEDURE Student.GuardianReadDuplicate
 (
-	@PersonalInformationId Numeric(10,0),
-	@GuardianProfileId Numeric(10,0),
-	@RelationshipId Numeric(10,0)
+	@PersonalInformationId Bigint,
+	@ProfileId Bigint,
+	@RelationshipId Bigint
 )
 AS
 BEGIN
 
-	SELECT Id	
+	SELECT Id
 	FROM Student.Guardian WITH (NOLOCK)
 	WHERE PersonalInformationId = @PersonalInformationId
-	and GuardianProfileId = @GuardianProfileId
-	and RelationshipId = @RelationshipId
+	AND ProfileId = @ProfileId
+	AND RelationshipId = @RelationshipId
 				
 END
