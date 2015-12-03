@@ -13,6 +13,11 @@ namespace Sparkle.Configuration.WinForm.Gender
             InitializeComponent();
         }
 
+        protected override Core.Facade.Server InstantiateFacade()
+        {
+            return new Fac.Server(base.FormDto as Fac.FormDto);
+        }
+
         protected override void Bind()
         {
 

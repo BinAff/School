@@ -1,4 +1,4 @@
-﻿namespace Sparkle.Configuration.WinForm.State
+﻿namespace Sparkle.Configuration.WinForm.Occupation
 {
 
     public partial class Form : Sparkle.Core.Presentation.Form
@@ -8,7 +8,7 @@
         {
             InitializeComponent();
             base.ListDisplayName = "Name";
-            base.FormName = "State";
+            base.FormName = "Occupation";
         }
 
         #region Framework

@@ -1,8 +1,4 @@
-﻿using FacLib = Sparkle.Core.Facade;
-
-using Fac = Sparkle.Configuration.Facade.MotherTongue;
-
-namespace Sparkle.Configuration.WinForm.MotherTongue
+﻿namespace Sparkle.Configuration.WinForm.MotherTongue
 {
 
     public partial class Form : Sparkle.Core.Presentation.Form
@@ -10,7 +6,6 @@ namespace Sparkle.Configuration.WinForm.MotherTongue
 
         public Form()
         {
-            base.FormControl = new FormControl();
             InitializeComponent();
             base.ListDisplayName = "Name";
             base.FormName = "Mother Tongue";
@@ -18,17 +13,9 @@ namespace Sparkle.Configuration.WinForm.MotherTongue
 
         #region Framework
 
-        protected override FacLib.FormDto InstantiateFormDto()
+        protected override void InstantiateFormControl()
         {
-            return new Fac.FormDto
-            {
-                Dto = new Fac.Dto(),
-            };
-        }
-
-        protected override FacLib.Server InstantiateFacade()
-        {
-            return new Fac.Server(base.FormDto as Fac.FormDto);
+            base.FormControl = new FormControl();
         }
 
         #endregion

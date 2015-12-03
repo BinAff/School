@@ -61,6 +61,18 @@
     <Compile Include="Caste\FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactInformation\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInformation\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInformation\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContactInformation\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Country\Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,30 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MotherTongue\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ocupation\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ocupation\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ocupation\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ocupation\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile\FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,6 +202,12 @@
     <EmbeddedResource Include="Caste\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContactInformation\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInformation\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Country\Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +227,18 @@
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotherTongue\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ocupation\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ocupation\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relationship\Form.resx">

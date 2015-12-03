@@ -15,6 +15,11 @@ namespace Sparkle.Configuration.WinForm.State
             InitializeComponent();
         }
 
+        protected override Core.Facade.Server InstantiateFacade()
+        {
+            return new Fac.Server(base.FormDto as Fac.FormDto);
+        }
+
         protected override void Bind()
         {
             this.cboCountry.Bind((this.FormDto as Fac.FormDto).CountryList, "Name");

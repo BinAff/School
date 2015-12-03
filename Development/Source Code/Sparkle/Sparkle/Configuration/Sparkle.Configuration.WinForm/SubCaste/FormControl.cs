@@ -1,5 +1,7 @@
 ﻿using System;
 
+using FacLib = Sparkle.Core.Facade;
+
 using Fac = Sparkle.Configuration.Facade.SubCaste;
 
 namespace Sparkle.Configuration.WinForm.SubCaste
@@ -11,6 +13,11 @@ namespace Sparkle.Configuration.WinForm.SubCaste
         public FormControl()
         {
             InitializeComponent();
+        }
+
+        protected override Core.Facade.Server InstantiateFacade()
+        {
+            return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
         protected override void Bind()
