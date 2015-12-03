@@ -3,8 +3,10 @@ using System.Data;
 
 namespace Crystal.Configuration.Component.Mobile
 {
+
     public class Dao : BinAff.Core.Dao
     {
+
         public Dao(Data data)
             : base(data)
         {
@@ -62,4 +64,5 @@ namespace Crystal.Configuration.Component.Mobile
         }
 
     }
+
 }

@@ -77,6 +77,14 @@
     <Compile Include="MotherTongue\Data.cs" />
     <Compile Include="MotherTongue\Server.cs" />
     <Compile Include="MotherTongue\Validator.cs" />
+    <Compile Include="Occupation\Dao.cs" />
+    <Compile Include="Occupation\Data.cs" />
+    <Compile Include="Occupation\Server.cs" />
+    <Compile Include="Occupation\Validator.cs" />
+    <Compile Include="Profile\Dao.cs" />
+    <Compile Include="Profile\Data.cs" />
+    <Compile Include="Profile\Server.cs" />
+    <Compile Include="Profile\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationship\Dao.cs" />
     <Compile Include="Relationship\Data.cs" />

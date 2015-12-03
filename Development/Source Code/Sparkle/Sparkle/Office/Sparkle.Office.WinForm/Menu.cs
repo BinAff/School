@@ -66,6 +66,12 @@ namespace Sparkle.Office.WinForm
             this.Close();
         }
 
+        private void btnOcupationManagement_Click(object sender, EventArgs e)
+        {
+            new Sparkle.Configuration.WinForm.Occupation.Form().Show();
+            this.Close();
+        }
+
     }
 
 }

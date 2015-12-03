@@ -37,6 +37,7 @@
             this.btnDistrictManagement = new System.Windows.Forms.Button();
             this.btnRelationshipManagement = new System.Windows.Forms.Button();
             this.btnMotherTongueManagement = new System.Windows.Forms.Button();
+            this.btnOcupationManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -138,11 +139,23 @@
             this.btnMotherTongueManagement.UseVisualStyleBackColor = true;
             this.btnMotherTongueManagement.Click += new System.EventHandler(this.btnMotherTongueManagement_Click);
             // 
+            // btnOcupationManagement
+            // 
+            this.btnOcupationManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOcupationManagement.Location = new System.Drawing.Point(312, 112);
+            this.btnOcupationManagement.Name = "btnOcupationManagement";
+            this.btnOcupationManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnOcupationManagement.TabIndex = 10;
+            this.btnOcupationManagement.Text = "Ocupation Management";
+            this.btnOcupationManagement.UseVisualStyleBackColor = true;
+            this.btnOcupationManagement.Click += new System.EventHandler(this.btnOcupationManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 215);
+            this.Controls.Add(this.btnOcupationManagement);
             this.Controls.Add(this.btnMotherTongueManagement);
             this.Controls.Add(this.btnRelationshipManagement);
             this.Controls.Add(this.btnDistrictManagement);
@@ -169,6 +182,7 @@
         private System.Windows.Forms.Button btnDistrictManagement;
         private System.Windows.Forms.Button btnRelationshipManagement;
         private System.Windows.Forms.Button btnMotherTongueManagement;
+        private System.Windows.Forms.Button btnOcupationManagement;
 
     }
 }

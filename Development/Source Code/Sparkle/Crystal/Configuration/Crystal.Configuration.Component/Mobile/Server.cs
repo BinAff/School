@@ -1,7 +1,9 @@
 ﻿namespace Crystal.Configuration.Component.Mobile
 {
+
     public class Server : BinAff.Core.Observer.SubjectCrud
     {
+
         public Server(Data data)
             : base(data)
         {
@@ -9,7 +11,7 @@
         }
         protected override void Compose()
         {
-            this.Name = "Mobile";
+            this.Name = "Mobile Number";
             this.DataAccess = new Dao(this.Data as Data);
             this.Validator = new Validator(this.Data as Data);
         }
@@ -32,5 +34,7 @@
                 Type = ChildType.Independent
             });
         }
+
     }
+
 }
