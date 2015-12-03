@@ -1,12 +1,12 @@
-﻿CREATE PROCEDURE [Student].[PersonalInformationReadDuplicate]
+﻿CREATE PROCEDURE Student.PersonalInformationReadDuplicate
 (
-	@StudId Bigint
+	@StudentId Bigint
 )
 AS
 BEGIN
 
 	SELECT Id	
 	FROM Student.PersonalInformation WITH (NOLOCK)
-	WHERE StudId = @Studid
+	WHERE StudentId = @StudentId
 				
 END

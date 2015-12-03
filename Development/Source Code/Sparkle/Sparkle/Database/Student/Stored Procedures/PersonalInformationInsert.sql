@@ -1,6 +1,6 @@
-﻿CREATE PROCEDURE [Student].[PersonalInformationInsert]
+﻿CREATE PROCEDURE Student.PersonalInformationInsert
 (
-	@StudId Bigint,
+	@StudentId Bigint,
 	@DateOfBirth Date,
 	@BirthPlace Varchar(100),
 	@MothertongueId Bigint,
@@ -16,8 +16,10 @@ AS
 BEGIN
 
 	INSERT INTO Student.PersonalInformation
-	(StudId,DateOfBirth,BirthPlace,MothertongueId,ReligionId,CasteId,SubCasteId,GenderId,PresentAddressId,PermananentAddressId)
-	VALUES(@StudId,@DateOfBirth,@BirthPlace,@MothertongueId,@ReligionId,@CasteId,@SubCasteId,@GenderId,@PresentAddressId,@PermananentAddressId)
+		(StudentId, DateOfBirth, BirthPlace, MothertongueId, ReligionId, CasteId,
+		SubCasteId, GenderId, PresentAddressId, PermananentAddressId)
+	VALUES(@StudentId, @DateOfBirth, @BirthPlace, @MothertongueId, @ReligionId, @CasteId,
+		@SubCasteId, @GenderId, @PresentAddressId, @PermananentAddressId)
 	SET @Id = @@IDENTITY
 	
 END

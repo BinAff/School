@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Student].[PersonalInformation] (
     [Id]        BIGINT       IDENTITY (1, 1) NOT NULL,
-    [StudId]      BIGINT NOT NULL,
+    [StudentId]      BIGINT NOT NULL,
 	[DateOfBirth]      DATE NOT NULL,
 	[BirthPlace] VARCHAR(100) NULL,
 	[MothertongueId] BIGINT NULL,

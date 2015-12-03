@@ -1,7 +1,7 @@
-﻿CREATE PROCEDURE [Student].[PersonalInformationUpdate]
+﻿CREATE PROCEDURE Student.PersonalInformationUpdate
 (  
 	@Id  Bigint,
-	@StudId Bigint,
+	@StudentId Bigint,
 	@DateOfBirth Date,
 	@BirthPlace Varchar(100),
 	@MothertongueId Bigint,
@@ -17,7 +17,7 @@ BEGIN
 
 	UPDATE Student.PersonalInformation
 	SET
-		StudId = @StudId,
+		StudentId = @StudentId,
 		DateOfBirth = @DateOfBirth,
 		BirthPlace = @BirthPlace,
 		MothertongueId = @MothertongueId,
