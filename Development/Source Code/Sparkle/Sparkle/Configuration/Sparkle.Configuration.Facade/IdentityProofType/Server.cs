@@ -1,5 +1,7 @@
 ﻿using Comp = Crystal.Configuration.Component.IdentityProofType;
 
+using FacLib = Sparkle.Core.Facade;
+
 namespace Sparkle.Configuration.Facade.IdentityProofType
 {
 
@@ -13,6 +15,19 @@ namespace Sparkle.Configuration.Facade.IdentityProofType
         }
 
         #region Framework
+
+        protected override FacLib.FormDto InstantiateFormDto()
+        {
+            return new FormDto
+            {
+                Dto = new Dto(),
+            };
+        }
+
+        protected override FacLib.Server InstantiateFacade()
+        {
+            return new Server(base.FormDto as FormDto);
+        }
 
         protected override void Instantiate()
         {
@@ -55,12 +70,7 @@ namespace Sparkle.Configuration.Facade.IdentityProofType
                 Name = dt.Name,
             };
         }
-
-        public override void LoadForm()
-        {
-            (this.FormDto as FormDto).DtoList = new Server(null).ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
-        }
-
+        
         #endregion
 
     }

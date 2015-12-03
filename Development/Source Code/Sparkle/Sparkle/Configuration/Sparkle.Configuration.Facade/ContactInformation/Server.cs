@@ -1,8 +1,9 @@
-﻿using Comp = Crystal.Configuration.Component.Relationship;
+﻿using Comp = Crystal.Configuration.Component.ContactInformation;
+using DistrictComp = Crystal.Configuration.Component.District;
 
 using FacLib = Sparkle.Core.Facade;
 
-namespace Sparkle.Configuration.Facade.Relationship
+namespace Sparkle.Configuration.Facade.ContactInformation
 {
 
     public class Server : Sparkle.Core.Facade.Server
@@ -40,7 +41,10 @@ namespace Sparkle.Configuration.Facade.Relationship
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
-            dto.Name = data.Name;
+            dto.Address = data.Address;
+            dto.District = new District.Server(null).Convert(data.District) as District.Dto;
+            dto.Pin = data.Pin;
+            dto.Landline = data.Landline;
         }
 
         public override void AssignData()
@@ -48,7 +52,10 @@ namespace Sparkle.Configuration.Facade.Relationship
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
-            data.Name = dto.Name;
+            data.Address = dto.Address;
+            data.District = new District.Server(null).Convert(dto.District) as DistrictComp.Data;
+            data.Pin = dto.Pin;
+            data.Landline = dto.Landline;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -57,7 +64,10 @@ namespace Sparkle.Configuration.Facade.Relationship
             return new Dto
             {
                 Id = dt.Id,
-                Name = dt.Name,
+                Address = dt.Address,
+                District = new District.Server(null).Convert(dt.District) as District.Dto,
+                Pin = dt.Pin,
+                Landline = dt.Landline,
             };
         }
 
@@ -67,8 +77,18 @@ namespace Sparkle.Configuration.Facade.Relationship
             return new Comp.Data
             {
                 Id = dt.Id,
-                Name = dt.Name,
+                Address = dt.Address,
+                District = new District.Server(null).Convert(dt.District) as DistrictComp.Data,
+                Pin = dt.Pin,
+                Landline = dt.Landline,
             };
+        }
+
+        public override void LoadControl()
+        {
+            (this.FormDto as FormDto).CountryList = new Country.Server(null).ReadAll<Country.Dto>();
+            (this.FormDto as FormDto).StateList = new State.Server(null).ReadAll<State.Dto>();
+            (this.FormDto as FormDto).DistrictList = new District.Server(null).ReadAll<District.Dto>();
         }
 
         #endregion

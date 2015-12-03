@@ -1,8 +1,9 @@
-﻿using Comp = Crystal.Configuration.Component.Relationship;
+﻿using Comp = Crystal.Configuration.Component.Mobile;
+using CountryComp = Crystal.Configuration.Component.Country;
 
 using FacLib = Sparkle.Core.Facade;
 
-namespace Sparkle.Configuration.Facade.Relationship
+namespace Sparkle.Configuration.Facade.Mobile
 {
 
     public class Server : Sparkle.Core.Facade.Server
@@ -40,7 +41,8 @@ namespace Sparkle.Configuration.Facade.Relationship
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
-            dto.Name = data.Name;
+            dto.Number = data.Number;
+            dto.Country = new Country.Server(null).Convert(data.Country) as Country.Dto;
         }
 
         public override void AssignData()
@@ -48,7 +50,8 @@ namespace Sparkle.Configuration.Facade.Relationship
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
-            data.Name = dto.Name;
+            data.Number = dto.Number;
+            data.Country = new Country.Server(null).Convert(dto.Country) as CountryComp.Data;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -57,7 +60,8 @@ namespace Sparkle.Configuration.Facade.Relationship
             return new Dto
             {
                 Id = dt.Id,
-                Name = dt.Name,
+                Number = dt.Number,
+                Country = new Country.Server(null).Convert(dt.Country) as Country.Dto,
             };
         }
 
@@ -67,8 +71,14 @@ namespace Sparkle.Configuration.Facade.Relationship
             return new Comp.Data
             {
                 Id = dt.Id,
-                Name = dt.Name,
+                Number = dt.Number,
+                Country = new Country.Server(null).Convert(dt.Country) as CountryComp.Data,
             };
+        }
+
+        public override void LoadControl()
+        {
+            (this.FormDto as FormDto).CountryList = new Country.Server(null).ReadAll<Country.Dto>();
         }
 
         #endregion

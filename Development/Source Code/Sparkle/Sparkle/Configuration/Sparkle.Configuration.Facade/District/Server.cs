@@ -1,6 +1,8 @@
 ﻿using Comp = Crystal.Configuration.Component.District;
 using StateComp = Crystal.Configuration.Component.State;
 
+using FacLib = Sparkle.Core.Facade;
+
 namespace Sparkle.Configuration.Facade.District
 {
 
@@ -14,6 +16,19 @@ namespace Sparkle.Configuration.Facade.District
         }
 
         #region Framework
+
+        protected override FacLib.FormDto InstantiateFormDto()
+        {
+            return new FormDto
+            {
+                Dto = new Dto(),
+            };
+        }
+
+        protected override FacLib.Server InstantiateFacade()
+        {
+            return new Server(base.FormDto as FormDto);
+        }
 
         protected override void Instantiate()
         {
@@ -61,9 +76,8 @@ namespace Sparkle.Configuration.Facade.District
             };
         }
 
-        public override void LoadForm()
+        public override void LoadControl()
         {
-            (this.FormDto as FormDto).DtoList = new Server(null).ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
             (this.FormDto as FormDto).StateList = new State.Server(null).ReadAll<State.Dto>();
         }
 

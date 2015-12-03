@@ -1,8 +1,8 @@
-﻿using Comp = Crystal.Configuration.Component.Relationship;
+﻿using Comp = Crystal.Configuration.Component.Occupation;
 
 using FacLib = Sparkle.Core.Facade;
 
-namespace Sparkle.Configuration.Facade.Relationship
+namespace Sparkle.Configuration.Facade.Occupation
 {
 
     public class Server : Sparkle.Core.Facade.Server
