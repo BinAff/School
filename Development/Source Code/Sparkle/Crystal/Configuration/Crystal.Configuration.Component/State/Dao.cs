@@ -38,7 +38,6 @@ namespace Crystal.Configuration.Component.State
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Country = new Country.Data
             {
                 Id = Convert.IsDBNull(dr["CountryId"]) ? 0 : Convert.ToInt64(dr["CountryId"]),
