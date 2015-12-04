@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Sparkle.School.Component.Class
+namespace Sparkle.School.Component.Standard
 {
 
     public class Dao : BinAff.Core.Dao
@@ -17,12 +17,12 @@ namespace Sparkle.School.Component.Class
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "School.ClassInsert";
-            base.ReadStoredProcedure = "School.ClassRead";
-            base.ReadAllStoredProcedure = "School.ClassReadAll";
-            base.UpdateStoredProcedure = "School.ClassUpdate";
+            base.CreateStoredProcedure = "School.StandardInsert";
+            base.ReadStoredProcedure = "School.StandardRead";
+            base.ReadAllStoredProcedure = "School.StandardReadAll";
+            base.UpdateStoredProcedure = "School.StandardUpdate";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "School.ClassDelete";
+            base.DeleteStoredProcedure = "School.StandardDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
@@ -30,22 +30,14 @@ namespace Sparkle.School.Component.Class
         {
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
-            dt.Standard = new Standard.Data
-            {
-                Id = Convert.IsDBNull(dr["StandardId"]) ? 0 : Convert.ToInt64(dr["StandardId"]),
-            };
-            dt.Section = new Section.Data
-            {
-                Id = Convert.IsDBNull(dr["SectionId"]) ? 0 : Convert.ToInt64(dr["SectionId"]),
-            };
+            dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
+
             return dt;
         }
 
         protected override void AssignParameter(String procedureName)
         {
-            Data data = this.Data as Data;
-            this.AddInParameter("@StandardId", DbType.String, data.Standard.Id);
-            this.AddInParameter("@SectionId", DbType.String, data.Section.Id);
+            base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
         }
 
         #endregion
@@ -54,8 +46,8 @@ namespace Sparkle.School.Component.Class
         {
             Data data = this.Data as Data;
             this.CreateConnection();
-            this.CreateCommand("School.ClassReadDuplicate");
-            this.AssignParameter("School.ClassReadDuplicate");
+            this.CreateCommand("School.StandardReadDuplicate");
+            this.AssignParameter("School.StandardReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

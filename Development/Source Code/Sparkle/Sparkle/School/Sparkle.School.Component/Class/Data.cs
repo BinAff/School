@@ -1,12 +1,12 @@
-﻿using System;
-
-namespace Sparkle.School.Component.Class
+﻿namespace Sparkle.School.Component.Class
 {
 
     public class Data : BinAff.Core.Data
     {
 
-        public String Name { get; set; }
+        public Standard.Data Standard { get; set; }
+
+        public Section.Data Section { get; set; }
 
     }
 

@@ -3,7 +3,7 @@
 using BinAff.Core;
 using BinAff.Utility;
 
-namespace Sparkle.Student.Component
+namespace Sparkle.Student.Component.PersonalInformation.Guardian
 {
 
     public class Validator : BinAff.Core.Validator
@@ -20,11 +20,14 @@ namespace Sparkle.Student.Component
             List<Message> msg = new List<Message>();
             Data data = base.Data as Data;
 
-            if (ValidationRule.IsNullOrEmpty(data.FirstName))
+            if (ValidationRule.IsNullOrEmpty(data.Relationship))
             {
-                msg.Add(new Message("First name cannot be empty.", Message.Type.Error));
+                msg.Add(new Message("Relationship cannot be empty.", Message.Type.Error));
             }
-
+            if (ValidationRule.IsNullOrEmpty(data.Profile))
+            {
+                msg.Add(new Message("Profile cannot be empty.", Message.Type.Error));
+            }
             return msg;
         }
 

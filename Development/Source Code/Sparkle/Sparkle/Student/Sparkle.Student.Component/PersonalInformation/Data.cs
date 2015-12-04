@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Conf = Crystal.Configuration.Component;
 
@@ -9,15 +10,24 @@ namespace Sparkle.Student.Component.PersonalInformation
     {
 
         public DateTime DateOfBirth { get; set; }
-        //Other properties from diagram
 
-        public Conf.Gender.Data Gender { get; set; }
+        public String BirthPlace { get; set; }
+
+        public Conf.MotherTongue.Data MotherTongue { get; set; }
 
         public Conf.Religion.Data Religion { get; set; }
 
         public Conf.Caste.Data Caste { get; set; }
 
         public Conf.SubCaste.Data SubCaste { get; set; }
+
+        public Conf.Gender.Data Gender { get; set; }
+
+        public Conf.ContactInformation.Data CurrentAddress { get; set; }
+
+        public Conf.ContactInformation.Data PermanentAddress { get; set; }
+
+        public List<BinAff.Core.Data> GuardianList { get; set; }
 
     }
 

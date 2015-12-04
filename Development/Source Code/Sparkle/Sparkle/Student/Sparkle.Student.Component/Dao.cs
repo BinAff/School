@@ -31,16 +31,30 @@ namespace Sparkle.Student.Component
             dt.FirstName = Convert.IsDBNull(dr["FirstName"]) ? String.Empty : Convert.ToString(dr["FirstName"]);
             dt.MiddleName = Convert.IsDBNull(dr["MiddleName"]) ? String.Empty : Convert.ToString(dr["MiddleName"]);
             dt.LastName = Convert.IsDBNull(dr["LastName"]) ? String.Empty : Convert.ToString(dr["LastName"]);
-            
-            //This place has to change...
-            dt.ResidentialAddress.Address = Convert.IsDBNull(dr["Address"]) ? String.Empty : Convert.ToString(dr["Address"]);
-            //dt.ResidentialAddress.State = new Crystal.Configuration.Component.State.Data
-            //{
-            //    Id = Convert.IsDBNull(dr["StateId"]) ? 0 : Convert.ToInt64(dr["StateId"]),
-            //};
-            //dt.ResidentialAddress.City = Convert.IsDBNull(dr["City"]) ? String.Empty : Convert.ToString(dr["City"]);
-            dt.ResidentialAddress.Pin = Convert.IsDBNull(dr["Pin"]) ? 0 : Convert.ToInt32(dr["Pin"]);
-            //...
+            dt.RollNumber = Convert.IsDBNull(dr["RollNumber"]) ? Convert.ToInt16(0) : Convert.ToInt16(dr["RollNumber"]);
+            //dt.Image = Convert.IsDBNull(dr["Image"]) ? Convert.ToByte(null) : Convert.ToByte(dr["Image"]);
+
+            if (dr["CategoryId"] != null)
+            {
+                dt.Category = new Category.Data
+                {
+                    Id = Convert.IsDBNull(dr["CategoryId"]) ? 0 : Convert.ToInt64(dr["CategoryId"])
+                };
+            }
+            if (dr["ClassId"] != null)
+            {
+                dt.Class = new Sparkle.School.Component.Class.Data
+                {
+                    Id = Convert.IsDBNull(dr["ClassId"]) ? 0 : Convert.ToInt64(dr["ClassId"])
+                };
+            }
+            if (dr["PersonalInformationId"] != null)
+            {
+                dt.PersonalInformation = new PersonalInformation.Data
+                {
+                    Id = Convert.IsDBNull(dr["PersonalInformationId"]) ? 0 : Convert.ToInt64(dr["PersonalInformationId"])
+                };
+            }
             return dt;
         }
 
@@ -49,11 +63,11 @@ namespace Sparkle.Student.Component
             base.AddInParameter("@FirstName", DbType.String, (this.Data as Data).FirstName);
             base.AddInParameter("@MiddleName", DbType.String, (this.Data as Data).MiddleName);
             base.AddInParameter("@LastName", DbType.String, (this.Data as Data).LastName);
-
-            base.AddInParameter("@Address", DbType.String, (this.Data as Data).ResidentialAddress.Address);
-            //base.AddInParameter("@StateId", DbType.Int64, (this.Data as Data).ResidentialAddress.State.Id);
-            //base.AddInParameter("@City", DbType.String, (this.Data as Data).ResidentialAddress.City);
-            base.AddInParameter("@Pin", DbType.Int32, (this.Data as Data).ResidentialAddress.Pin);
+            base.AddInParameter("@RollNumber", DbType.Int64, (this.Data as Data).RollNumber);
+            base.AddInParameter("@Image", DbType.Byte, (this.Data as Data).Image);
+            base.AddInParameter("@CategoryId", DbType.String, (this.Data as Data).Category.Id);
+            base.AddInParameter("@ClassId", DbType.String, (this.Data as Data).Class.Id);
+            base.AddInParameter("@PersonalInformationId", DbType.String, (this.Data as Data).PersonalInformation.Id);
         }
 
     }

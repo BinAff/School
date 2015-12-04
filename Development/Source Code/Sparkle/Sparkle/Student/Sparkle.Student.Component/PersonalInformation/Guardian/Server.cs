@@ -1,4 +1,6 @@
-﻿namespace Sparkle.School.Component.Class
+﻿using Conf = Crystal.Configuration.Component;
+
+namespace Sparkle.Student.Component.PersonalInformation.Guardian
 {
 
     public class Server : BinAff.Core.Crud
@@ -12,7 +14,7 @@
 
         protected override void Compose()
         {
-            base.Name = "Class";
+            base.Name = "Student's Guardian";
             base.Validator = new Validator(this.Data as Data);
             base.DataAccess = new Dao(this.Data as Data);
         }
@@ -29,15 +31,14 @@
 
         protected override void CreateChildren()
         {
-            base.AddChild(new Standard.Server((this.Data as Data).Standard)
+            base.AddChild(new Conf.Relationship.Server((this.Data as Data).Relationship)
             {
                 Type = ChildType.Independent,
                 IsReadOnly = true,
             });
-            base.AddChild(new Section.Server((this.Data as Data).Section)
+            base.AddChild(new Conf.Profile.Server((this.Data as Data).Profile)
             {
                 Type = ChildType.Independent,
-                IsReadOnly = true,
             });
         }
 

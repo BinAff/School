@@ -20,12 +20,12 @@ namespace Sparkle.School.Component.Class
             List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
-            if (ValidationRule.IsNullOrEmpty(data.Name))
+            if (ValidationRule.IsNullOrEmpty(data.Standard))
             {
-                retMsg.Add(new Message("Class cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Standard cannot be empty.", Message.Type.Error));
             }
 
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Class already exists.", Message.Type.Error));
             }

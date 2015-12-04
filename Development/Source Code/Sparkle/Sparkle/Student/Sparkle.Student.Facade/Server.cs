@@ -52,10 +52,10 @@ namespace Sparkle.Student.Facade
             dto.FirstName = data.FirstName;
             dto.MiddleName = data.MiddleName;
             dto.LastName = data.LastName;
-            dto.Address = data.ResidentialAddress.Address;
+            //dto.Address = data.ResidentialAddress.Address;
             //dto.State = new StateFac.Server(null).Convert(data.ResidentialAddress.State) as StateFac.Dto;
             //dto.City = data.ResidentialAddress.City;
-            dto.Pin = data.ResidentialAddress.Pin;
+            //dto.Pin = data.ResidentialAddress.Pin;
         }
 
         public override void AssignData()
@@ -66,10 +66,10 @@ namespace Sparkle.Student.Facade
             data.FirstName = dto.FirstName;
             data.MiddleName = dto.MiddleName;
             data.LastName = dto.LastName;
-            data.ResidentialAddress.Address = dto.Address;
+            //data.ResidentialAddress.Address = dto.Address;
             //data.ResidentialAddress.State = new StateFac.Server(null).Convert(dto.State) as StateComp.Data;
             //data.ResidentialAddress.City = dto.City;
-            data.ResidentialAddress.Pin = dto.Pin;
+            //data.ResidentialAddress.Pin = dto.Pin;
         }
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)

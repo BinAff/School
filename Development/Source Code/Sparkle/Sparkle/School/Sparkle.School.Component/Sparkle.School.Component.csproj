@@ -51,6 +51,10 @@
     <Compile Include="Section\Data.cs" />
     <Compile Include="Section\Server.cs" />
     <Compile Include="Section\Validator.cs" />
+    <Compile Include="Standard\Dao.cs" />
+    <Compile Include="Standard\Data.cs" />
+    <Compile Include="Standard\Server.cs" />
+    <Compile Include="Standard\Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

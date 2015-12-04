@@ -3,7 +3,7 @@
 using BinAff.Core;
 using BinAff.Utility;
 
-namespace Sparkle.School.Component.Section
+namespace Sparkle.School.Component.Standard
 {
 
     public class Validator : BinAff.Core.Validator
@@ -22,12 +22,12 @@ namespace Sparkle.School.Component.Section
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                retMsg.Add(new Message("Section cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Standard cannot be empty.", Message.Type.Error));
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
-                retMsg.Add(new Message("Section already exists.", Message.Type.Error));
+                retMsg.Add(new Message("Standard already exists.", Message.Type.Error));
             }
             return retMsg;
         }
