@@ -50,6 +50,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache.cs" />
     <Compile Include="Class\Dto.cs" />
     <Compile Include="Class\FormDto.cs" />
     <Compile Include="Class\Server.cs" />

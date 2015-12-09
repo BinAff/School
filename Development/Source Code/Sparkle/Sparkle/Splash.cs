@@ -22,7 +22,7 @@ namespace Sparkle
             {
                 try
                 {
-                    new Sparkle.Cache.Server().Cache();
+                    Sparkle.Cache.Server.Cache();
                 }
                 catch
                 {
