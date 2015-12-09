@@ -75,7 +75,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.Size = new System.Drawing.Size(342, 199);
+            this.tlpMain.Size = new System.Drawing.Size(420, 196);
             this.tlpMain.TabIndex = 8;
             // 
             // label1
@@ -84,7 +84,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 72);
+            this.label1.Size = new System.Drawing.Size(184, 72);
             this.label1.TabIndex = 162;
             this.label1.Text = "Address";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,11 +92,11 @@
             // txtAddress
             // 
             this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress.Location = new System.Drawing.Point(174, 3);
+            this.txtAddress.Location = new System.Drawing.Point(213, 3);
             this.txtAddress.MaxLength = 50;
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(145, 66);
+            this.txtAddress.Size = new System.Drawing.Size(184, 66);
             this.txtAddress.TabIndex = 165;
             // 
             // label2
@@ -105,7 +105,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 24);
+            this.label2.Size = new System.Drawing.Size(184, 24);
             this.label2.TabIndex = 166;
             this.label2.Text = "Country";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,7 +116,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 24);
+            this.label3.Size = new System.Drawing.Size(184, 24);
             this.label3.TabIndex = 167;
             this.label3.Text = "State";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,7 +127,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 24);
+            this.label4.Size = new System.Drawing.Size(184, 24);
             this.label4.TabIndex = 168;
             this.label4.Text = "District";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +138,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 24);
+            this.label5.Size = new System.Drawing.Size(184, 24);
             this.label5.TabIndex = 169;
             this.label5.Text = "Landline";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,10 +146,10 @@
             // txtLandline
             // 
             this.txtLandline.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLandline.Location = new System.Drawing.Point(174, 171);
+            this.txtLandline.Location = new System.Drawing.Point(213, 171);
             this.txtLandline.MaxLength = 50;
             this.txtLandline.Name = "txtLandline";
-            this.txtLandline.Size = new System.Drawing.Size(145, 20);
+            this.txtLandline.Size = new System.Drawing.Size(184, 20);
             this.txtLandline.TabIndex = 172;
             // 
             // label6
@@ -158,7 +158,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(3, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 24);
+            this.label6.Size = new System.Drawing.Size(184, 24);
             this.label6.TabIndex = 173;
             this.label6.Text = "Pin";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,36 +166,42 @@
             // cboDistrict
             // 
             this.cboDistrict.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDistrict.FormattingEnabled = true;
-            this.cboDistrict.Location = new System.Drawing.Point(174, 123);
+            this.cboDistrict.Location = new System.Drawing.Point(213, 123);
             this.cboDistrict.Name = "cboDistrict";
-            this.cboDistrict.Size = new System.Drawing.Size(145, 21);
+            this.cboDistrict.Size = new System.Drawing.Size(184, 21);
+            this.cboDistrict.Sorted = true;
             this.cboDistrict.TabIndex = 174;
             // 
             // cboCountry
             // 
             this.cboCountry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCountry.FormattingEnabled = true;
-            this.cboCountry.Location = new System.Drawing.Point(174, 75);
+            this.cboCountry.Location = new System.Drawing.Point(213, 75);
             this.cboCountry.Name = "cboCountry";
-            this.cboCountry.Size = new System.Drawing.Size(145, 21);
+            this.cboCountry.Size = new System.Drawing.Size(184, 21);
+            this.cboCountry.Sorted = true;
             this.cboCountry.TabIndex = 175;
             // 
             // cboState
             // 
             this.cboState.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(174, 99);
+            this.cboState.Location = new System.Drawing.Point(213, 99);
             this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(145, 21);
+            this.cboState.Size = new System.Drawing.Size(184, 21);
+            this.cboState.Sorted = true;
             this.cboState.TabIndex = 176;
             // 
             // txtPin
             // 
             this.txtPin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPin.Location = new System.Drawing.Point(174, 147);
+            this.txtPin.Location = new System.Drawing.Point(213, 147);
             this.txtPin.Name = "txtPin";
-            this.txtPin.Size = new System.Drawing.Size(145, 20);
+            this.txtPin.Size = new System.Drawing.Size(184, 20);
             this.txtPin.TabIndex = 177;
             // 
             // FormControl
@@ -203,8 +209,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
+            this.MinimumSize = new System.Drawing.Size(420, 196);
             this.Name = "FormControl";
-            this.Size = new System.Drawing.Size(342, 199);
+            this.Size = new System.Drawing.Size(420, 196);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.ResumeLayout(false);
