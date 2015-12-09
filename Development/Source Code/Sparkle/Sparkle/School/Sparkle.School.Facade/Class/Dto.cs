@@ -8,6 +8,12 @@
 
         public Section.Dto Section { get; set; }
 
+        public Dto()
+        {
+            this.Standard = new Standard.Dto();
+            this.Section = new Section.Dto();
+        }
+
     }
 
 }
