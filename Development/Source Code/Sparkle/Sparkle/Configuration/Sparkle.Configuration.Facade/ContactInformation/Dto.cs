@@ -20,6 +20,11 @@ namespace Sparkle.Configuration.Facade.ContactInformation
 
         public Int32 Landline { get; set; }
 
+        public Dto()
+        {
+            this.District = new District.Dto();
+        }
+
     }
 
 }

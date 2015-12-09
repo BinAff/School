@@ -16,6 +16,11 @@ namespace Sparkle.Configuration.Facade.District
         /// </summary>
         public State.Dto State { get; set; }
 
+        public Dto()
+        {
+            this.State = new State.Dto();
+        }
+
     }
 
 }

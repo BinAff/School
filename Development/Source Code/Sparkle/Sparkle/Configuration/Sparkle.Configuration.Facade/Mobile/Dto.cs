@@ -16,6 +16,11 @@ namespace Sparkle.Configuration.Facade.Mobile
         /// </summary>
         public Country.Dto Country { get; set; }
 
+        public Dto()
+        {
+            this.Country = new Country.Dto();
+        }
+
     }
 
 }

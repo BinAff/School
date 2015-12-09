@@ -18,10 +18,12 @@ namespace Sparkle.Configuration.Facade.Profile
 
         public Mobile.Dto Mobile { get; set; }
 
-        ///// <summary>
-        ///// Name of district
-        ///// </summary>
-        //public String Name { get; }
+        public Dto()
+        {
+            this.Occupation = new Occupation.Dto();
+            this.ContactInformation = new ContactInformation.Dto();
+            this.Mobile = new Mobile.Dto();
+        }
 
     }
 
