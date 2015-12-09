@@ -1,5 +1,9 @@
-﻿using Comp = Crystal.Configuration.Component.District;
+﻿using System.Collections.Generic;
+
+using Comp = Crystal.Configuration.Component.District;
 using StateComp = Crystal.Configuration.Component.State;
+
+using AppCache = BinAff.Facade.Cache.Server;
 
 using FacLib = Sparkle.Core.Facade;
 
@@ -78,7 +82,7 @@ namespace Sparkle.Configuration.Facade.District
 
         public override void LoadControl()
         {
-            (this.FormDto as FormDto).StateList = new State.Server(null).ReadAll<State.Dto>();
+            (this.FormDto as FormDto).StateList = AppCache.Current.Cache["StateList"] as List<State.Dto>;
         }
 
         #endregion

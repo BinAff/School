@@ -1,7 +1,11 @@
-﻿using Comp = Crystal.Configuration.Component.Profile;
+﻿using System.Collections.Generic;
+
+using Comp = Crystal.Configuration.Component.Profile;
 using OcuComp = Crystal.Configuration.Component.Occupation;
 using ContComp = Crystal.Configuration.Component.ContactInformation;
 using MobileComp = Crystal.Configuration.Component.Mobile;
+
+using AppCache = BinAff.Facade.Cache.Server;
 
 using FacLib = Sparkle.Core.Facade;
 
@@ -99,7 +103,7 @@ namespace Sparkle.Configuration.Facade.Profile
 
         public override void LoadControl()
         {
-            (this.FormDto as FormDto).OccupationList = new Occupation.Server(null).ReadAll<Occupation.Dto>();
+            (this.FormDto as FormDto).OccupationList = AppCache.Current.Cache["OccupationList"] as List<Occupation.Dto>;
         }
 
         #endregion

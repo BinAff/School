@@ -1,5 +1,9 @@
-﻿using Comp = Crystal.Configuration.Component.ContactInformation;
+﻿using System.Collections.Generic;
+
+using Comp = Crystal.Configuration.Component.ContactInformation;
 using DistrictComp = Crystal.Configuration.Component.District;
+
+using AppCache = BinAff.Facade.Cache.Server;
 
 using FacLib = Sparkle.Core.Facade;
 
@@ -86,9 +90,9 @@ namespace Sparkle.Configuration.Facade.ContactInformation
 
         public override void LoadControl()
         {
-            (this.FormDto as FormDto).CountryList = new Country.Server(null).ReadAll<Country.Dto>();
-            (this.FormDto as FormDto).StateList = new State.Server(null).ReadAll<State.Dto>();
-            (this.FormDto as FormDto).DistrictList = new District.Server(null).ReadAll<District.Dto>();
+            (this.FormDto as FormDto).CountryList = AppCache.Current.Cache["CountryList"] as List<Country.Dto>;
+            (this.FormDto as FormDto).StateList = AppCache.Current.Cache["StateList"] as List<State.Dto>;
+            (this.FormDto as FormDto).DistrictList = AppCache.Current.Cache["DistrictList"] as List<District.Dto>;
         }
 
         #endregion

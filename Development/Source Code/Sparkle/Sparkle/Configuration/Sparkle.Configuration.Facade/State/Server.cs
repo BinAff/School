@@ -1,5 +1,9 @@
-﻿using Comp = Crystal.Configuration.Component.State;
+﻿using System.Collections.Generic;
+
+using Comp = Crystal.Configuration.Component.State;
 using CountryComp = Crystal.Configuration.Component.Country;
+
+using AppCache = BinAff.Facade.Cache.Server;
 
 using FacLib = Sparkle.Core.Facade;
 
@@ -78,7 +82,7 @@ namespace Sparkle.Configuration.Facade.State
 
         public override void LoadControl()
         {
-            (this.FormDto as FormDto).CountryList = new Country.Server(null).ReadAll<Country.Dto>();
+            (this.FormDto as FormDto).CountryList = AppCache.Current.Cache["CountryList"] as List<Country.Dto>;
         }
 
         #endregion

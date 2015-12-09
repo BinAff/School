@@ -33,12 +33,17 @@
     <Reference Include="BinAff.Core">
       <HintPath>..\..\..\Reference\BinAff.Core.dll</HintPath>
     </Reference>
+    <Reference Include="BinAff.Facade.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\BinAff.Facade.Cache.dll</HintPath>
+    </Reference>
     <Reference Include="BinAff.Facade.Library">
       <HintPath>..\..\..\Reference\BinAff.Facade.Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache.cs" />
     <Compile Include="Caste\Dto.cs" />
     <Compile Include="Caste\FormDto.cs" />
     <Compile Include="Caste\Server.cs" />
