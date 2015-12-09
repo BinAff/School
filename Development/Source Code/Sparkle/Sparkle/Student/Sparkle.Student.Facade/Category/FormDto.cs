@@ -1,4 +1,4 @@
-﻿namespace Sparkle.Student.Facade.ContactInformation.Address
+﻿namespace Sparkle.Student.Facade.Category
 {
 
     public class FormDto : Sparkle.Core.Facade.FormDto

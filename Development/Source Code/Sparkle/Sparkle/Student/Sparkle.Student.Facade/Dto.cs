@@ -1,8 +1,5 @@
 ﻿using System;
 
-using StateFac = Vanilla.Configuration.Facade.State;
-using CountryFac = Vanilla.Configuration.Facade.Country;
-
 namespace Sparkle.Student.Facade
 {
 
@@ -10,13 +7,20 @@ namespace Sparkle.Student.Facade
     {
 
         public String FirstName { get; set; }
+
         public String MiddleName { get; set; }
+
         public String LastName { get; set; }
-        
-        public String Address { get; set; }
-        public StateFac.Dto State { get; set; }
-        public String City { get; set; }
-        public Int32 Pin { get; set; }
+
+        public Int16 RollNumber { get; set; }
+
+        public Byte[] Image { get; set; }
+
+        public Category.Dto Category { get; set; }
+
+        public Sparkle.School.Facade.Class.Dto Class { get; set; }
+
+        public PersonalInformation.Dto PersonalInformation { get; set; }
 
     }
 

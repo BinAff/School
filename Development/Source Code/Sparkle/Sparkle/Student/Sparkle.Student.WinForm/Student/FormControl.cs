@@ -2,7 +2,7 @@
 
 using BinAff.Presentation.Library.Extension;
 
-using StateFac = Vanilla.Configuration.Facade.State;
+using SchlFac = Sparkle.School.Facade;
 
 using Fac = Sparkle.Student.Facade;
 
@@ -24,11 +24,21 @@ namespace Sparkle.Student.WinForm.Student
 
         protected override void Bind()
         {
-            this.cboCurrentAddressCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
-            this.cboCurrentAddressState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
-            this.cboCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
-            this.cboPermanentAddressCountry.Bind((base.FormDto as Facade.FormDto).CountryList, "Name");
-            this.cboPermanentAddressState.Bind((base.FormDto as Facade.FormDto).StateList, "Name");
+            this.cboStandard.Bind((this.FormDto as Fac.FormDto).StandardList, "Name");
+            this.cboSection.Bind((this.FormDto as Fac.FormDto).SectionList, "Name");
+        }
+
+        protected override void ResetForm()
+        {
+            this.txtFirstName.Text = String.Empty;
+            this.txtMiddleName.Text = String.Empty;
+            this.txtLastName.Text = String.Empty;
+            this.cboStandard.SelectedIndex = -1;
+            this.cboStandard.Text = String.Empty;
+            this.cboSection.SelectedIndex = -1;
+            this.cboSection.Text = String.Empty;
+            this.txtRollNumber.Text = String.Empty;
+            this.txtFirstName.Focus();
         }
 
         protected override void AssignDto()
@@ -37,10 +47,12 @@ namespace Sparkle.Student.WinForm.Student
             dto.FirstName = this.txtFirstName.Text;
             dto.MiddleName = this.txtMiddleName.Text;
             dto.LastName = this.txtLastName.Text;
-            dto.Address = this.txtPermanentAddress.Text;
-            dto.State = this.cboPermanentAddressState.SelectedItem as StateFac.Dto;
-            dto.City = this.txtPermanentAddressCity.Text;
-            dto.Pin = Convert.ToInt32(this.txtPermanentAddressPin.Text);
+            dto.Class = new SchlFac.Class.Dto
+            {
+                Standard = this.cboStandard.SelectedItem as SchlFac.Standard.Dto,
+                Section = this.cboSection.SelectedItem as SchlFac.Section.Dto,
+            };
+            dto.RollNumber = Convert.ToInt16(this.txtRollNumber.Text.Trim());
         }
 
         protected override void AssignFormControls()
@@ -49,11 +61,9 @@ namespace Sparkle.Student.WinForm.Student
             this.txtFirstName.Text = dto.FirstName;
             this.txtMiddleName.Text = dto.MiddleName;
             this.txtLastName.Text = dto.LastName;
-            this.txtPermanentAddress.Text = dto.Address;
-            this.cboPermanentAddressState.SelectedItem = (this.FormDto as Facade.FormDto).StateList.FindLast((p) => { return p.Id == dto.State.Id; });
-            this.cboPermanentAddressCountry.SelectedItem = (this.FormDto as Facade.FormDto).CountryList.FindLast((p) => { return p.Id == dto.State.Country.Id; });
-            this.txtPermanentAddressCity.Text = dto.City;
-            this.txtRollNumber.Text = dto.Pin.ToString();
+            this.cboStandard.SelectedItem = (this.FormDto as Facade.FormDto).StandardList.FindLast((p) => { return p.Id == dto.Class.Standard.Id; });
+            this.cboSection.SelectedItem = (this.FormDto as Facade.FormDto).SectionList.FindLast((p) => { return p.Id == dto.Class.Section.Id; });
+            this.txtRollNumber.Text = Convert.ToString(dto.RollNumber);
         }
 
         protected override Boolean ValidateForm()

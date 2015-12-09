@@ -27,7 +27,7 @@ namespace Sparkle.Student.Facade
             {
                 Dto = new Dto
                 {
-                    State = new StateFac.Dto(),
+                    //State = new StateFac.Dto(),
                 },
             };
         }
