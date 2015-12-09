@@ -29,6 +29,18 @@ namespace Sparkle.Student.Facade.PersonalInformation
 
         public List<BinAff.Facade.Library.Dto> GuardianList { get; set; }
 
+        public Dto()
+        {
+            this.MotherTongue = new Conf.MotherTongue.Dto();
+            this.Religion = new Conf.Religion.Dto();
+            this.Caste = new Conf.Caste.Dto();
+            this.SubCaste = new Conf.SubCaste.Dto();
+            this.Gender = new Conf.Gender.Dto();
+            this.CurrentAddress = new Conf.ContactInformation.Dto();
+            this.PermanentAddress = new Conf.ContactInformation.Dto();
+            this.GuardianList = new List<BinAff.Facade.Library.Dto>();
+        }
+
     }
 
 }

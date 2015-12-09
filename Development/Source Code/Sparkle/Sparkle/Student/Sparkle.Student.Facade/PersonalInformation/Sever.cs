@@ -1,9 +1,12 @@
-﻿using FacLib = Sparkle.Core.Facade;
+﻿using System.Collections.Generic;
+
+using AppChache = BinAff.Facade.Cache.Server;
 
 using Conf = Crystal.Configuration.Component;
 
-using ConfFac = Sparkle.Configuration.Facade;
+using FacLib = Sparkle.Core.Facade;
 
+using ConfFac = Sparkle.Configuration.Facade;
 using Comp = Sparkle.Student.Component.PersonalInformation;
 
 namespace Sparkle.Student.Facade.PersonalInformation
@@ -113,11 +116,11 @@ namespace Sparkle.Student.Facade.PersonalInformation
 
         public override void LoadControl()
         {
-            (this.FormDto as FormDto).GenderList = new ConfFac.Gender.Server(null).ReadAll<ConfFac.Gender.Dto>();
-            (this.FormDto as FormDto).MotherTongueList = new ConfFac.MotherTongue.Server(null).ReadAll<ConfFac.MotherTongue.Dto>();
-            (this.FormDto as FormDto).ReligionList = new ConfFac.Religion.Server(null).ReadAll<ConfFac.Religion.Dto>();
-            (this.FormDto as FormDto).CasteList = new ConfFac.Caste.Server(null).ReadAll<ConfFac.Caste.Dto>();
-            (this.FormDto as FormDto).SubCasteList = new ConfFac.SubCaste.Server(null).ReadAll<ConfFac.SubCaste.Dto>();
+            (this.FormDto as FormDto).GenderList = AppChache.Current.Cache["GenderList"] as List<ConfFac.Gender.Dto>;
+            (this.FormDto as FormDto).MotherTongueList = AppChache.Current.Cache["MotherTongueList"] as List<ConfFac.MotherTongue.Dto>;
+            (this.FormDto as FormDto).ReligionList = AppChache.Current.Cache["ReligionList"] as List<ConfFac.Religion.Dto>;
+            (this.FormDto as FormDto).CasteList = AppChache.Current.Cache["CasteList"] as List<ConfFac.Caste.Dto>;
+            (this.FormDto as FormDto).SubCasteList = AppChache.Current.Cache["SubCasteList"] as List<ConfFac.SubCaste.Dto>;
         }
 
         #endregion

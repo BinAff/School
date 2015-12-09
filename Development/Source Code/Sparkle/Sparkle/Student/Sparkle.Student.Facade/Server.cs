@@ -1,4 +1,8 @@
-﻿using StateComp = Crystal.Configuration.Component.State;
+﻿using System.Collections.Generic;
+
+using AppChache = BinAff.Facade.Cache.Server;
+
+using Schl = Sparkle.School.Facade;
 
 using StateFac = Vanilla.Configuration.Facade.State;
 using CountryFac = Vanilla.Configuration.Facade.Country;
@@ -25,10 +29,7 @@ namespace Sparkle.Student.Facade
         {
             return new FormDto
             {
-                Dto = new Dto
-                {
-                    //State = new StateFac.Dto(),
-                },
+                Dto = new Dto(),
             };
         }
 
@@ -107,8 +108,8 @@ namespace Sparkle.Student.Facade
 
         public override void LoadControl()
         {
-            //(this.FormDto as FormDto).StateList = new StateFac.Server(null).ReadAll<StateFac.Dto>();
-            //(this.FormDto as FormDto).CountryList = new CountryFac.Server(null).ReadAll<CountryFac.Dto>();
+            (this.FormDto as FormDto).StandardList = AppChache.Current.Cache["StandardList"] as List<Schl.Standard.Dto>;
+            (this.FormDto as FormDto).SectionList = AppChache.Current.Cache["SectionList"] as List<Schl.Section.Dto>;
         }
 
         #endregion

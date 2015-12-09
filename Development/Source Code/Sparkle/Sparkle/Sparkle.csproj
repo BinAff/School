@@ -104,6 +104,10 @@
       <Project>{d8f953f0-9abf-47ce-98c1-df155434cdde}</Project>
       <Name>Sparkle.School.WinForm</Name>
     </ProjectReference>
+    <ProjectReference Include="Sparkle.Cache\Sparkle.Cache.csproj">
+      <Project>{888817a0-3805-4e8c-8599-28c38b15d3c5}</Project>
+      <Name>Sparkle.Cache</Name>
+    </ProjectReference>
     <ProjectReference Include="Sparkle.Core\Sparkle.Core.csproj">
       <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
       <Name>Sparkle.Core</Name>

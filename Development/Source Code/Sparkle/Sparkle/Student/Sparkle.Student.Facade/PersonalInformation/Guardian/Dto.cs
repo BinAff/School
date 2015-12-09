@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Conf = Sparkle.Configuration.Facade;
+﻿using Conf = Sparkle.Configuration.Facade;
 
 namespace Sparkle.Student.Facade.PersonalInformation.Guardian
 {
@@ -12,6 +9,12 @@ namespace Sparkle.Student.Facade.PersonalInformation.Guardian
         public Conf.Profile.Dto Profile { get; set; }
 
         public Conf.Relationship.Dto Relationship { get; set; }
+
+        public Dto()
+        {
+            this.Profile = new Conf.Profile.Dto();
+            this.Relationship = new Conf.Relationship.Dto();
+        }
 
     }
 

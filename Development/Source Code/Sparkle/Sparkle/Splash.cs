@@ -22,6 +22,17 @@ namespace Sparkle
             {
                 try
                 {
+                    new Sparkle.Cache.Server().Cache();
+                }
+                catch
+                {
+                    throw;
+                }
+            }).Start();
+            new Thread(() =>
+            {
+                try
+                {
                     Application.Run(frm);
                     frm.BringToFront();
                 }
