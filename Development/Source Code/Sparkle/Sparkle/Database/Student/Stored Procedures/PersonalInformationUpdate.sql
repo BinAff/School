@@ -10,7 +10,7 @@
 	@SubCasteId Bigint,
 	@GenderId Bigint,
 	@PresentAddressId Bigint,
-	@PermananentAddressId Bigint
+	@PermanentAddressId Bigint
 )
 AS
 BEGIN
@@ -26,7 +26,7 @@ BEGIN
 		SubCasteId = @SubCasteId,
 		GenderId = @GenderId,
 		PresentAddressId = @PresentAddressId,
-		PermananentAddressId = @PermananentAddressId
+		PermanentAddressId = @PermanentAddressId
 	WHERE Id = @Id
 
 END

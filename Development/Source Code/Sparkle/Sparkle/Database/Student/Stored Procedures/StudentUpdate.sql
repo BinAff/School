@@ -6,7 +6,7 @@
 	@MiddleName Varchar(100),
 	@LastName Varchar(100),
 	@RollNumber Varchar(50),
-	@Photo Varbinary(1024),
+	@Photo Varbinary(1024) = null,
 	@CategoryId Bigint,
 	@ClassId Bigint
 )
