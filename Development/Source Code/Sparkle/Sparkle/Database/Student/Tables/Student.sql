@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Student].[Student] (
     [Id]         BIGINT        IDENTITY (1, 1) NOT NULL,
-	[StudentId] BIGINT    NOT NULL,
+	[StudentId] VARCHAR(50)    NOT NULL,
     [FirstName]  VARCHAR (100)  NULL,
     [MiddleName] VARCHAR (60)  NULL,
     [LastName]   VARCHAR (60)  NULL,

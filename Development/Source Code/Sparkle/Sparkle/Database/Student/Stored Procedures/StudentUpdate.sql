@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [Student].[StudentUpdate]
 (  
 	@Id  Bigint,
-	@StudentId Bigint,
+	@StudentId Varchar(50),
 	@FirstName Varchar(100),
 	@MiddleName Varchar(100),
 	@LastName Varchar(100),
