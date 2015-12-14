@@ -286,6 +286,8 @@
             this.chkSame.TabIndex = 217;
             this.chkSame.Text = "Same as Above";
             this.chkSame.UseVisualStyleBackColor = true;
+            this.chkSame.Visible = false;
+            this.chkSame.CheckedChanged += new System.EventHandler(this.chkSame_CheckedChanged);
             // 
             // FormControl
             // 

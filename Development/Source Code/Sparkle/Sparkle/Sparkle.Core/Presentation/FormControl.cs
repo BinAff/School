@@ -69,7 +69,7 @@ namespace Sparkle.Core.Presentation
             });
         }
 
-        internal void PopulateDtoToFormControl()
+        public void PopulateDtoToFormControl()
         {
             this.RecurseFormControls(this, delegate(FormControl frmCtrl)
             {

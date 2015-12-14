@@ -84,6 +84,16 @@ namespace Sparkle.Student.WinForm.PersonalInformation
             return true;
         }
 
+        private void chkSame_CheckedChanged(object sender, EventArgs e)
+        {
+            //Not working. So check box is hidden
+            if (this.chkSame.Checked)
+            {
+                this.ucPermanantAddress.FormDto.Dto = this.ucCurrentAddress.FormDto.Dto;
+                this.ucPermanantAddress.PopulateDtoToFormControl();
+            }
+        }
+
     }
 
 }
