@@ -2,14 +2,12 @@
 
 using AppChache = BinAff.Facade.Cache.Server;
 
-using Schl = Sparkle.School.Facade;
-
-using StateFac = Vanilla.Configuration.Facade.State;
-using CountryFac = Vanilla.Configuration.Facade.Country;
+using Schl = Sparkle.School.Component;
+using Comp = Sparkle.Student.Component;
 
 using FacLib = Sparkle.Core.Facade;
 
-using Comp = Sparkle.Student.Component;
+using SchlFac = Sparkle.School.Facade;
 
 namespace Sparkle.Student.Facade
 {
@@ -53,10 +51,11 @@ namespace Sparkle.Student.Facade
             dto.FirstName = data.FirstName;
             dto.MiddleName = data.MiddleName;
             dto.LastName = data.LastName;
-            //dto.Address = data.ResidentialAddress.Address;
-            //dto.State = new StateFac.Server(null).Convert(data.ResidentialAddress.State) as StateFac.Dto;
-            //dto.City = data.ResidentialAddress.City;
-            //dto.Pin = data.ResidentialAddress.Pin;
+            dto.RollNumber = data.RollNumber;
+            dto.Standard = new SchlFac.Standard.Server(null).Convert(data.Standard) as SchlFac.Standard.Dto;
+            dto.Section = new SchlFac.Section.Server(null).Convert(data.Section) as SchlFac.Section.Dto;
+            dto.PersonalInformation = new PersonalInformation.Server(null).Convert(data.PersonalInformation) as PersonalInformation.Dto;
+            dto.Category = new Category.Server(null).Convert(data.Category) as Category.Dto;
         }
 
         public override void AssignData()
@@ -67,10 +66,11 @@ namespace Sparkle.Student.Facade
             data.FirstName = dto.FirstName;
             data.MiddleName = dto.MiddleName;
             data.LastName = dto.LastName;
-            //data.ResidentialAddress.Address = dto.Address;
-            //data.ResidentialAddress.State = new StateFac.Server(null).Convert(dto.State) as StateComp.Data;
-            //data.ResidentialAddress.City = dto.City;
-            //data.ResidentialAddress.Pin = dto.Pin;
+            data.RollNumber = dto.RollNumber;
+            data.Standard = new SchlFac.Standard.Server(null).Convert(dto.Standard) as Schl.Standard.Data;
+            data.Section = new SchlFac.Section.Server(null).Convert(dto.Section) as Schl.Section.Data;
+            data.PersonalInformation = new PersonalInformation.Server(null).Convert(dto.PersonalInformation) as Comp.PersonalInformation.Data;
+            data.Category = new Category.Server(null).Convert(dto.Category) as Comp.Category.Data;
         }
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)
@@ -82,11 +82,11 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                //ResidentialAddress = 
-                //Address = dt.Address,
-                //State = new StateFac.Server(null).Convert(dt.State) as StateComp.Data,
-                //City = dt.City,
-                //Pin = dt.Pin,
+                RollNumber = dt.RollNumber,
+                Standard = new SchlFac.Standard.Server(null).Convert(dt.Standard) as Schl.Standard.Data,
+                Section = new SchlFac.Section.Server(null).Convert(dt.Section) as Schl.Section.Data,
+                PersonalInformation = new PersonalInformation.Server(null).Convert(dt.PersonalInformation) as Comp.PersonalInformation.Data,
+                Category = new Category.Server(null).Convert(dt.Category) as Comp.Category.Data,
             };
         }
 
@@ -99,17 +99,18 @@ namespace Sparkle.Student.Facade
                 FirstName = dt.FirstName,
                 MiddleName = dt.MiddleName,
                 LastName = dt.LastName,
-                //Address = dt.Address,
-                //State = new StateFac.Server(null).Convert(dt.State) as StateFac.Dto,
-                //City = dt.City,
-                //Pin = dt.Pin,
+                RollNumber = dt.RollNumber,
+                Standard = new SchlFac.Standard.Server(null).Convert(dt.Standard) as SchlFac.Standard.Dto,
+                Section = new SchlFac.Section.Server(null).Convert(dt.Section) as SchlFac.Section.Dto,
+                PersonalInformation = new PersonalInformation.Server(null).Convert(dt.PersonalInformation) as PersonalInformation.Dto,
+                Category = new Category.Server(null).Convert(dt.Category) as Category.Dto,
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
-            (this.FormDto as FormDto).StandardList = AppChache.Current.Cache["StandardList"] as List<Schl.Standard.Dto>;
-            (this.FormDto as FormDto).SectionList = AppChache.Current.Cache["SectionList"] as List<Schl.Section.Dto>;
+            (this.FormDto as FormDto).StandardList = AppChache.Current.Cache["StandardList"] as List<SchlFac.Standard.Dto>;
+            (this.FormDto as FormDto).SectionList = AppChache.Current.Cache["SectionList"] as List<SchlFac.Section.Dto>;
         }
 
         #endregion

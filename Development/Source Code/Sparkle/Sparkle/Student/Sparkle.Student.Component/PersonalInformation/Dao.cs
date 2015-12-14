@@ -53,9 +53,9 @@ namespace Sparkle.Student.Component.PersonalInformation
             {
                 Id = Convert.IsDBNull(dr["GenderId"]) ? 0 : Convert.ToInt64(dr["GenderId"]),
             };
-            dt.CurrentAddress = new Conf.ContactInformation.Data
+            dt.PresentAddress = new Conf.ContactInformation.Data
             {
-                Id = Convert.IsDBNull(dr["CurrentAddressId"]) ? 0 : Convert.ToInt64(dr["CurrentAddressId"]),
+                Id = Convert.IsDBNull(dr["PresentAddressId"]) ? 0 : Convert.ToInt64(dr["PresentAddressId"]),
             };
             dt.PermanentAddress = new Conf.ContactInformation.Data
             {
@@ -73,9 +73,14 @@ namespace Sparkle.Student.Component.PersonalInformation
             base.AddInParameter("@CasteId", DbType.Int64, (this.Data as Data).Caste.Id);
             base.AddInParameter("@SubCasteId", DbType.Int64, (this.Data as Data).SubCaste.Id);
             base.AddInParameter("@GenderId", DbType.Int64, (this.Data as Data).Gender.Id);
-            base.AddInParameter("@CurrentAddressId", DbType.Int64, (this.Data as Data).CurrentAddress.Id);
+            base.AddInParameter("@PresentAddressId", DbType.Int64, (this.Data as Data).PresentAddress.Id);
             base.AddInParameter("@PermanentAddressId", DbType.Int64, (this.Data as Data).PermanentAddress.Id);
             base.AddInParameter("@StudentId", DbType.String, (this.ParentData as Student.Component.Data).Id);
+        }
+
+        protected override void AttachChildDataToParent()
+        {
+            (this.ParentData as Student.Component.Data).PersonalInformation = this.Data as Data;
         }
 
     }

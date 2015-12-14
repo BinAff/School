@@ -40,7 +40,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtAdmissionNumber = new System.Windows.Forms.TextBox();
             this.tbpPersonalInfo = new System.Windows.Forms.TabPage();
-            this.ucPersonalInformation = new Sparkle.Student.WinForm.PersonalInformation.FormControl();
             this.tbpGeneral = new System.Windows.Forms.TabPage();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblStudentId = new System.Windows.Forms.Label();
@@ -60,7 +59,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.tbcMain = new System.Windows.Forms.TabControl();
-            this.tbpContactInfo = new System.Windows.Forms.TabPage();
+            this.tbpGuardians = new System.Windows.Forms.TabPage();
+            this.ucPersonalInformation = new Sparkle.Student.WinForm.PersonalInformation.FormControl();
             this.tbpAdmission.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tbpPersonalInfo.SuspendLayout();
@@ -199,15 +199,6 @@
             this.tbpPersonalInfo.Text = "Personal Information";
             this.tbpPersonalInfo.UseVisualStyleBackColor = true;
             // 
-            // ucPersonalInformation
-            // 
-            this.ucPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPersonalInformation.Location = new System.Drawing.Point(3, 3);
-            this.ucPersonalInformation.MinimumSize = new System.Drawing.Size(420, 612);
-            this.ucPersonalInformation.Name = "ucPersonalInformation";
-            this.ucPersonalInformation.Size = new System.Drawing.Size(550, 616);
-            this.ucPersonalInformation.TabIndex = 0;
-            // 
             // tbpGeneral
             // 
             this.tbpGeneral.Controls.Add(this.tlpMain);
@@ -326,6 +317,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(249, 20);
             this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.Text = "Arpan";
             // 
             // txtMiddleName
             // 
@@ -342,6 +334,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(249, 20);
             this.txtLastName.TabIndex = 3;
+            this.txtLastName.Text = "Kar";
             // 
             // txtRollNumber
             // 
@@ -416,7 +409,7 @@
             // 
             this.tbcMain.Controls.Add(this.tbpGeneral);
             this.tbcMain.Controls.Add(this.tbpPersonalInfo);
-            this.tbcMain.Controls.Add(this.tbpContactInfo);
+            this.tbcMain.Controls.Add(this.tbpGuardians);
             this.tbcMain.Controls.Add(this.tbpAdmission);
             this.tbcMain.Controls.Add(this.tbpPastEducation);
             this.tbcMain.Controls.Add(this.tbpBilling);
@@ -428,14 +421,24 @@
             this.tbcMain.Size = new System.Drawing.Size(564, 648);
             this.tbcMain.TabIndex = 9;
             // 
-            // tbpContactInfo
+            // tbpGuardians
             // 
-            this.tbpContactInfo.Location = new System.Drawing.Point(4, 22);
-            this.tbpContactInfo.Name = "tbpContactInfo";
-            this.tbpContactInfo.Size = new System.Drawing.Size(556, 622);
-            this.tbpContactInfo.TabIndex = 2;
-            this.tbpContactInfo.Text = "Contact Information";
-            this.tbpContactInfo.UseVisualStyleBackColor = true;
+            this.tbpGuardians.Location = new System.Drawing.Point(4, 22);
+            this.tbpGuardians.Name = "tbpGuardians";
+            this.tbpGuardians.Size = new System.Drawing.Size(556, 622);
+            this.tbpGuardians.TabIndex = 2;
+            this.tbpGuardians.Text = "Guardians";
+            this.tbpGuardians.UseVisualStyleBackColor = true;
+            // 
+            // ucPersonalInformation
+            // 
+            this.ucPersonalInformation.AutoScroll = true;
+            this.ucPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPersonalInformation.Location = new System.Drawing.Point(3, 3);
+            this.ucPersonalInformation.MinimumSize = new System.Drawing.Size(420, 612);
+            this.ucPersonalInformation.Name = "ucPersonalInformation";
+            this.ucPersonalInformation.Size = new System.Drawing.Size(550, 616);
+            this.ucPersonalInformation.TabIndex = 0;
             // 
             // FormControl
             // 
@@ -491,7 +494,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TabControl tbcMain;
-        private System.Windows.Forms.TabPage tbpContactInfo;
+        private System.Windows.Forms.TabPage tbpGuardians;
 
     }
 }

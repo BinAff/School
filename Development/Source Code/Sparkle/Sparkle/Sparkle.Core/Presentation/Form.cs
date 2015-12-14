@@ -10,9 +10,7 @@ namespace Sparkle.Core.Presentation
 
     public partial class Form : Lib.Form
     {
-
-        protected FormDto FormDto { get; private set; }
-
+        
         protected String ListDisplayName { get; set; }
         protected String FormName { get; set; }
 
@@ -56,7 +54,6 @@ namespace Sparkle.Core.Presentation
             if (DesignMode) return;
             this.formControl.LoadForm();
             this.formControl.Facade.LoadForm();
-            this.FormDto = this.FormControl.FormDto as FormDto;
             this.Bind();
         }
 
@@ -70,16 +67,16 @@ namespace Sparkle.Core.Presentation
             if (!this.formControl.Save()) return;
             if (!this.formControl.Facade.IsError)
             {
-                this.FormDto.DtoList.Add(this.FormDto.Dto);
+                this.formControl.FormDto.DtoList.Add(this.formControl.FormDto.Dto);
                 if (this.cboList.Items.Count > 0)
                 {
-                    this.cboList.Items.Add(this.FormDto.Dto);
+                    this.cboList.Items.Add(this.formControl.FormDto.Dto);
                 }
                 else
                 {
-                    this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                    this.cboList.Bind(this.formControl.FormDto.DtoList, this.ListDisplayName);
                 }
-                this.formControl.ResetForm();
+                this.formControl.ClearForm();
             }
             new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
         }
@@ -89,8 +86,8 @@ namespace Sparkle.Core.Presentation
             if (!this.formControl.Change()) return;
             if (!this.formControl.Facade.IsError)
             {
-                this.formControl.ResetForm();
-                this.cboList.Bind(this.FormDto.DtoList, this.ListDisplayName);
+                this.formControl.ClearForm();
+                this.cboList.Bind(this.formControl.FormDto.DtoList, this.ListDisplayName);
                 this.cboList.Text = String.Empty;
                 this.cboList.SelectedIndex = -1;
             }
@@ -105,9 +102,9 @@ namespace Sparkle.Core.Presentation
                 this.formControl.Facade.Delete();
                 if (!this.formControl.Facade.IsError)
                 {
-                    this.FormDto.DtoList.Remove(this.cboList.SelectedItem as Dto);
+                    this.formControl.FormDto.DtoList.Remove(this.cboList.SelectedItem as Dto);
                     this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
-                    this.formControl.ResetForm();
+                    this.formControl.ClearForm();
                 }
                 new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
             }
@@ -117,8 +114,8 @@ namespace Sparkle.Core.Presentation
         {
             if (this.cboList.SelectedItem != null)
             {
-                this.FormDto.Dto = this.cboList.SelectedItem as Dto;
-                this.formControl.AssignFormControls();
+                this.formControl.FormDto.Dto = this.cboList.SelectedItem as Dto;
+                this.formControl.PopulateDtoToFormControl();
             }
         }
 
@@ -134,7 +131,7 @@ namespace Sparkle.Core.Presentation
 
         protected void Bind()
         {
-            this.cboList.Bind((this.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
+            this.cboList.Bind((this.formControl.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
         }
         
         #region Mandatory Hook

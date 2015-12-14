@@ -23,7 +23,7 @@ namespace Sparkle.School.WinForm.Section
 
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.txtName.Focus();

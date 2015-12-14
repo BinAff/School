@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 using Conf = Crystal.Configuration.Component;
@@ -47,6 +48,18 @@ namespace Sparkle.Student.Component.PersonalInformation.Guardian
             base.AddInParameter("@ProfileId", DbType.Int64, (this.Data as Data).Profile.Id);
             base.AddInParameter("@RelationshipId", DbType.String, (this.Data as Data).Relationship.Id);
             base.AddInParameter("@PersonalInformationId", DbType.String, (this.ParentData as PersonalInformation.Data).Id);
+        }
+
+        protected override void AttachChildrenDataToParent(System.Collections.Generic.List<BinAff.Core.Data> dataList)
+        {
+            if (dataList.Count > 0)
+            {
+                (this.ParentData as PersonalInformation.Data).GuardianList = new List<BinAff.Core.Data>();
+                foreach (BinAff.Core.Data data in dataList)
+                {
+                    (this.ParentData as PersonalInformation.Data).GuardianList.Add(data);
+                }
+            }
         }
 
     }

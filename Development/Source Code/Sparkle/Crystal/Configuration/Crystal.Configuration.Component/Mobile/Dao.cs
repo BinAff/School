@@ -48,7 +48,9 @@ namespace Crystal.Configuration.Component.Mobile
             Data data = (Data)this.Data;
             this.CreateConnection();
             this.CreateCommand("Configuration.MobileReadDuplicate");
-            this.AddInParameter("@Number", DbType.Int64, data.Number);
+            this.AddInParameter("@MobileNumber", DbType.Int64, data.Number);
+            this.AddInParameter("@GuardianProfileId", DbType.Int64, this.ParentData.Id);
+            this.AddInParameter("@CountryId", DbType.Int64, data.Country.Id);
 
             DataSet ds = this.ExecuteDataSet();
 

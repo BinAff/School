@@ -75,7 +75,7 @@ namespace Sparkle.School.Facade.Class
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
             (this.FormDto as FormDto).SectionList = new Section.Server(null).ReadAll<Section.Dto>();
             (this.FormDto as FormDto).StandardList = new Standard.Server(null).ReadAll<Standard.Dto>();

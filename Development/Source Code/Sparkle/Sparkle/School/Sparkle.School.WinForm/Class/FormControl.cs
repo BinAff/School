@@ -26,7 +26,7 @@ namespace Sparkle.School.WinForm.Class
             this.cboSection.Bind((this.FormDto as Fac.FormDto).SectionList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.cboStandard.Text = String.Empty;
             this.cboStandard.SelectedIndex = -1;

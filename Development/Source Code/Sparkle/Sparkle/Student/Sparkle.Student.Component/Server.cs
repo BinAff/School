@@ -1,4 +1,8 @@
-﻿namespace Sparkle.Student.Component
+﻿using System;
+
+using Schl = Sparkle.School.Component;
+
+namespace Sparkle.Student.Component
 {
 
     public class Server : BinAff.Core.Crud
@@ -29,11 +33,37 @@
 
         protected override void CreateChildren()
         {
-            //base.AddChild(new Crystal.Configuration.Component.State.Server((this.Data as Data).ResidentialAddress.State)
-            //{
-            //    Type = ChildType.Independent,
-            //    IsReadOnly = true,
-            //});
+            base.AddChild(new Category.Server((this.Data as Data).Category)
+            {
+                Type = ChildType.Independent,
+                IsReadOnly = true,
+            });
+            base.AddChild(new Schl.Standard.Server((this.Data as Data).Standard)
+            {
+                Type = ChildType.Independent,
+                IsReadOnly = true,
+            });
+            base.AddChild(new Schl.Section.Server((this.Data as Data).Section)
+            {
+                Type = ChildType.Independent,
+                IsReadOnly = true,
+            });
+            base.AddChild(new PersonalInformation.Server((this.Data as Data).PersonalInformation)
+            {
+                Type = ChildType.Dependent,
+            });
+        }
+
+        protected override BinAff.Core.ReturnObject<Boolean> CreateBefore()
+        {
+            if (this.actionType == Action.Create)
+            {
+                (this.Data as Data).StudentId = String.Format("STUD-{0}-1", DateTime.Today.Year);//Need algorithm
+            }
+            return new BinAff.Core.ReturnObject<Boolean>
+            {
+                Value = true,
+            };
         }
 
     }

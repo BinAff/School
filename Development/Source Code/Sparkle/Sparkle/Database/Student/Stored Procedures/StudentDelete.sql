@@ -1,11 +1,11 @@
-﻿CREATE PROCEDURE [Student].[StudentDelete]
- (
+﻿CREATE PROCEDURE Student.StudentDelete
+(
 	@Id Numeric(10,0)
- )
- As
- BEGIN
- 
+)
+As
+BEGIN
+
 	DELETE FROM Student.Student
 	WHERE Id = @Id
 	
- End
+End

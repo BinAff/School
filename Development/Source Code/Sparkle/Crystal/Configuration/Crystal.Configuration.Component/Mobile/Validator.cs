@@ -25,7 +25,7 @@ namespace Crystal.Configuration.Component.Mobile
             {
                 retMsg.Add(new Message("Number cannot be empty.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Mobile number already exists.", Message.Type.Error));
             }

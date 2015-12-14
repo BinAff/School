@@ -23,7 +23,7 @@ namespace Sparkle.Configuration.WinForm.Gender
 
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.txtName.Focus();

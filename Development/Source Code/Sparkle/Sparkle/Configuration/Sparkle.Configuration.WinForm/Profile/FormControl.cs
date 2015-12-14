@@ -25,7 +25,7 @@ namespace Sparkle.Configuration.WinForm.Profile
             this.cboOccupation.Bind((this.FormDto as Fac.FormDto).OccupationList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtFirstName.Text = String.Empty;
             this.txtFirstName.Focus();

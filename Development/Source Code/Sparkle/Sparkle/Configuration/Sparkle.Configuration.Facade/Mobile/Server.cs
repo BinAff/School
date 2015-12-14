@@ -76,7 +76,7 @@ namespace Sparkle.Configuration.Facade.Mobile
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
             (this.FormDto as FormDto).CountryList = new Country.Server(null).ReadAll<Country.Dto>();
         }

@@ -44,9 +44,9 @@ namespace Crystal.Configuration.Component.Profile
             {
                 retMsg.Add(new Message("Occupation cannot be empty.", Message.Type.Error));
             }
-            if (data.ContactInformation == null || data.ContactInformation.Id == 0)
+            if (data.ContactInformation == null)
             {
-                retMsg.Add(new Message("Occupation cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Contact Information cannot be empty.", Message.Type.Error));
             }
 
             return retMsg;

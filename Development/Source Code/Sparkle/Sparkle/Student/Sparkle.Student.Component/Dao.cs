@@ -32,7 +32,7 @@ namespace Sparkle.Student.Component
             dt.MiddleName = Convert.IsDBNull(dr["MiddleName"]) ? String.Empty : Convert.ToString(dr["MiddleName"]);
             dt.LastName = Convert.IsDBNull(dr["LastName"]) ? String.Empty : Convert.ToString(dr["LastName"]);
             dt.RollNumber = Convert.IsDBNull(dr["RollNumber"]) ? Convert.ToInt16(0) : Convert.ToInt16(dr["RollNumber"]);
-            //dt.Image = Convert.IsDBNull(dr["Image"]) ? Convert.ToByte(null) : Convert.ToByte(dr["Image"]);
+            //dt.Photo = Convert.IsDBNull(dr["Photo"]) ? Convert.ToByte(null) : Convert.ToByte(dr["Photo"]);
 
             if (dr["CategoryId"] != null)
             {
@@ -41,18 +41,18 @@ namespace Sparkle.Student.Component
                     Id = Convert.IsDBNull(dr["CategoryId"]) ? 0 : Convert.ToInt64(dr["CategoryId"])
                 };
             }
-            if (dr["ClassId"] != null)
+            if (dr["StandardId"] != null)
             {
-                dt.Class = new Sparkle.School.Component.Class.Data
+                dt.Standard = new Sparkle.School.Component.Standard.Data
                 {
-                    Id = Convert.IsDBNull(dr["ClassId"]) ? 0 : Convert.ToInt64(dr["ClassId"])
+                    Id = Convert.IsDBNull(dr["StandardId"]) ? 0 : Convert.ToInt64(dr["StandardId"])
                 };
             }
-            if (dr["PersonalInformationId"] != null)
+            if (dr["SectionId"] != null)
             {
-                dt.PersonalInformation = new PersonalInformation.Data
+                dt.Section = new Sparkle.School.Component.Section.Data
                 {
-                    Id = Convert.IsDBNull(dr["PersonalInformationId"]) ? 0 : Convert.ToInt64(dr["PersonalInformationId"])
+                    Id = Convert.IsDBNull(dr["SectionId"]) ? 0 : Convert.ToInt64(dr["SectionId"])
                 };
             }
             return dt;
@@ -60,14 +60,15 @@ namespace Sparkle.Student.Component
 
         protected override void AssignParameter(String procedureName)
         {
+            base.AddInParameter("@StudentId", DbType.String, (this.Data as Data).StudentId);
             base.AddInParameter("@FirstName", DbType.String, (this.Data as Data).FirstName);
             base.AddInParameter("@MiddleName", DbType.String, (this.Data as Data).MiddleName);
             base.AddInParameter("@LastName", DbType.String, (this.Data as Data).LastName);
             base.AddInParameter("@RollNumber", DbType.Int64, (this.Data as Data).RollNumber);
-            base.AddInParameter("@Image", DbType.Byte, (this.Data as Data).Image);
+            base.AddInParameter("@Photo", DbType.Byte, (this.Data as Data).Photo);
             base.AddInParameter("@CategoryId", DbType.String, (this.Data as Data).Category.Id);
-            base.AddInParameter("@ClassId", DbType.String, (this.Data as Data).Class.Id);
-            base.AddInParameter("@PersonalInformationId", DbType.String, (this.Data as Data).PersonalInformation.Id);
+            base.AddInParameter("@StandardId", DbType.String, (this.Data as Data).Standard.Id);
+            base.AddInParameter("@SectionId", DbType.String, (this.Data as Data).Section.Id);
         }
 
     }

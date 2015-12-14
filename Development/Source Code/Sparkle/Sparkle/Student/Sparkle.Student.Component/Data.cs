@@ -6,6 +6,8 @@ namespace Sparkle.Student.Component
     public class Data : BinAff.Core.Data
     {
 
+        public String StudentId { get; internal set; }
+
         public String FirstName { get; set; }
 
         public String MiddleName { get; set; }
@@ -14,11 +16,13 @@ namespace Sparkle.Student.Component
 
         public Int16 RollNumber { get; set; }
 
-        public Byte[] Image { get; set; }
+        public Byte[] Photo { get; set; }
 
         public Category.Data Category { get; set; }
 
-        public Sparkle.School.Component.Class.Data Class { get; set; }
+        public Sparkle.School.Component.Standard.Data Standard { get; set; }
+
+        public Sparkle.School.Component.Section.Data Section { get; set; }
 
         public PersonalInformation.Data PersonalInformation { get; set; }
 

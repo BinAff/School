@@ -12,13 +12,13 @@ namespace Sparkle.Core.Facade
         public Server(FormDto formDto)
             : base(formDto)
         {
-            this.FormDto = this.InstantiateFormDto();
+            base.FormDto = this.InstantiateFormDto();
             this.Instantiate();
         }
 
         protected abstract void Instantiate();
 
-        protected abstract FormDto InstantiateFormDto();
+        protected internal abstract FormDto InstantiateFormDto();
 
         protected abstract Server InstantiateFacade();
 
@@ -26,7 +26,7 @@ namespace Sparkle.Core.Facade
 
         public abstract void AssignData();
 
-        public virtual void LoadControl()
+        public virtual void LoadListForControl()
         {
 
         }

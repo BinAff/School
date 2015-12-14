@@ -8,7 +8,8 @@
 	@RollNumber Varchar(50),
 	@Photo Varbinary(1024) = null,
 	@CategoryId Bigint,
-	@ClassId Bigint
+	@StandardId Bigint,
+	@SectionId Bigint
 )
 AS
 BEGIN
@@ -22,7 +23,8 @@ BEGIN
 		RollNumber = @RollNumber,
 		Photo = @Photo,
 		CategoryId = @CategoryId,
-		ClassId = @ClassId
+		StandardId = @StandardId,
+		SectionId = @SectionId
 	WHERE Id = @Id
 
 END

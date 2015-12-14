@@ -56,7 +56,7 @@ namespace Sparkle.Student.Component.PersonalInformation
                 Type = ChildType.Independent,
                 IsReadOnly = true,
             });
-            base.AddChild(new Conf.ContactInformation.Server((this.Data as Data).CurrentAddress)
+            base.AddChild(new Conf.ContactInformation.Server((this.Data as Data).PresentAddress)
             {
                 Type = ChildType.Independent,
             });

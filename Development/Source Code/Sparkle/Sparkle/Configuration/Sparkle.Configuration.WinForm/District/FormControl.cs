@@ -25,7 +25,7 @@ namespace Sparkle.Configuration.WinForm.District
             this.cboState.Bind((this.FormDto as Fac.FormDto).StateList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.cboState.SelectedIndex = -1;

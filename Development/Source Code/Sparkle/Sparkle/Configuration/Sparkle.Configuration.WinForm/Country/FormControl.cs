@@ -23,7 +23,7 @@ namespace Sparkle.Configuration.WinForm.Country
 
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.txtCode.Text = String.Empty;

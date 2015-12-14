@@ -9,7 +9,7 @@ namespace Sparkle.Configuration.Facade.Mobile
         /// <summary>
         /// Mobile number
         /// </summary>
-        public Int32 Number { get; set; }
+        public Int64 Number { get; set; }
 
         /// <summary>
         /// Country where the state belongs to

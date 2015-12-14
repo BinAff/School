@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Schl = Sparkle.School.Facade;
+
 namespace Sparkle.Student.Facade
 {
 
@@ -18,9 +20,19 @@ namespace Sparkle.Student.Facade
 
         public Category.Dto Category { get; set; }
 
-        public Sparkle.School.Facade.Class.Dto Class { get; set; }
+        public Schl.Standard.Dto Standard { get; set; }
+
+        public Schl.Section.Dto Section { get; set; }
 
         public PersonalInformation.Dto PersonalInformation { get; set; }
+
+        public Dto()
+        {
+            this.Category = new Category.Dto();
+            this.Standard = new Schl.Standard.Dto();
+            this.Section = new Schl.Section.Dto();
+            this.PersonalInformation = new PersonalInformation.Dto();
+        }
 
     }
 

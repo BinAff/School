@@ -23,7 +23,7 @@ namespace Sparkle.Student.Component.PersonalInformation
 
         public Conf.Gender.Data Gender { get; set; }
 
-        public Conf.ContactInformation.Data CurrentAddress { get; set; }
+        public Conf.ContactInformation.Data PresentAddress { get; set; }
 
         public Conf.ContactInformation.Data PermanentAddress { get; set; }
 

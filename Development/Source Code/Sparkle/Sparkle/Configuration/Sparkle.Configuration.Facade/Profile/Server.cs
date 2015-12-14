@@ -101,7 +101,7 @@ namespace Sparkle.Configuration.Facade.Profile
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
             (this.FormDto as FormDto).OccupationList = AppCache.Current.Cache["OccupationList"] as List<Occupation.Dto>;
         }

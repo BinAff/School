@@ -6,7 +6,7 @@ As
 BEGIN
 
 	SELECT  Id, StudentId, DateOfBirth, BirthPlace, MothertongueId,
-		ReligionId, CasteId, SubCasteId, GenderId, PresentAddressId, PermananentAddressId
+		ReligionId, CasteId, SubCasteId, GenderId, PresentAddressId, PermanentAddressId
 	FROM Student.PersonalInformation WITH (NOLOCK)
 	WHERE Id = @Id
 	

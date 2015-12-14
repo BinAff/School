@@ -54,7 +54,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
             dto.Caste = new ConfFac.Caste.Server(null).Convert(data.Caste) as ConfFac.Caste.Dto;
             dto.SubCaste = new ConfFac.SubCaste.Server(null).Convert(data.SubCaste) as ConfFac.SubCaste.Dto;
             dto.Gender = new ConfFac.Gender.Server(null).Convert(data.Gender) as ConfFac.Gender.Dto;
-            dto.CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(data.CurrentAddress) as ConfFac.ContactInformation.Dto;
+            dto.CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(data.PresentAddress) as ConfFac.ContactInformation.Dto;
             dto.PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(data.PermanentAddress) as ConfFac.ContactInformation.Dto;
             dto.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(data.GuardianList);
         }
@@ -71,7 +71,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
             data.Caste = new ConfFac.Caste.Server(null).Convert(dto.Caste) as Conf.Caste.Data;
             data.SubCaste = new ConfFac.SubCaste.Server(null).Convert(dto.SubCaste) as Conf.SubCaste.Data;
             data.Gender = new ConfFac.Gender.Server(null).Convert(dto.Gender) as Conf.Gender.Data;
-            data.CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(dto.CurrentAddress) as Conf.ContactInformation.Data;
+            data.PresentAddress = new ConfFac.ContactInformation.Server(null).Convert(dto.CurrentAddress) as Conf.ContactInformation.Data;
             data.PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dto.PermanentAddress) as Conf.ContactInformation.Data;
             data.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dto.GuardianList);
         }
@@ -89,7 +89,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
                 Caste = new ConfFac.Caste.Server(null).Convert(dt.Caste) as ConfFac.Caste.Dto,
                 SubCaste = new ConfFac.SubCaste.Server(null).Convert(dt.SubCaste) as ConfFac.SubCaste.Dto,
                 Gender = new ConfFac.Gender.Server(null).Convert(dt.Gender) as ConfFac.Gender.Dto,
-                CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.CurrentAddress) as ConfFac.ContactInformation.Dto,
+                CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PresentAddress) as ConfFac.ContactInformation.Dto,
                 PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PermanentAddress) as ConfFac.ContactInformation.Dto,
                 GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
             };
@@ -108,13 +108,13 @@ namespace Sparkle.Student.Facade.PersonalInformation
                 Caste = new ConfFac.Caste.Server(null).Convert(dt.Caste) as Conf.Caste.Data,
                 SubCaste = new ConfFac.SubCaste.Server(null).Convert(dt.SubCaste) as Conf.SubCaste.Data,
                 Gender = new ConfFac.Gender.Server(null).Convert(dt.Gender) as Conf.Gender.Data,
-                CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.CurrentAddress) as Conf.ContactInformation.Data,
+                PresentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.CurrentAddress) as Conf.ContactInformation.Data,
                 PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PermanentAddress) as Conf.ContactInformation.Data,
                 GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
             (this.FormDto as FormDto).GenderList = AppChache.Current.Cache["GenderList"] as List<ConfFac.Gender.Dto>;
             (this.FormDto as FormDto).MotherTongueList = AppChache.Current.Cache["MotherTongueList"] as List<ConfFac.MotherTongue.Dto>;

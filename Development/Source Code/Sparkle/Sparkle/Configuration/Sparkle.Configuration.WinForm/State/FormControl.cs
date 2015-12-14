@@ -25,7 +25,7 @@ namespace Sparkle.Configuration.WinForm.State
             this.cboCountry.Bind((this.FormDto as Fac.FormDto).CountryList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.cboCountry.SelectedIndex = -1;

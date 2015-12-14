@@ -9,7 +9,7 @@ namespace Sparkle.Core.Presentation
     public partial class FormControl : UserControl
     {
 
-        protected internal FormDto FormDto { get; set; }
+        public FormDto FormDto { get; protected internal set; }
         protected internal Server Facade { get; set; }
 
         protected ErrorProvider ErrorProvider
@@ -19,6 +19,8 @@ namespace Sparkle.Core.Presentation
                 return this.errorProvider;
             }
         }
+
+        private delegate void F(FormControl formControl);
 
         public FormControl()
         {
@@ -32,41 +34,18 @@ namespace Sparkle.Core.Presentation
 
         public void LoadForm()
         {
-            this.InistantiateControls(this);
-        }
-
-        private void InistantiateControls(System.Windows.Forms.Control ctrl)
-        {
-            FormControl frmCtrl = ctrl as FormControl;
-            if (frmCtrl != null)
-            {
-                frmCtrl.Facade = frmCtrl.InstantiateFacade();
-                frmCtrl.FormDto = frmCtrl.Facade.FormDto as FormDto;
-                frmCtrl.Facade.LoadControl();
-                frmCtrl.Bind();
-            }
-            Control.ControlCollection colection = ctrl.Controls;
-            if (colection.Count > 0)
-            {
-                foreach (Control ctrl1 in colection)
-                {
-                    this.InistantiateControls(ctrl1);
-                }
-            }
-            else
-            {
-                return;
-            }
+            this.InistantiateControls();
+            this.BindDataToControls();
         }
 
         internal Boolean Save()
         {
             if (this.ValidateForm())
             {
-                this.AssignDto();
+                this.AssignDtoFromControls();
                 this.FormDto.Dto.Id = 0;
                 this.Facade.Add();
-                return true;
+                return this.Facade.IsError;
             }
             return false;
         }
@@ -75,12 +54,79 @@ namespace Sparkle.Core.Presentation
         {
             if (this.ValidateForm())
             {
-                this.AssignDto();
+                this.AssignDtoFromControls();
                 this.Facade.Change();
                 return true;
             }
             return false;
         }
+
+        internal void ResetForm()
+        {
+            this.RecurseFormControls(this, delegate(FormControl frmCtrl)
+            {
+                frmCtrl.ClearForm();
+            });
+        }
+
+        internal void PopulateDtoToFormControl()
+        {
+            this.RecurseFormControls(this, delegate(FormControl frmCtrl)
+            {
+                frmCtrl.AttachDtoToChildControl();
+                frmCtrl.AssignFormControls();
+            });
+        }
+
+        private void InistantiateControls()
+        {
+            this.RecurseFormControls(this, delegate(FormControl frmCtrl)
+            {
+                frmCtrl.Facade = frmCtrl.InstantiateFacade();
+                frmCtrl.FormDto = frmCtrl.Facade.FormDto as FormDto;
+            });
+        }
+
+        private void BindDataToControls()
+        {
+            this.RecurseFormControls(this, delegate(FormControl frmCtrl)
+            {
+                frmCtrl.AttachDtoToChildControl();
+                frmCtrl.Facade.LoadListForControl();
+                frmCtrl.Bind();
+            });
+        }
+
+        private void AssignDtoFromControls()
+        {
+            this.RecurseFormControls(this, delegate(FormControl frmCtrl)
+            {
+                frmCtrl.AssignDto();
+            });
+        }
+
+        private void RecurseFormControls(System.Windows.Forms.Control ctrl, F action)
+        {
+            FormControl frmCtrl = ctrl as FormControl;
+            if (frmCtrl != null)
+            {
+                action(frmCtrl);
+            }
+            Control.ControlCollection colection = ctrl.Controls;
+            if (colection.Count > 0)
+            {
+                foreach (Control ctrl1 in colection)
+                {
+                    this.RecurseFormControls(ctrl1, action);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        #region Mandatory Hook
 
         protected internal virtual void Bind()
         {
@@ -107,9 +153,16 @@ namespace Sparkle.Core.Presentation
             throw new System.NotImplementedException();
         }
 
-        protected internal virtual void ResetForm()
+        protected internal virtual void ClearForm()
         {
             throw new System.NotImplementedException();
+        }
+
+        #endregion
+
+        protected internal virtual void AttachDtoToChildControl()
+        {
+
         }
 
     }

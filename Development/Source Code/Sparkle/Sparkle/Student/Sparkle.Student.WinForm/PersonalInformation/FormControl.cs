@@ -22,6 +22,12 @@ namespace Sparkle.Student.WinForm.PersonalInformation
             return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
+        protected override void AttachDtoToChildControl()
+        {
+            this.ucCurrentAddress.FormDto.Dto = ((this.FormDto as Fac.FormDto).Dto as Fac.Dto).CurrentAddress;
+            this.ucPermanantAddress.FormDto.Dto = ((this.FormDto as Fac.FormDto).Dto as Fac.Dto).PermanentAddress;
+        }
+
         protected override void Bind()
         {
             this.cboGender.Bind((this.FormDto as Fac.FormDto).GenderList, "Name");
@@ -31,7 +37,7 @@ namespace Sparkle.Student.WinForm.PersonalInformation
             this.cboSubCaste.Bind((this.FormDto as Fac.FormDto).SubCasteList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.dtpDateOfBirth.Value = DateTime.Now;
             this.txtPlaceOfBirth.Text = String.Empty;

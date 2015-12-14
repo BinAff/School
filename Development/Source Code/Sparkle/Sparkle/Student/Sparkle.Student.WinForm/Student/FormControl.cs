@@ -13,6 +13,7 @@ namespace Sparkle.Student.WinForm.Student
     {
 
         public FormControl()
+            : base()
         {
             InitializeComponent();
         }
@@ -22,13 +23,18 @@ namespace Sparkle.Student.WinForm.Student
             return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
+        protected override void AttachDtoToChildControl()
+        {
+            this.ucPersonalInformation.FormDto.Dto = ((this.FormDto as Fac.FormDto).Dto as Fac.Dto).PersonalInformation;
+        }
+
         protected override void Bind()
         {
             this.cboStandard.Bind((this.FormDto as Fac.FormDto).StandardList, "Name");
             this.cboSection.Bind((this.FormDto as Fac.FormDto).SectionList, "Name");
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtFirstName.Text = String.Empty;
             this.txtMiddleName.Text = String.Empty;
@@ -38,6 +44,7 @@ namespace Sparkle.Student.WinForm.Student
             this.cboSection.SelectedIndex = -1;
             this.cboSection.Text = String.Empty;
             this.txtRollNumber.Text = String.Empty;
+            this.tbcMain.SelectTab(this.tbpGeneral);
             this.txtFirstName.Focus();
         }
 
@@ -47,12 +54,10 @@ namespace Sparkle.Student.WinForm.Student
             dto.FirstName = this.txtFirstName.Text;
             dto.MiddleName = this.txtMiddleName.Text;
             dto.LastName = this.txtLastName.Text;
-            dto.Class = new SchlFac.Class.Dto
-            {
-                Standard = this.cboStandard.SelectedItem as SchlFac.Standard.Dto,
-                Section = this.cboSection.SelectedItem as SchlFac.Section.Dto,
-            };
+            dto.Standard = this.cboStandard.SelectedItem as SchlFac.Standard.Dto;
+            dto.Section = this.cboSection.SelectedItem as SchlFac.Section.Dto;
             dto.RollNumber = Convert.ToInt16(this.txtRollNumber.Text.Trim());
+            dto.Category.Id = 1; //Hardcoded
         }
 
         protected override void AssignFormControls()
@@ -61,9 +66,11 @@ namespace Sparkle.Student.WinForm.Student
             this.txtFirstName.Text = dto.FirstName;
             this.txtMiddleName.Text = dto.MiddleName;
             this.txtLastName.Text = dto.LastName;
-            this.cboStandard.SelectedItem = (this.FormDto as Facade.FormDto).StandardList.FindLast((p) => { return p.Id == dto.Class.Standard.Id; });
-            this.cboSection.SelectedItem = (this.FormDto as Facade.FormDto).SectionList.FindLast((p) => { return p.Id == dto.Class.Section.Id; });
+            this.cboStandard.SelectedItem = (this.FormDto as Facade.FormDto).StandardList.FindLast((p) => { return p.Id == dto.Standard.Id; });
+            this.cboSection.SelectedItem = (this.FormDto as Facade.FormDto).SectionList.FindLast((p) => { return p.Id == dto.Section.Id; });
             this.txtRollNumber.Text = Convert.ToString(dto.RollNumber);
+            this.tbcMain.SelectTab(this.tbpGeneral);
+            this.txtFirstName.Focus();
         }
 
         protected override Boolean ValidateForm()

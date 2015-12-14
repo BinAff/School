@@ -80,7 +80,7 @@ namespace Sparkle.Configuration.Facade.State
             };
         }
 
-        public override void LoadControl()
+        public override void LoadListForControl()
         {
             (this.FormDto as FormDto).CountryList = AppCache.Current.Cache["CountryList"] as List<Country.Dto>;
         }

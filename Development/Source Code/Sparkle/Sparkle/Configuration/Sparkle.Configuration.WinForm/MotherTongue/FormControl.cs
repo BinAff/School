@@ -23,7 +23,7 @@ namespace Sparkle.Configuration.WinForm.MotherTongue
 
         }
 
-        protected override void ResetForm()
+        protected override void ClearForm()
         {
             this.txtName.Text = String.Empty;
             this.txtName.Focus();
