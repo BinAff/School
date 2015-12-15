@@ -27,8 +27,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
 
         public Conf.ContactInformation.Dto PermanentAddress { get; set; }
 
-        public List<BinAff.Facade.Library.Dto> GuardianList { get; set; }
-
         public Dto()
         {
             this.MotherTongue = new Conf.MotherTongue.Dto();
@@ -38,7 +36,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
             this.Gender = new Conf.Gender.Dto();
             this.CurrentAddress = new Conf.ContactInformation.Dto();
             this.PermanentAddress = new Conf.ContactInformation.Dto();
-            this.GuardianList = new List<BinAff.Facade.Library.Dto>();
         }
 
     }

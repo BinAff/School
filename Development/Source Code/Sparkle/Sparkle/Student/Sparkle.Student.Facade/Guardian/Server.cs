@@ -4,9 +4,9 @@ using Conf = Crystal.Configuration.Component;
 
 using ConfFac = Sparkle.Configuration.Facade;
 
-using Comp = Sparkle.Student.Component.PersonalInformation.Guardian;
+using Comp = Sparkle.Student.Component.Guardian;
 
-namespace Sparkle.Student.Facade.PersonalInformation.Guardian
+namespace Sparkle.Student.Facade.Guardian
 {
 
     public class Server : Sparkle.Core.Facade.Server

@@ -48,6 +48,7 @@ namespace Sparkle.Student.Facade
             dto = this.Convert(base.ComponentData) as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
+            dto.StudentId = data.StudentId;
             dto.FirstName = data.FirstName;
             dto.MiddleName = data.MiddleName;
             dto.LastName = data.LastName;
@@ -56,6 +57,7 @@ namespace Sparkle.Student.Facade
             dto.Section = new SchlFac.Section.Server(null).Convert(data.Section) as SchlFac.Section.Dto;
             dto.PersonalInformation = new PersonalInformation.Server(null).Convert(data.PersonalInformation) as PersonalInformation.Dto;
             dto.Category = new Category.Server(null).Convert(data.Category) as Category.Dto;
+            dto.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(data.GuardianList);
         }
 
         public override void AssignData()
@@ -71,6 +73,26 @@ namespace Sparkle.Student.Facade
             data.Section = new SchlFac.Section.Server(null).Convert(dto.Section) as Schl.Section.Data;
             data.PersonalInformation = new PersonalInformation.Server(null).Convert(dto.PersonalInformation) as Comp.PersonalInformation.Data;
             data.Category = new Category.Server(null).Convert(dto.Category) as Comp.Category.Data;
+            data.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dto.GuardianList);
+        }
+
+        public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
+        {
+            Comp.Data dt = data as Comp.Data;
+            return new Dto
+            {
+                Id = dt.Id,
+                StudentId = dt.StudentId,
+                FirstName = dt.FirstName,
+                MiddleName = dt.MiddleName,
+                LastName = dt.LastName,
+                RollNumber = dt.RollNumber,
+                Standard = new SchlFac.Standard.Server(null).Convert(dt.Standard) as SchlFac.Standard.Dto,
+                Section = new SchlFac.Section.Server(null).Convert(dt.Section) as SchlFac.Section.Dto,
+                PersonalInformation = new PersonalInformation.Server(null).Convert(dt.PersonalInformation) as PersonalInformation.Dto,
+                GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
+                Category = new Category.Server(null).Convert(dt.Category) as Category.Dto,
+            };
         }
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)
@@ -86,24 +108,8 @@ namespace Sparkle.Student.Facade
                 Standard = new SchlFac.Standard.Server(null).Convert(dt.Standard) as Schl.Standard.Data,
                 Section = new SchlFac.Section.Server(null).Convert(dt.Section) as Schl.Section.Data,
                 PersonalInformation = new PersonalInformation.Server(null).Convert(dt.PersonalInformation) as Comp.PersonalInformation.Data,
+                GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
                 Category = new Category.Server(null).Convert(dt.Category) as Comp.Category.Data,
-            };
-        }
-
-        public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
-        {
-            Comp.Data dt = data as Comp.Data;
-            return new Dto
-            {
-                Id = dt.Id,
-                FirstName = dt.FirstName,
-                MiddleName = dt.MiddleName,
-                LastName = dt.LastName,
-                RollNumber = dt.RollNumber,
-                Standard = new SchlFac.Standard.Server(null).Convert(dt.Standard) as SchlFac.Standard.Dto,
-                Section = new SchlFac.Section.Server(null).Convert(dt.Section) as SchlFac.Section.Dto,
-                PersonalInformation = new PersonalInformation.Server(null).Convert(dt.PersonalInformation) as PersonalInformation.Dto,
-                Category = new Category.Server(null).Convert(dt.Category) as Category.Dto,
             };
         }
 

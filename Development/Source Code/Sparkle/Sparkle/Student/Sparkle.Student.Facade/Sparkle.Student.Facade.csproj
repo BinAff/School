@@ -52,11 +52,11 @@
     <Compile Include="Category\Server.cs" />
     <Compile Include="Dto.cs" />
     <Compile Include="FormDto.cs" />
+    <Compile Include="Guardian\Dto.cs" />
+    <Compile Include="Guardian\FormDto.cs" />
+    <Compile Include="Guardian\Server.cs" />
     <Compile Include="PersonalInformation\Dto.cs" />
     <Compile Include="PersonalInformation\FormDto.cs" />
-    <Compile Include="PersonalInformation\Guardian\Dto.cs" />
-    <Compile Include="PersonalInformation\Guardian\FormDto.cs" />
-    <Compile Include="PersonalInformation\Guardian\Server.cs" />
     <Compile Include="PersonalInformation\Sever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />

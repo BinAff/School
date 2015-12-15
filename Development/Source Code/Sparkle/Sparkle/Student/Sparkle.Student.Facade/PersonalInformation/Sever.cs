@@ -56,7 +56,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
             dto.Gender = new ConfFac.Gender.Server(null).Convert(data.Gender) as ConfFac.Gender.Dto;
             dto.CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(data.PresentAddress) as ConfFac.ContactInformation.Dto;
             dto.PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(data.PermanentAddress) as ConfFac.ContactInformation.Dto;
-            dto.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(data.GuardianList);
         }
 
         public override void AssignData()
@@ -73,7 +72,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
             data.Gender = new ConfFac.Gender.Server(null).Convert(dto.Gender) as Conf.Gender.Data;
             data.PresentAddress = new ConfFac.ContactInformation.Server(null).Convert(dto.CurrentAddress) as Conf.ContactInformation.Data;
             data.PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dto.PermanentAddress) as Conf.ContactInformation.Data;
-            data.GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dto.GuardianList);
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -91,7 +89,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
                 Gender = new ConfFac.Gender.Server(null).Convert(dt.Gender) as ConfFac.Gender.Dto,
                 CurrentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PresentAddress) as ConfFac.ContactInformation.Dto,
                 PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PermanentAddress) as ConfFac.ContactInformation.Dto,
-                GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
             };
         }
 
@@ -110,7 +107,6 @@ namespace Sparkle.Student.Facade.PersonalInformation
                 Gender = new ConfFac.Gender.Server(null).Convert(dt.Gender) as Conf.Gender.Data,
                 PresentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.CurrentAddress) as Conf.ContactInformation.Data,
                 PermanentAddress = new ConfFac.ContactInformation.Server(null).Convert(dt.PermanentAddress) as Conf.ContactInformation.Data,
-                GuardianList = new Guardian.Server(null).ConvertAll<BinAff.Core.Data, BinAff.Facade.Library.Dto>(dt.GuardianList),
             };
         }
 

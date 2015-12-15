@@ -1,6 +1,6 @@
 ﻿using Conf = Sparkle.Configuration.Facade;
 
-namespace Sparkle.Student.Facade.PersonalInformation.Guardian
+namespace Sparkle.Student.Facade.Guardian
 {
 
     public class Dto : Sparkle.Core.Facade.Dto
