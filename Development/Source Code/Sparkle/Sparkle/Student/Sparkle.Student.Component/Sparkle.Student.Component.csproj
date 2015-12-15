@@ -49,10 +49,6 @@
     <Compile Include="Data.cs" />
     <Compile Include="PersonalInformation\Dao.cs" />
     <Compile Include="PersonalInformation\Data.cs" />
-    <Compile Include="Guardian\Dao.cs" />
-    <Compile Include="Guardian\Data.cs" />
-    <Compile Include="Guardian\Server.cs" />
-    <Compile Include="Guardian\Validator.cs" />
     <Compile Include="PersonalInformation\Server.cs" />
     <Compile Include="PersonalInformation\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
