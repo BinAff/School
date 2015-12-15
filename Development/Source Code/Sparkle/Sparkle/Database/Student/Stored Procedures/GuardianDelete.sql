@@ -8,4 +8,4 @@ BEGIN
 	DELETE FROM Student.Guardian
 	WHERE Id = @Id
 	
-End
+END

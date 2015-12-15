@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE Student.GuardianUpdate
 (  
 	@Id Bigint,
-	@PersonalInformationId Bigint,
+	@StudentId Bigint,
 	@ProfileId Bigint,
 	@RelationshipId Bigint
 )
@@ -10,7 +10,7 @@ BEGIN
 
 	UPDATE Student.Guardian
 	SET
-		PersonalInformationId = @PersonalInformationId,
+		StudentId = @StudentId,
 		ProfileId = @ProfileId,
 		RelationshipId = @RelationshipId
 	WHERE Id = @Id

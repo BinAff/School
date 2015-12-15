@@ -2,7 +2,7 @@
 As
 BEGIN
 
-	SELECT Id, PersonalInformationId, ProfileId, RelationshipId
+	SELECT Id, StudentId, ProfileId, RelationshipId
 		FROM Student.Guardian WITH (NOLOCK)
 	
 END

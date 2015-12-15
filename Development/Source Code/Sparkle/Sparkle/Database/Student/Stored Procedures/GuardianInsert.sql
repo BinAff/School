@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE Student.GuardianInsert
 (
-	@PersonalInformationId Bigint,
+	@StudentId Bigint,
 	@ProfileId Bigint,
 	@RelationshipId Bigint,
 	@Id  Bigint OUTPUT
@@ -8,8 +8,8 @@
 AS
 BEGIN
 
-	INSERT INTO Student.Guardian(PersonalInformationId, ProfileId, RelationshipId)
-	VALUES(@PersonalInformationId, @ProfileId, @RelationshipId)   
+	INSERT INTO Student.Guardian(StudentId, ProfileId, RelationshipId)
+	VALUES(@StudentId, @ProfileId, @RelationshipId)   
 	SET @Id = @@IDENTITY
 	
 END

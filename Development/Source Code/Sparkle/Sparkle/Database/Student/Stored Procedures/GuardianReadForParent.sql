@@ -5,8 +5,8 @@
 AS
 BEGIN
 
-	SELECT Id, PersonalInformationId, ProfileId, RelationshipId
+	SELECT Id, StudentId, ProfileId, RelationshipId
 	FROM Student.Guardian WITH (NOLOCK)
-	WHERE PersonalInformationId = @ParentId
+	WHERE StudentId = @ParentId
 	
 END
