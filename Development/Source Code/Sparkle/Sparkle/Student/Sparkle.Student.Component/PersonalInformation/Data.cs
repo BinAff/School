@@ -27,8 +27,6 @@ namespace Sparkle.Student.Component.PersonalInformation
 
         public Conf.ContactInformation.Data PermanentAddress { get; set; }
 
-        public List<BinAff.Core.Data> GuardianList { get; set; }
-
     }
 
 }

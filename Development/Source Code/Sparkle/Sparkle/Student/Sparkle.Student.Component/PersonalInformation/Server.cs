@@ -64,10 +64,6 @@ namespace Sparkle.Student.Component.PersonalInformation
             {
                 Type = ChildType.Independent,
             });
-            base.AddChildren(new Guardian.Server(null)
-            {
-                Type = ChildType.Dependent,
-            }, (this.Data as Data).GuardianList);
         }
 
     }

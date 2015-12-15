@@ -36,6 +36,12 @@ namespace Sparkle.Student.Component
             {
                 msg.Add(new Message("Personal Information cannot be empty.", Message.Type.Error));
             }
+            //if (ValidationRule.IsNullOrEmpty(data.GuardianList)
+            //    || data.GuardianList.Count == 0 
+            //    || ValidationRule.IsNullOrEmpty(data.GuardianList[0]))
+            //{
+            //    msg.Add(new Message("At least one gurdian is required.", Message.Type.Error));
+            //}
             return msg;
         }
 

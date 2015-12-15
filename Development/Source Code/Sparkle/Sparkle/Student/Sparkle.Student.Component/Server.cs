@@ -52,14 +52,24 @@ namespace Sparkle.Student.Component
             {
                 Type = ChildType.Dependent,
             });
+            base.AddChildren(new Guardian.Server(null)
+            {
+                Type = ChildType.Dependent,
+            }, (this.Data as Data).GuardianList);
         }
 
         protected override BinAff.Core.ReturnObject<Boolean> CreateBefore()
         {
-            if (this.actionType == Action.Create)
+            (this.Data as Data).StudentId = String.Format("STUD-{0}-1", DateTime.Today.Year);//Need algorithm
+            return new BinAff.Core.ReturnObject<Boolean>
             {
-                (this.Data as Data).StudentId = String.Format("STUD-{0}-1", DateTime.Today.Year);//Need algorithm
-            }
+                Value = true,
+            };
+        }
+
+        protected override BinAff.Core.ReturnObject<Boolean> UpdateBefore()
+        {
+            (this.Data as Data).StudentId = String.Format("STUD-{0}-1", DateTime.Today.Year);//Need algorithm
             return new BinAff.Core.ReturnObject<Boolean>
             {
                 Value = true,

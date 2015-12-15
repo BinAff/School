@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Sparkle.Student.Component
 {
@@ -25,6 +26,8 @@ namespace Sparkle.Student.Component
         public Sparkle.School.Component.Section.Data Section { get; set; }
 
         public PersonalInformation.Data PersonalInformation { get; set; }
+
+        public List<BinAff.Core.Data> GuardianList { get; set; }
 
     }
 
