@@ -40,6 +40,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtAdmissionNumber = new System.Windows.Forms.TextBox();
             this.tbpPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ucPersonalInformation = new Sparkle.Student.WinForm.PersonalInformation.FormControl();
             this.tbpGeneral = new System.Windows.Forms.TabPage();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblStudentId = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.tbcMain = new System.Windows.Forms.TabControl();
             this.tbpGuardians = new System.Windows.Forms.TabPage();
-            this.ucPersonalInformation = new Sparkle.Student.WinForm.PersonalInformation.FormControl();
             this.tbpAdmission.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tbpPersonalInfo.SuspendLayout();
@@ -199,6 +199,16 @@
             this.tbpPersonalInfo.Text = "Personal Information";
             this.tbpPersonalInfo.UseVisualStyleBackColor = true;
             // 
+            // ucPersonalInformation
+            // 
+            this.ucPersonalInformation.AutoScroll = true;
+            this.ucPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPersonalInformation.Location = new System.Drawing.Point(3, 3);
+            this.ucPersonalInformation.MinimumSize = new System.Drawing.Size(420, 612);
+            this.ucPersonalInformation.Name = "ucPersonalInformation";
+            this.ucPersonalInformation.Size = new System.Drawing.Size(550, 616);
+            this.ucPersonalInformation.TabIndex = 0;
+            // 
             // tbpGeneral
             // 
             this.tbpGeneral.Controls.Add(this.tlpMain);
@@ -257,7 +267,6 @@
             this.lblStudentId.Name = "lblStudentId";
             this.lblStudentId.Size = new System.Drawing.Size(249, 24);
             this.lblStudentId.TabIndex = 16;
-            this.lblStudentId.Text = "YYYY-XXXX";
             this.lblStudentId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -317,7 +326,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(249, 20);
             this.txtFirstName.TabIndex = 0;
-            this.txtFirstName.Text = "Arpan";
             // 
             // txtMiddleName
             // 
@@ -334,7 +342,6 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(249, 20);
             this.txtLastName.TabIndex = 3;
-            this.txtLastName.Text = "Kar";
             // 
             // txtRollNumber
             // 
@@ -429,16 +436,6 @@
             this.tbpGuardians.TabIndex = 2;
             this.tbpGuardians.Text = "Guardians";
             this.tbpGuardians.UseVisualStyleBackColor = true;
-            // 
-            // ucPersonalInformation
-            // 
-            this.ucPersonalInformation.AutoScroll = true;
-            this.ucPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPersonalInformation.Location = new System.Drawing.Point(3, 3);
-            this.ucPersonalInformation.MinimumSize = new System.Drawing.Size(420, 612);
-            this.ucPersonalInformation.Name = "ucPersonalInformation";
-            this.ucPersonalInformation.Size = new System.Drawing.Size(550, 616);
-            this.ucPersonalInformation.TabIndex = 0;
             // 
             // FormControl
             // 

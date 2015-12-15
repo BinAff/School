@@ -36,6 +36,7 @@ namespace Sparkle.Student.WinForm.Student
 
         protected override void ClearForm()
         {
+            this.lblStudentId.Text = String.Empty;
             this.txtFirstName.Text = String.Empty;
             this.txtMiddleName.Text = String.Empty;
             this.txtLastName.Text = String.Empty;
@@ -63,6 +64,7 @@ namespace Sparkle.Student.WinForm.Student
         protected override void AssignFormControls()
         {
             Facade.Dto dto = base.FormDto.Dto as Facade.Dto;
+            this.lblStudentId.Text = dto.StudentId;
             this.txtFirstName.Text = dto.FirstName;
             this.txtMiddleName.Text = dto.MiddleName;
             this.txtLastName.Text = dto.LastName;

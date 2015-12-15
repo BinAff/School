@@ -45,7 +45,7 @@ namespace Sparkle.Core.Presentation
                 this.AssignDtoFromControls();
                 this.FormDto.Dto.Id = 0;
                 this.Facade.Add();
-                return this.Facade.IsError;
+                return !this.Facade.IsError;
             }
             return false;
         }
@@ -56,7 +56,7 @@ namespace Sparkle.Core.Presentation
             {
                 this.AssignDtoFromControls();
                 this.Facade.Change();
-                return true;
+                return !this.Facade.IsError;
             }
             return false;
         }

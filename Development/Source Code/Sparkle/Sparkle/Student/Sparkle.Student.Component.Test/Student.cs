@@ -46,31 +46,31 @@ namespace Sparkle.Student.Component.Test
                         Address = "Boalia",
                         District = new Conf.District.Data { Id = 2 },
                         Pin = 700084,
-                    },
-                    GuardianList = new System.Collections.Generic.List<BinAff.Core.Data>
+                    },                    
+                },
+                GuardianList = new System.Collections.Generic.List<BinAff.Core.Data>
+                {
+                    new Stud.Guardian.Data
                     {
-                        new Stud.PersonalInformation.Guardian.Data
+                        Profile = new Conf.Profile.Data
                         {
-                            Profile = new Conf.Profile.Data
+                            FirstName = "Ajoy",
+                            LastName = "Kar",
+                            Mobile = new Conf.Mobile.Data
                             {
-                                FirstName = "Ajoy",
-                                LastName = "Kar",
-                                Mobile = new Conf.Mobile.Data
-                                {
-                                    Number = 9875403258,
-                                    Country = new Conf.Country.Data { Id = 2},
-                                },
-                                Occupation = new Conf.Occupation.Data { Id = 1},
-                                ContactInformation = new Conf.ContactInformation.Data
-                                {
-                                    Address = "Garia",
-                                    District = new Conf.District.Data { Id = 1 },
-                                    Pin = 700084
-                                },
+                                Number = 9875403258,
+                                Country = new Conf.Country.Data { Id = 2},
                             },
-                            Relationship = new Conf.Relationship.Data { Id = 1},
-                        }
-                    },
+                            Occupation = new Conf.Occupation.Data { Id = 1},
+                            ContactInformation = new Conf.ContactInformation.Data
+                            {
+                                Address = "Garia",
+                                District = new Conf.District.Data { Id = 1 },
+                                Pin = 700084
+                            },
+                        },
+                        Relationship = new Conf.Relationship.Data { Id = 1},
+                    }
                 },
             };
             BinAff.Core.Crud server = new Server(data);
