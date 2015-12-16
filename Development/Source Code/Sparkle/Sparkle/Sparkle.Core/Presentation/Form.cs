@@ -64,7 +64,7 @@ namespace Sparkle.Core.Presentation
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            if (!this.formControl.Save()) return;
+            this.formControl.Save();
             if (!this.formControl.Facade.IsError)
             {
                 this.formControl.FormDto.DtoList.Add(this.formControl.FormDto.Dto);
@@ -83,7 +83,7 @@ namespace Sparkle.Core.Presentation
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (!this.formControl.Change()) return;
+            this.formControl.Change();
             if (!this.formControl.Facade.IsError)
             {
                 this.formControl.ClearForm();
@@ -115,6 +115,7 @@ namespace Sparkle.Core.Presentation
             if (this.cboList.SelectedItem != null)
             {
                 this.formControl.FormDto.Dto = this.cboList.SelectedItem as Dto;
+                this.formControl.Read();
                 this.formControl.PopulateDtoToFormControl();
             }
         }

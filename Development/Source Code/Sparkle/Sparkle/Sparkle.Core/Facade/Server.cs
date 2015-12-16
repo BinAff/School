@@ -33,6 +33,7 @@ namespace Sparkle.Core.Facade
 
         public override sealed void LoadForm()
         {
+            (this.ComponentServer as BinAff.Core.Crud).IsReadOwnData = true;
             (this.FormDto as FormDto).DtoList = this.ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
         }
         
@@ -48,6 +49,8 @@ namespace Sparkle.Core.Facade
 
         public override void Read()
         {
+            this.AssignData();
+            (this.ComponentServer as BinAff.Core.Crud).IsReadOwnData = false;
             BinAff.Core.ReturnObject<BinAff.Core.Data> ret = this.ComponentServer.Read();
             if (this.IsError = ret.HasError())
             {

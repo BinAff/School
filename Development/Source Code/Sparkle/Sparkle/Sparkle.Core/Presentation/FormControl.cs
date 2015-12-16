@@ -38,6 +38,12 @@ namespace Sparkle.Core.Presentation
             this.BindDataToControls();
         }
 
+        internal Boolean Read()
+        {
+            this.Facade.Read();
+            return !this.Facade.IsError;
+        }
+
         internal Boolean Save()
         {
             if (this.ValidateForm())
