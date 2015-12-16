@@ -46,6 +46,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
+            if (data == null) return;
             base.ComponentData.Id = data.Id;
             dto.DateOfBirth = data.DateOfBirth;
             dto.BirthPlace = data.BirthPlace;
@@ -61,6 +62,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
         public override void AssignData()
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
+            if (dto == null) return;
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
             data.DateOfBirth = dto.DateOfBirth;
@@ -76,6 +78,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
         {
+            if (data == null) return new Dto();
             Comp.Data dt = data as Comp.Data;
             return new Dto
             {
@@ -94,6 +97,7 @@ namespace Sparkle.Student.Facade.PersonalInformation
 
         public override BinAff.Core.Data Convert(BinAff.Facade.Library.Dto dto)
         {
+            if (dto == null) return null;
             Dto dt = dto as Dto;
             return new Comp.Data
             {
