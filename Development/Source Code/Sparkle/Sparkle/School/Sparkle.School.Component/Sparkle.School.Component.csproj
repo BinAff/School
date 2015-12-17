@@ -45,16 +45,25 @@
     <Compile Include="Class\Data.cs" />
     <Compile Include="Class\Server.cs" />
     <Compile Include="Class\Validator.cs" />
+    <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Section\Dao.cs" />
     <Compile Include="Section\Data.cs" />
     <Compile Include="Section\Server.cs" />
     <Compile Include="Section\Validator.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Standard\Dao.cs" />
     <Compile Include="Standard\Data.cs" />
     <Compile Include="Standard\Server.cs" />
     <Compile Include="Standard\Validator.cs" />
+    <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Crystal\Configuration\Crystal.Configuration.Component\Crystal.Configuration.Component.csproj">
+      <Project>{2c1a698f-760a-4b91-8f91-4f3a579d7d12}</Project>
+      <Name>Crystal.Configuration.Component</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
