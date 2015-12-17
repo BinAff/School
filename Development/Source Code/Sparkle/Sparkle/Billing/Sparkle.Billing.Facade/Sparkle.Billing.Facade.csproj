@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC4386B3-DF94-41E8-92C3-BFF1827F94ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sparkle.Billing.Facade</RootNamespace>
+    <AssemblyName>Sparkle.Billing.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BinAff.Core">
+      <HintPath>..\..\..\Reference\BinAff.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BinAff.Facade.Library">
+      <HintPath>..\..\..\Reference\BinAff.Facade.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fee\Definition\Dto.cs" />
+    <Compile Include="Fee\Definition\FormDto.cs" />
+    <Compile Include="Fee\Definition\Server.cs" />
+    <Compile Include="Fee\Dto.cs" />
+    <Compile Include="Fee\FormDto.cs" />
+    <Compile Include="Fee\Group\Dto.cs" />
+    <Compile Include="Fee\Group\FormDto.cs" />
+    <Compile Include="Fee\Group\Server.cs" />
+    <Compile Include="Fee\Server.cs" />
+    <Compile Include="Fine\Definition\Dto.cs" />
+    <Compile Include="Fine\Definition\FormDto.cs" />
+    <Compile Include="Fine\Definition\Server.cs" />
+    <Compile Include="Fine\Dto.cs" />
+    <Compile Include="Fine\FormDto.cs" />
+    <Compile Include="Fine\Server.cs" />
+    <Compile Include="Fine\Type\Dto.cs" />
+    <Compile Include="Fine\Type\FormDto.cs" />
+    <Compile Include="Fine\Type\Server.cs" />
+    <Compile Include="Frequency\Dto.cs" />
+    <Compile Include="Frequency\FormDto.cs" />
+    <Compile Include="Frequency\Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
+      <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
+      <Name>Sparkle.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sparkle.Billing.Component\Sparkle.Billing.Component.csproj">
+      <Project>{d6a7f247-56c8-4935-b4be-a9ada2de1eaf}</Project>
+      <Name>Sparkle.Billing.Component</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
