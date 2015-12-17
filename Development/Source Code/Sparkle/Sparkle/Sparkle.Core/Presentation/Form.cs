@@ -4,6 +4,7 @@ using Lib = BinAff.Presentation.Library;
 using BinAff.Presentation.Library.Extension;
 
 using Sparkle.Core.Facade;
+using System.Windows.Forms;
 
 namespace Sparkle.Core.Presentation
 {
@@ -46,6 +47,7 @@ namespace Sparkle.Core.Presentation
         private void Form_Load(object sender, System.EventArgs e)
         {
             if (DesignMode) return;
+            this.Cursor = Cursors.WaitCursor;
             this.InstantiateFormControl();
         }
 
@@ -55,6 +57,7 @@ namespace Sparkle.Core.Presentation
             this.formControl.LoadForm();
             this.formControl.Facade.LoadForm();
             this.Bind();
+            this.Cursor = Cursors.Default;
         }
 
         private void btnRefresh_Click(object sender, System.EventArgs e)
@@ -64,6 +67,7 @@ namespace Sparkle.Core.Presentation
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             this.formControl.Save();
             if (!this.formControl.Facade.IsError)
             {
@@ -78,11 +82,13 @@ namespace Sparkle.Core.Presentation
                 }
                 this.formControl.ClearForm();
             }
+            this.Cursor = Cursors.Default;
             new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             this.formControl.Change();
             if (!this.formControl.Facade.IsError)
             {
@@ -91,11 +97,13 @@ namespace Sparkle.Core.Presentation
                 this.cboList.Text = String.Empty;
                 this.cboList.SelectedIndex = -1;
             }
+            this.Cursor = Cursors.Default;
             new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (this.cboList.SelectedItem == null) return;
             if (new Lib.MessageBox().Confirm("Do you wan't to delete?") == System.Windows.Forms.DialogResult.OK)
             {
@@ -108,16 +116,19 @@ namespace Sparkle.Core.Presentation
                 }
                 new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
             }
+            this.Cursor = Cursors.Default;
         }
 
         private void cboList_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (this.cboList.SelectedItem != null)
             {
                 this.formControl.FormDto.Dto = this.cboList.SelectedItem as Dto;
                 this.formControl.Read();
                 this.formControl.PopulateDtoToFormControl();
             }
+            this.Cursor = Cursors.Default;
         }
 
         #endregion
