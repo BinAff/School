@@ -451,15 +451,15 @@
     <Build Include="Configuration\Stored Procedures\FrequencyRead.sql" />
     <Build Include="Configuration\Stored Procedures\FrequencyInsert.sql" />
     <Build Include="Configuration\Stored Procedures\FrequencyDelete.sql" />
-    <Build Include="Configuration\Tables\PaymentMode.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeUpdate.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeReadDuplicate.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeReadAll.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeRead.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeInsert.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeDelete.sql" />
-    <Build Include="Configuration\Stored Procedures\PaymentModeReadAllActive.sql" />
     <Build Include="Configuration\Stored Procedures\FrequencyReadAllActive.sql" />
+    <Build Include="Finance\Tables\PaymentMode.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeUpdate.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeDelete.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeInsert.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeRead.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeReadAll.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeReadAllActive.sql" />
+    <Build Include="Finance\Stored Procedures\PaymentModeReadDuplicate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
