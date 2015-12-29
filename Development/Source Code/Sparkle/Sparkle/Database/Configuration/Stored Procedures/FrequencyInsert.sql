@@ -6,8 +6,8 @@
 AS
 BEGIN	
 	
-	INSERT INTO Configuration.Frequency(Name,IsActive)
-	VALUES(@Name,'True')
+	INSERT INTO Configuration.Frequency(Name, IsActive)
+	VALUES(@Name, 'True')
    
 	SET @Id = @@IDENTITY
 
