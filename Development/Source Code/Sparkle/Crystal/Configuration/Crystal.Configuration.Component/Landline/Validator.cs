@@ -23,7 +23,7 @@ namespace Crystal.Configuration.Component.Landline
             {
                 retMsg.Add(new Message("StdCode cannot be empty.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("StdCode already exists.", Message.Type.Error));
             }

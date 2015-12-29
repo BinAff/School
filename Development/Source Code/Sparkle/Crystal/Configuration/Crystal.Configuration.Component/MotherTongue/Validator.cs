@@ -25,7 +25,7 @@ namespace Crystal.Configuration.Component.MotherTongue
                 retMsg.Add(new Message("Mother Tongue name cannot be empty.", Message.Type.Error));
             }
 
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Mother Tongue already exists.", Message.Type.Error));
             }

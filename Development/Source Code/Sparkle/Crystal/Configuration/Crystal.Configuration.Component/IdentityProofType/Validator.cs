@@ -29,7 +29,7 @@ namespace Crystal.Configuration.Component.IdentityProofType
             {
                 retMsg.Add(new Message("Identity Proof Type cannot be more than 50 characters.", Message.Type.Error));
             }
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Same Identity Proof Type already exists.", Message.Type.Error));
             }

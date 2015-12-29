@@ -25,7 +25,7 @@ namespace Crystal.Configuration.Component.Religion
                 retMsg.Add(new Message("Religion name cannot be empty.", Message.Type.Error));
             }
 
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Religion already exists.", Message.Type.Error));
             }
