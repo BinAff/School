@@ -2,7 +2,7 @@
 (  
 	@Name Varchar(50),
 	@IsActive BIT,
-	@Id  Numeric(10,0) OUTPUT
+	@Id  BIGINT OUTPUT
 )
 AS
 BEGIN	

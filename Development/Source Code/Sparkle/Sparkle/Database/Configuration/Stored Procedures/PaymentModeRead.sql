@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [Configuration].[PaymentModeRead]
 (
-   @Id Numeric(10,0)
+   @Id BIGINT
 )
 AS
 BEGIN

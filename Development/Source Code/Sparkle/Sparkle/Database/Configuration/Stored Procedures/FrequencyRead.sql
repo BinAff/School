@@ -1,7 +1,7 @@
 ﻿
 CREATE PROCEDURE [Configuration].[FrequencyRead]
 (
-   @Id Numeric(10,0)
+   @Id BIGINT
 )
 AS
 BEGIN

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [Configuration].[FrequencyUpdate]
 (
-	@Id Numeric(10,0),
+	@Id BIGINT,
 	@Name Varchar(50)
 	)
 AS
