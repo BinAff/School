@@ -57,9 +57,6 @@
     <Compile Include="Fine\Type\Dto.cs" />
     <Compile Include="Fine\Type\FormDto.cs" />
     <Compile Include="Fine\Type\Server.cs" />
-    <Compile Include="Frequency\Dto.cs" />
-    <Compile Include="Frequency\FormDto.cs" />
-    <Compile Include="Frequency\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

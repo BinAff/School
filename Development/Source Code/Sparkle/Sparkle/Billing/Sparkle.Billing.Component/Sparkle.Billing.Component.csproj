@@ -65,10 +65,6 @@
     <Compile Include="Fine\Type\Server.cs" />
     <Compile Include="Fine\Type\Validator.cs" />
     <Compile Include="Fine\Validator.cs" />
-    <Compile Include="Frequency\Dao.cs" />
-    <Compile Include="Frequency\Data.cs" />
-    <Compile Include="Frequency\Server.cs" />
-    <Compile Include="Frequency\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
