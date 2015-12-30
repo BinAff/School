@@ -25,7 +25,7 @@ namespace Sparkle.Student.Component.Category
                 retMsg.Add(new Message("Category cannot be empty.", Message.Type.Error));
             }
 
-            if ((this.Server.DataAccess as Dao).ReadDuplicate() != null)
+            if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
                 retMsg.Add(new Message("Category already exists.", Message.Type.Error));
             }
