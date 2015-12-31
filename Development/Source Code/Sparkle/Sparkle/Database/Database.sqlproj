@@ -84,6 +84,9 @@
     <Folder Include="Finance\" />
     <Folder Include="Finance\Tables\" />
     <Folder Include="Finance\Stored Procedures\" />
+    <Folder Include="Billing\" />
+    <Folder Include="Billing\Tables\" />
+    <Folder Include="Billing\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Student.sql" />
@@ -457,6 +460,16 @@
     <Build Include="Finance\Stored Procedures\AccountingYearUpdateStatus.sql" />
     <Build Include="Configuration\Stored Procedures\FrequencyUpdateStatus.sql" />
     <Build Include="Finance\Stored Procedures\AccountingYearReadAllActive.sql" />
+    <Build Include="Billing\Tables\FeeGroup.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupInsert.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupDelete.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupRead.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupReadAllActive.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupReadDuplicate.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\FeeGroupUpdateStatus.sql" />
+    <Build Include="Security\Billing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />

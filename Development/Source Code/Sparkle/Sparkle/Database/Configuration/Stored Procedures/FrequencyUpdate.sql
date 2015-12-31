@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [Configuration].[FrequencyUpdate]
 (
 	@Id BIGINT,
-	@Name Varchar(50)
+	@Name VARCHAR(50)
 )
 AS
 BEGIN
@@ -10,4 +10,5 @@ BEGIN
 	SET	
 		Name = @Name
 	WHERE Id = @Id
+
 END
