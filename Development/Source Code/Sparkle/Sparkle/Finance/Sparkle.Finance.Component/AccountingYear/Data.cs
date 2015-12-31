@@ -19,6 +19,11 @@ namespace Sparkle.Finance.Component.AccountingYear
         /// Flag for Current Accounting Year
         /// </summary>
         public Boolean CurrentFlag { get; set; }
+
+        /// <summary>
+        /// Flag to activate / deactivate Accounting Year
+        /// </summary>
+        public Boolean IsActive { get; set; }
     }
 
 }
