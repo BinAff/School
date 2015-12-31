@@ -16,6 +16,10 @@ namespace Sparkle.Finance.Component.PaymentMode
         /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Flag to activate / deactivate Payment Mode
+        /// </summary>
+        public Boolean IsActive { get; set; }
     }
 
 }
