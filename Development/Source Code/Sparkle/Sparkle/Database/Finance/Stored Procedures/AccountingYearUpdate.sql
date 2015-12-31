@@ -6,12 +6,12 @@ CREATE PROCEDURE [Finance].[AccountingYearUpdate]
 	@CurrentFlag BIT
 )
 AS
-
 BEGIN
 	
 	UPDATE Finance.AccountingYear
 	SET	
 		Name = @Name,
 		CurrentFlag = @CurrentFlag
-		WHERE Id = @Id
-   END
+	WHERE Id = @Id
+
+END
