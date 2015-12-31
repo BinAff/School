@@ -30,14 +30,14 @@ namespace Sparkle.Finance.Component.Account
         {
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
-            //dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
+            dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
 
             return dt;
         }
 
         protected override void AssignParameter(String procedureName)
         {
-            //base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
+            base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
         }
 
         #endregion
