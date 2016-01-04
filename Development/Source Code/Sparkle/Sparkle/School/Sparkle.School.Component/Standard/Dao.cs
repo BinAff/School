@@ -17,12 +17,12 @@ namespace Sparkle.School.Component.Standard
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Organization.StandardInsert";
-            base.ReadStoredProcedure = "Organization.StandardRead";
-            base.ReadAllStoredProcedure = "Organization.StandardReadAll";
-            base.UpdateStoredProcedure = "Organization.StandardUpdate";
+            base.CreateStoredProcedure = "School.StandardInsert";
+            base.ReadStoredProcedure = "School.StandardRead";
+            base.ReadAllStoredProcedure = "School.StandardReadAll";
+            base.UpdateStoredProcedure = "School.StandardUpdate";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "Organization.StandardDelete";
+            base.DeleteStoredProcedure = "School.StandardDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
@@ -46,8 +46,8 @@ namespace Sparkle.School.Component.Standard
         {
             Data data = this.Data as Data;
             this.CreateConnection();
-            this.CreateCommand("Organization.StandardReadDuplicate");
-            this.AssignParameter("Organization.StandardReadDuplicate");
+            this.CreateCommand("School.StandardReadDuplicate");
+            this.AssignParameter("School.StandardReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 

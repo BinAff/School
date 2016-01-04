@@ -10,6 +10,8 @@
     CONSTRAINT [FK_Fee_AccountingYear] FOREIGN KEY ([AccountYearId]) REFERENCES [Finance].[AccountingYear] ([Id]),
     CONSTRAINT [FK_Fee_Category] FOREIGN KEY ([CategoryId]) REFERENCES [Student].[Category] ([Id]),
     CONSTRAINT [FK_Fee_FeeDefinition] FOREIGN KEY ([FeeDefinitionId]) REFERENCES [Billing].[FeeDefinition] ([Id]),
-    CONSTRAINT [FK_Fee_Standard] FOREIGN KEY ([StandardId]) REFERENCES [Organization].[Standard] ([Id])
+    CONSTRAINT [FK_Fee_Standard] FOREIGN KEY ([StandardId]) REFERENCES [School].[Standard] ([Id])
 );
+
+
 
