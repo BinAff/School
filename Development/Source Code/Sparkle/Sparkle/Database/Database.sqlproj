@@ -525,6 +525,23 @@
     <Build Include="School\Stored Procedures\SchoolUpdate.sql" />
     <Build Include="School\Stored Procedures\SchoolInsert.sql" />
     <Build Include="Security\School.sql" />
+    <Build Include="Billing\Tables\FineSlab.sql" />
+    <Build Include="Billing\Tables\Fine.sql" />
+    <Build Include="Billing\Stored Procedures\FineUpdateStatus.sql" />
+    <Build Include="Billing\Stored Procedures\FineUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabUpdateStatus.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabReadDuplicate.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabReadAllActive.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabRead.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabInsert.sql" />
+    <Build Include="Billing\Stored Procedures\FineSlabDelete.sql" />
+    <Build Include="Billing\Stored Procedures\FineReadAllActive.sql" />
+    <Build Include="Billing\Stored Procedures\FineReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\FineRead.sql" />
+    <Build Include="Billing\Stored Procedures\FineInsert.sql" />
+    <Build Include="Billing\Stored Procedures\FineDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
