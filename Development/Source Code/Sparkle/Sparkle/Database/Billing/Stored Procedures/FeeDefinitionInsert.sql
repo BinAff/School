@@ -1,10 +1,10 @@
-﻿CREATE PROCEDURE Billing.FeeDefinitionInsert
+﻿CREATE PROCEDURE [Billing].[FeeDefinitionInsert]
 (  
-	@Id BIGINT,
 	@Name VARCHAR(50),
 	@FeeGroupId BIGINT,
 	@FineDefinitionId BIGINT,
-	@AccountId BIGINT
+	@AccountId BIGINT,
+	@Id BIGINT OUTPUT
 )
 AS
 BEGIN	

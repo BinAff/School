@@ -1,11 +1,11 @@
-﻿CREATE PROCEDURE Billing.FeeInsert
+﻿CREATE PROCEDURE [Billing].[FeeInsert]
 (  
-	@Id BIGINT,
 	@FeeDefinitionId BIGINT,
 	@StandardId BIGINT,
 	@CategoryId BIGINT,
 	@Amount NUMERIC(10,2),
-	@AccountYearId BIGINT
+	@AccountYearId BIGINT,
+	@Id BIGINT OUTPUT
 )
 AS
 BEGIN	

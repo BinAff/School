@@ -1,10 +1,10 @@
 ﻿CREATE PROCEDURE [Billing].[FineDefinitionInsert]
 (  
-	@Id BIGINT,
 	@Name VARCHAR(50),
 	@IsPercentage BIT,
 	@FineTypeId BIGINT,
-	@AccountId BIGINT
+	@AccountId BIGINT,
+	@Id BIGINT OUTPUT
 )
 AS
 BEGIN	

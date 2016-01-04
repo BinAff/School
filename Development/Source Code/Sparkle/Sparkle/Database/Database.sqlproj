@@ -506,6 +506,15 @@
     <Build Include="Billing\Stored Procedures\FeeDefinitionRead.sql" />
     <Build Include="Billing\Stored Procedures\FeeDefinitionInsert.sql" />
     <Build Include="Billing\Stored Procedures\FeeDefinitionDelete.sql" />
+    <Build Include="Billing\Tables\Concesion.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionUpdateStatus.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionReadDuplicate.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionReadAllActive.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionRead.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionInsert.sql" />
+    <Build Include="Billing\Stored Procedures\ConcessionDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
