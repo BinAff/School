@@ -5,7 +5,7 @@ INSERT INTO Configuration.Caste(Name) VALUES('OBC');
 
 --India Pack
 INSERT INTO Configuration.Country(Name, Code, IsdCode)
-VALUES('India', 'IN', '+91');
+	VALUES('India', 'IN', '+91');
 
 -- Andhra Pradesh Pack
 INSERT INTO Configuration.State(Name, CountryId)
