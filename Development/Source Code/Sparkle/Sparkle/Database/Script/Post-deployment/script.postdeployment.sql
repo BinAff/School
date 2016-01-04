@@ -9,82 +9,82 @@ INSERT INTO Configuration.Country(Name, Code, IsdCode)
 
 -- Andhra Pradesh Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Andhra Pradesh',(SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Andhra Pradesh',(SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 -- Andhra Pradesh Pack - End
 
 -- Bihar Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Bihar', (SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Bihar', (SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 -- Bihar Pack - End
 
 -- Karnataka Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Karnataka', (SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Karnataka', (SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Bangalore', (SELECT ID FROM Configuration.State where Name like 'Karnataka'))
+	VALUES('Bangalore', (SELECT Id FROM Configuration.State where Name like 'Karnataka'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Mandia', (SELECT ID FROM configuration.State where Name like 'Karnataka'))
+	VALUES('Mandia', (SELECT Id FROM configuration.State where Name like 'Karnataka'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Simoga', (SELECT ID FROM configuration.State where Name like 'Karnataka'))
+	VALUES('Simoga', (SELECT Id FROM configuration.State where Name like 'Karnataka'));
 -- Karnataka Pack - End
 
 -- Gujrat Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Gujrat',(SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Gujrat',(SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 -- Gujrat Pack - End
 
 -- Maharastra Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Maharastra', (SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Maharastra', (SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Mumbai', (SELECT ID FROM Configuration.State where Name like 'Maharastra'))
+	VALUES('Mumbai', (SELECT Id FROM Configuration.State where Name like 'Maharastra'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Thane', (SELECT ID FROM Configuration.State where Name like 'Maharastra'))
+	VALUES('Thane', (SELECT Id FROM Configuration.State where Name like 'Maharastra'));
 -- Maharastra Pack - End
 
 -- Orisa Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Orisa',(SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Orisa',(SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 -- Orisa Pack - End
 
 -- Tamilnadu Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('Tamilnadu',(SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('Tamilnadu',(SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 -- Tamilnadu Pack - End
 
 -- West Bengal Pack
 INSERT INTO Configuration.State(Name, CountryId)
-	VALUES('West Bengal',(SELECT ID FROM Configuration.Country WHERE Name like 'India'));
+	VALUES('West Bengal',(SELECT Id FROM Configuration.Country WHERE Name like 'India'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Kolkata', (SELECT ID FROM Configuration.State where Name like 'West Bengal'))
+	VALUES('Kolkata', (SELECT Id FROM Configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('South 24 Parganas', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('South 24 Parganas', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('North 24 Parganas', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('North 24 Parganas', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Howrah', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Howrah', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Hugli', (SELECT ID FROM Configuration.State where Name like 'West Bengal'))
+	VALUES('Hugli', (SELECT Id FROM Configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('East Midnapur', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('East Midnapur', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('West Midnapur', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('West Midnapur', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Nadia', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Nadia', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Bardhaman', (SELECT ID FROM Configuration.State where Name like 'West Bengal'))
+	VALUES('Bardhaman', (SELECT Id FROM Configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Murshidabad', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Murshidabad', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Purulia', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Purulia', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Birbhum', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Birbhum', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Darjeeling', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Darjeeling', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Jalpaiguri', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Jalpaiguri', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 INSERT INTO Configuration.District(Name, StateId)
-	VALUES('Kochbihar', (SELECT ID FROM configuration.State where Name like 'West Bengal'))
+	VALUES('Kochbihar', (SELECT Id FROM configuration.State where Name like 'West Bengal'));
 -- West Bengal Pack - End
 -- India Pack - End
 
