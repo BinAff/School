@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Sparkle.Billing.Component.Fine
+namespace Sparkle.Billing.Component.Fine.LineItem
 {
 
     public class Dao : BinAff.Core.Dao
@@ -17,21 +17,19 @@ namespace Sparkle.Billing.Component.Fine
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Billing.FineInsert";
-            base.ReadStoredProcedure = "Billing.FineRead";
-            base.ReadAllStoredProcedure = "Billing.FineReadAll";
-            base.UpdateStoredProcedure = "Billing.FineUpdate";
+            base.CreateStoredProcedure = "Billing.FineLineItemInsert";
+            base.ReadStoredProcedure = "Billing.FineLineItemRead";
+            base.ReadAllStoredProcedure = "Billing.FineLineItemReadAll";
+            base.UpdateStoredProcedure = "Billing.FineLineItemUpdate";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "Billing.FineDelete";
+            base.DeleteStoredProcedure = "Billing.FineLineItemDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Amount = Convert.IsDBNull(dr["Amount"]) ? 0.00 : Convert.ToDouble(dr["Amount"]);
-            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
             return dt;
         }
 
@@ -46,8 +44,8 @@ namespace Sparkle.Billing.Component.Fine
         {
             Data data = this.Data as Data;
             this.CreateConnection();
-            this.CreateCommand("Billing.FineReadDuplicate");
-            this.AssignParameter("Billing.FineReadDuplicate");
+            this.CreateCommand("Billing.FineLineItemReadDuplicate");
+            this.AssignParameter("Billing.FineLineItemReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 
@@ -62,25 +60,7 @@ namespace Sparkle.Billing.Component.Fine
             return false;
         }
 
-        internal Boolean Activate()
-        {
-            return UpdateStatus(true);
-        }
-
-        internal Boolean Deactivate()
-        {
-            return UpdateStatus(false);
-        }
-
-        internal Boolean UpdateStatus(Boolean ActiveStatus)
-        {
-            Data data = this.Data as Data;
-            this.CreateConnection();
-            this.CreateCommand("Billing.FineUpdateStatus");
-            base.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
-            base.AddInParameter("@IsActive", DbType.Boolean, ActiveStatus);
-            return this.ExecuteNonQuery() == 1 ? true : false;
-        }
+        
 
     }
 
