@@ -22,7 +22,7 @@ namespace Sparkle.School.Component.Standard
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                retMsg.Add(new Message("Standard cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Standard Name cannot be empty.", Message.Type.Error));
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())
