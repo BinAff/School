@@ -22,7 +22,7 @@ namespace Sparkle.School.Component.Section
 
             if (ValidationRule.IsNullOrEmpty(data.Name))
             {
-                retMsg.Add(new Message("Section cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Section Name cannot be empty.", Message.Type.Error));
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())
