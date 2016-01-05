@@ -8,6 +8,8 @@ namespace Sparkle.School.Component.Section
 
         public String Name { get; set; }
 
+        public Boolean IsActive { get; set; }
+
     }
 
 }
