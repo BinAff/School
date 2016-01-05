@@ -12,6 +12,8 @@ namespace Sparkle.Billing.Component.Fee
 
         public Sparkle.School.Component.Section.Data Section { get; set; }
 
+        public Boolean IsActive { get; set; }
+
     }
 
 }

@@ -30,14 +30,15 @@ namespace Sparkle.Billing.Component.Fee
         {
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
-            //dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-
+            dt.Amount = Convert.IsDBNull(dr["Amount"]) ? 0.00 : Convert.ToDouble(dr["Amount"]);
+            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
             return dt;
         }
 
         protected override void AssignParameter(String procedureName)
         {
-            //base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
+            base.AddInParameter("@Amount", DbType.String, (this.Data as Data).Amount);
+            base.AddInParameter("@IsActive", DbType.Boolean, (this.Data as Data).IsActive);
         }
 
         #endregion
@@ -60,6 +61,26 @@ namespace Sparkle.Billing.Component.Fee
             }
 
             return false;
+        }
+
+        internal Boolean Activate()
+        {
+            return UpdateStatus(true);
+        }
+
+        internal Boolean Deactivate()
+        {
+            return UpdateStatus(false);
+        }
+
+        internal Boolean UpdateStatus(Boolean ActiveStatus)
+        {
+            Data data = this.Data as Data;
+            this.CreateConnection();
+            this.CreateCommand("Finance.FeeUpdateStatus");
+            base.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
+            base.AddInParameter("@IsActive", DbType.Boolean, ActiveStatus);
+            return this.ExecuteNonQuery() == 1 ? true : false;
         }
 
     }
