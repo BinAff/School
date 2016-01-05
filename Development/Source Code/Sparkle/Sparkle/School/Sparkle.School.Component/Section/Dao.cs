@@ -31,7 +31,7 @@ namespace Sparkle.School.Component.Section
             Data dt = data as Data;
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-
+            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
             return dt;
         }
 
@@ -60,6 +60,26 @@ namespace Sparkle.School.Component.Section
             }
 
             return false;
+        }
+
+        internal Boolean Activate()
+        {
+            return UpdateStatus(true);
+        }
+
+        internal Boolean Deactivate()
+        {
+            return UpdateStatus(false);
+        }
+
+        internal Boolean UpdateStatus(Boolean ActiveStatus)
+        {
+            Data data = this.Data as Data;
+            this.CreateConnection();
+            this.CreateCommand("School.SectionUpdateStatus");
+            base.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
+            base.AddInParameter("@IsActive", DbType.Boolean, ActiveStatus);
+            return this.ExecuteNonQuery() == 1 ? true : false;
         }
 
     }
