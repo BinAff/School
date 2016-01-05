@@ -41,6 +41,7 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
             dto.Name = data.Name;
+            dto.IsActive = data.IsActive;
         }
 
         public override void AssignData()
@@ -49,6 +50,7 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
             data.Name = dto.Name;
+            data.IsActive = dto.IsActive;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -58,6 +60,7 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsActive = dt.IsActive,
             };
         }
 
@@ -68,6 +71,7 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsActive = dt.IsActive,
             };
         }
 

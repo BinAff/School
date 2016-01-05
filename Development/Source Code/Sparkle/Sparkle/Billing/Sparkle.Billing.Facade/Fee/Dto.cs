@@ -11,6 +11,8 @@ namespace Sparkle.Billing.Facade.Fee
         /// </summary>
         public Double Amount { get; set; }
 
+        public Boolean IsActive { get; set; }
+
     }
 
 }

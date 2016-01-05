@@ -1,8 +1,8 @@
-﻿using Comp = Sparkle.Billing.Component.Fee;
+﻿using Comp = Sparkle.Billing.Component.Fee.LineItem;
 
 using FacLib = Sparkle.Core.Facade;
 
-namespace Sparkle.Billing.Facade.Fee
+namespace Sparkle.Billing.Facade.Fee.LineItem
 {
 
     public class Server : Sparkle.Core.Facade.Server
@@ -40,8 +40,8 @@ namespace Sparkle.Billing.Facade.Fee
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
+            dto.Installment = data.Installment;
             dto.Amount = data.Amount;
-            dto.IsActive = data.IsActive;
         }
 
         public override void AssignData()
@@ -49,8 +49,8 @@ namespace Sparkle.Billing.Facade.Fee
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
+            data.Installment = dto.Installment;
             data.Amount = dto.Amount;
-            data.IsActive = dto.IsActive;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -59,8 +59,8 @@ namespace Sparkle.Billing.Facade.Fee
             return new Dto
             {
                 Id = dt.Id,
+                Installment = dt.Installment,
                 Amount = dt.Amount,
-                IsActive = dt.IsActive,
             };
         }
 
@@ -70,8 +70,8 @@ namespace Sparkle.Billing.Facade.Fee
             return new Comp.Data
             {
                 Id = dt.Id,
+                Installment = dt.Installment,
                 Amount = dt.Amount,
-                IsActive = dt.IsActive,
             };
         }
 
