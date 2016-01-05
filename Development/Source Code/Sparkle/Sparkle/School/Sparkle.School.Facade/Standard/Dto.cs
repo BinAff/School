@@ -11,6 +11,8 @@ namespace Sparkle.School.Facade.Standard
         /// </summary>
         public String Name { get; set; }
 
+        public Boolean IsActive { get; set; }
+
     }
 
 }
