@@ -20,10 +20,10 @@ namespace Sparkle.School.Component
             List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
-            //if (ValidationRule.IsNullOrEmpty(data.Name))
-            //{
-            //    retMsg.Add(new Message("Standard cannot be empty.", Message.Type.Error));
-            //}
+            if (ValidationRule.IsNullOrEmpty(data.Name))
+            {
+                retMsg.Add(new Message("School Name cannot be empty.", Message.Type.Error));
+            }
 
             //if ((this.Server.DataAccess as Dao).ReadDuplicate())
             //{
