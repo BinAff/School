@@ -11,6 +11,10 @@ namespace Sparkle.Billing.Facade.Fine.Definition
         /// </summary>
         public String Name { get; set; }
 
+        public Boolean IsPercentage { get; set; }
+
+        public Boolean IsActive { get; set; }
+
     }
 
 }

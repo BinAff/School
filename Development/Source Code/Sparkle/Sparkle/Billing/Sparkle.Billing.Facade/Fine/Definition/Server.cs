@@ -41,6 +41,8 @@ namespace Sparkle.Billing.Facade.Fine.Definition
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
             dto.Name = data.Name;
+            dto.IsPercentage = data.IsPercentage;
+            dto.IsActive = data.IsActive;
         }
 
         public override void AssignData()
@@ -49,6 +51,8 @@ namespace Sparkle.Billing.Facade.Fine.Definition
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
             data.Name = dto.Name;
+            data.IsPercentage = dto.IsPercentage;
+            data.IsActive = dto.IsActive;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -58,6 +62,8 @@ namespace Sparkle.Billing.Facade.Fine.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsPercentage = dt.IsPercentage,
+                IsActive = dt.IsActive,
             };
         }
 
@@ -68,6 +74,8 @@ namespace Sparkle.Billing.Facade.Fine.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsPercentage = dt.IsPercentage,
+                IsActive = dt.IsActive,
             };
         }
 

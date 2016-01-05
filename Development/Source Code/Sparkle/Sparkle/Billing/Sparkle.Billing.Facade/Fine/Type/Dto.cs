@@ -11,6 +11,8 @@ namespace Sparkle.Billing.Facade.Fine.Type
         /// </summary>
         public String Name { get; set; }
 
+        public Boolean IsActive { get; set; }
+
     }
 
 }
