@@ -544,6 +544,25 @@
     <Build Include="Billing\Stored Procedures\FineRead.sql" />
     <Build Include="Billing\Stored Procedures\FineInsert.sql" />
     <Build Include="Billing\Stored Procedures\FineDelete.sql" />
+    <Build Include="Billing\Tables\FineLineItem.sql" />
+    <Build Include="Billing\Tables\FeeLineItem.sql" />
+    <Build Include="Billing\Tables\Bill.sql" />
+    <Build Include="Billing\Stored Procedures\FineReadDuplicate.sql" />
+    <Build Include="Billing\Stored Procedures\FineLineItemUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\FineLineItemReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\FineLineItemRead.sql" />
+    <Build Include="Billing\Stored Procedures\FineLineItemInsert.sql" />
+    <Build Include="Billing\Stored Procedures\FineLineItemDelete.sql" />
+    <Build Include="Billing\Stored Procedures\FeeLineItemUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\FeeLineItemReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\FeeLineItemRead.sql" />
+    <Build Include="Billing\Stored Procedures\FeeLineItemInsert.sql" />
+    <Build Include="Billing\Stored Procedures\FeeLineItemDelete.sql" />
+    <Build Include="Billing\Stored Procedures\BillUpdate.sql" />
+    <Build Include="Billing\Stored Procedures\BillReadAll.sql" />
+    <Build Include="Billing\Stored Procedures\BillRead.sql" />
+    <Build Include="Billing\Stored Procedures\BillInsert.sql" />
+    <Build Include="Billing\Stored Procedures\BillDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
