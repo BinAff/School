@@ -3,7 +3,7 @@ using ContInfo = Crystal.Configuration.Component.ContactInformation;
 
 using FacLib = Sparkle.Core.Facade;
 
-using ContInfoFac = Sparkle.Configuration.Facade.ContactInformation;
+using ContInfoFac = Sparkle.Finance.Facade.ContactInformation;
 
 namespace Sparkle.School.Facade
 {
@@ -44,6 +44,9 @@ namespace Sparkle.School.Facade
             Comp.Data data = base.ComponentData as Comp.Data;
             base.ComponentData.Id = data.Id;
             dto.Name = data.Name;
+            dto.Logo = data.Logo;
+            dto.AccreditationNumber = data.AccreditationNumber;
+            dto.Tan = data.Tan;
             dto.ContactInformation = new ContInfoFac.Server(null).Convert(data.ContactInformation) as ContInfoFac.Dto;
         }
 
@@ -53,6 +56,9 @@ namespace Sparkle.School.Facade
             Comp.Data data = base.ComponentData as Comp.Data;
             data.Id = dto.Id;
             data.Name = dto.Name;
+            data.Logo = dto.Logo;
+            data.AccreditationNumber = dto.AccreditationNumber;
+            data.Tan = dto.Tan;
             data.ContactInformation = new ContInfoFac.Server(null).Convert(dto.ContactInformation) as ContInfo.Data;
         }
 
@@ -63,6 +69,9 @@ namespace Sparkle.School.Facade
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                Logo = dt.Logo,
+                AccreditationNumber = dt.AccreditationNumber,
+                Tan = dt.Tan,
                 ContactInformation = new ContInfoFac.Server(null).Convert(dt.ContactInformation) as ContInfoFac.Dto,
             };
         }
@@ -74,6 +83,9 @@ namespace Sparkle.School.Facade
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                Logo = dt.Logo,
+                AccreditationNumber = dt.AccreditationNumber,
+                Tan = dt.Tan,
                 ContactInformation = new ContInfoFac.Server(null).Convert(dt.ContactInformation) as ContInfo.Data
             };
         }
