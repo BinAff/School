@@ -14,11 +14,15 @@ namespace BinAff.Core
     public abstract class Dao : IDisposable
     {
 
+        #region Logging / Tracing member variable
+
         private readonly Boolean IsTraceOn = ConfigurationManager.AppSettings["TraceOn"] == "Y";
         private readonly String tracePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["Tracepath"];
         private readonly String exceptionPath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["ExceptionPath"];
         private Utility.Log.Server traceWritter;
         private Utility.Log.Server exceptionWritter;
+
+        #endregion
 
         #region Properties
 
@@ -71,11 +75,16 @@ namespace BinAff.Core
         /// Stored procedure to read record
         /// </summary>
         public String ReadStoredProcedure { get; set; }
-
+        
         /// <summary>
         /// Stored procedure to read all record
         /// </summary>
         public String ReadAllStoredProcedure { get; set; }
+
+        /// <summary>
+        /// Stored procedure to read all activated record
+        /// </summary>
+        public String ReadAllActivateStoredProcedure { get; set; }
 
         /// <summary>
         /// Stored procedure to read record from parent reference
@@ -87,6 +96,11 @@ namespace BinAff.Core
         /// Stored procedure to update record
         /// </summary>
         public String UpdateStoredProcedure { get; set; }
+
+        /// <summary>
+        /// Stored procedure to update activation status of record
+        /// </summary>
+        public String UpdateActivationStatusStoredProcedure { get; set; }
 
         /// <summary>
         /// Stored procedure to delete record
@@ -267,6 +281,8 @@ namespace BinAff.Core
 
         protected abstract void Compose();
 
+        #region Advanced CRUD and activator
+
         /// <summary>
         /// Create new record in database
         /// </summary>
@@ -379,6 +395,24 @@ namespace BinAff.Core
         }
 
         /// <summary>
+        /// Read all record from database
+        /// </summary>
+        /// <returns></returns>
+        public virtual List<BinAff.Core.Data> ReadAllActivate()
+        {
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " ReadAllActivate Start");
+            if (this.ReadAllActivateStoredProcedure == null) throw new Exception("ReadAllActivate stored procedure not specified");
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " SP - " + this.ReadAllActivateStoredProcedure);
+            this.CreateCommand(this.ReadAllActivateStoredProcedure);
+            DataSet ds = this.ExecuteDataSet();
+            List<BinAff.Core.Data> dataList = CreateDataObjectList(ds);
+            this.CloseConnection();
+
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " ReadAllActivate End");
+            return dataList;
+        }
+
+        /// <summary>
         /// Abstract method to override in child for Delete
         /// </summary>
         /// <returns></returns>
@@ -416,6 +450,33 @@ namespace BinAff.Core
             //return status;
             #endregion
         }
+
+        /// <summary>
+        /// Update activation status of existing record in database
+        /// </summary>
+        /// <returns></returns>
+        public virtual Boolean UpdateActivationStatus(Boolean activationStatus)
+        {
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " UpdateActivationStatus Start");
+            if (this.UpdateActivationStatusStoredProcedure == null) throw new Exception("UpdateActivationStatus stored procedure not specified");
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " SP - " + this.UpdateActivationStatusStoredProcedure + ", Id - " + this.Data.Id);
+
+            Data data = this.Data as Data;
+            Boolean status = false;
+            this.CreateConnection();
+            if (this.UpdateActivationStatusBefore())
+            {
+                this.CreateCommand(this.UpdateActivationStatusStoredProcedure);
+                this.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
+                this.AddInParameter("@IsActive", DbType.Boolean, activationStatus);
+                if (this.ExecuteNonQuery() == 1) status = this.UpdateActivationStatusAfter();
+            }
+            this.CloseConnection();
+            if (this.IsTraceOn) this.traceWritter.Write(this.GetType().ToString() + " UpdateActivationStatus End");
+            return status;
+        }
+
+        #endregion
 
         protected Boolean DeleteAndCreateForList()
         {
@@ -604,6 +665,16 @@ namespace BinAff.Core
         }
 
         internal protected virtual Boolean UpdateAfter()
+        {
+            return true;
+        }
+
+        internal protected virtual Boolean UpdateActivationStatusBefore()
+        {
+            return true;
+        }
+
+        internal protected virtual Boolean UpdateActivationStatusAfter()
         {
             return true;
         }

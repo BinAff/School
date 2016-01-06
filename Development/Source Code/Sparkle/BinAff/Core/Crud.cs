@@ -7,7 +7,7 @@ using System.Transactions;
 namespace BinAff.Core
 {
 
-    public abstract class Crud : ICrud, IFactory
+    public abstract class Crud : ICrud, IActivator, IFactory
     {
 
         private readonly Boolean isReadParallel = true;
@@ -137,6 +137,8 @@ namespace BinAff.Core
             this.Compose();
         }
 
+        #region Children
+
         /// <summary>
         /// Add child component to parent component
         /// </summary>
@@ -234,6 +236,10 @@ namespace BinAff.Core
             }
             return null;
         }
+
+        #endregion
+
+        #region CRUD
 
         protected virtual Data GetDataForParent()
         {
@@ -821,9 +827,91 @@ namespace BinAff.Core
             return retList;
         }
 
+        #endregion
+
+        #region Activator
+
+        private ReturnObject<Boolean> Activate()
+        {
+            ReturnObject<Boolean> retObj = new ReturnObject<Boolean>
+            {
+                MessageList = new List<Message>()
+            };
+
+            if (!this.IsSkip && !this.IsReadOnly)
+            {
+                retObj.Value = this.dataAccess.UpdateActivationStatus(true);
+                Message msg = new Message();
+                if (retObj.Value)
+                {
+                    msg.Description = String.IsNullOrEmpty(this.Name) ? "Data successfully activated." : this.Name + " data successfully activated.";
+                    msg.Category = Message.Type.Information;
+                }
+                else
+                {
+                    msg.Description = String.IsNullOrEmpty(this.Name) ? "Data activation failed." : this.Name + " data activation failed.";
+                    msg.Category = Message.Type.Error;
+                }
+                retObj.MessageList.Add(msg);
+            }
+
+            return retObj;
+        }
+
+        private ReturnObject<Boolean> Deactivate()
+        {
+            ReturnObject<Boolean> retObj = new ReturnObject<Boolean>
+            {
+                MessageList = new List<Message>()
+            };
+
+            if (!this.IsSkip && !this.IsReadOnly)
+            {
+                retObj.Value = this.dataAccess.UpdateActivationStatus(false);
+                Message msg = new Message();
+                if (retObj.Value)
+                {
+                    msg.Description = String.IsNullOrEmpty(this.Name) ? "Data successfully deactivated." : this.Name + " data successfully deactivated.";
+                    msg.Category = Message.Type.Information;
+                }
+                else
+                {
+                    msg.Description = String.IsNullOrEmpty(this.Name) ? "Data deactivation failed." : this.Name + " data deactivation failed.";
+                    msg.Category = Message.Type.Error;
+                }
+                retObj.MessageList.Add(msg);
+            }
+
+            return retObj;
+        }
+
+        private ReturnObject<List<Data>> ReadAllActivate()
+        {
+            ReturnObject<List<BinAff.Core.Data>> retList = new ReturnObject<List<BinAff.Core.Data>>
+            {
+                Value = (this.dataAccess as Dao).ReadAllActivate()
+            };
+            if (!this.IsReadOwnData)
+            {
+                this.RunForEach<BinAff.Core.Data>(this.isReadParallel, retList.Value, (p) =>
+                {
+                    ICrud server = this.CreateInstance(p);
+                    server.Read();
+                    return true;
+                });
+            }
+            return retList;
+        }
+
+        #endregion
+
         #region Mandatory Hook
 
         protected abstract void Compose();
+
+        #endregion
+
+        #region IFactory
 
         public abstract Data CreateDataObject();
 
@@ -916,6 +1004,42 @@ namespace BinAff.Core
             };
         }
 
+        private ReturnObject<Boolean> ActivateBefore()
+        {
+            return new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>()
+            };
+        }
+
+        private ReturnObject<Boolean> ActivateAfter()
+        {
+            return new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>()
+            };
+        }
+
+        private ReturnObject<Boolean> DeactivateBefore()
+        {
+            return new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>()
+            };
+        }
+
+        private ReturnObject<Boolean> DeactivateAfter()
+        {
+            return new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>()
+            };
+        }
+
         #endregion
 
         #region ICrud Members
@@ -938,6 +1062,65 @@ namespace BinAff.Core
         ReturnObject<List<Data>> ICrud.ReadAll()
         {
             return this.ReadAll();
+        }
+
+        #endregion
+
+        #region IActivator
+
+        ReturnObject<Boolean> IActivator.Activate()
+        {
+            ReturnObject<Boolean> retObj = new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>(),
+            };
+
+            this.actionType = Action.Activate;
+
+            if (this.Data.Id != 0) //There is data to read
+            {
+                //Manage before hook
+                if (retObj.MergeMessageList(this.ActivateBefore()).HasError()) return retObj;
+
+                //Read own
+                if (retObj.MergeMessageList(this.Activate()).HasError()) return retObj;
+
+                //Manage after hook
+                if (retObj.MergeMessageList(this.ActivateAfter()).HasError()) return retObj;
+            }
+
+            return retObj;
+        }
+
+        ReturnObject<Boolean> IActivator.Deactivate()
+        {
+            ReturnObject<Boolean> retObj = new ReturnObject<Boolean>
+            {
+                Value = true,
+                MessageList = new List<Message>(),
+            };
+
+            this.actionType = Action.Activate;
+
+            if (this.Data.Id != 0) //There is data to read
+            {
+                //Manage before hook
+                if (retObj.MergeMessageList(this.DeactivateBefore()).HasError()) return retObj;
+
+                //Read own
+                if (retObj.MergeMessageList(this.Deactivate()).HasError()) return retObj;
+
+                //Manage after hook
+                if (retObj.MergeMessageList(this.DeactivateAfter()).HasError()) return retObj;
+            }
+
+            return retObj;
+        }
+
+        ReturnObject<List<Data>> IActivator.ReadAllActivate()
+        {
+            return this.ReadAllActivate();
         }
 
         #endregion
@@ -980,6 +1163,7 @@ namespace BinAff.Core
 
         public enum Action
         {
+            Activate,
             Create,
             Read,
             Update,

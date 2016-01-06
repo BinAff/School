@@ -7,7 +7,10 @@ namespace BinAff.Core
     {
 
         public Int64 Id { get; set; }
+
         public Boolean IsDeletable { get; set; }
+
+        public Boolean IsActive { get; set; }
 
         public virtual Data Clone()
         {

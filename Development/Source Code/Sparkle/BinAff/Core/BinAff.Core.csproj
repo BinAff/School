@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnectionPool.cs" />
+    <Compile Include="IActivator.cs" />
     <Compile Include="IChildrenDataFinder.cs" />
     <Compile Include="Dao.cs" />
     <Compile Include="IFactory.cs" />
