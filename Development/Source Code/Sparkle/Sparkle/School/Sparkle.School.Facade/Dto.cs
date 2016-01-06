@@ -8,7 +8,7 @@ namespace Sparkle.School.Facade
 
         public String Name { get; set; }
 
-        public Finance.Facade.ContactInformation.Dto ContactInformation { get; set; }
+        public Configuration.Facade.ContactInformation.Dto ContactInformation { get; set; }
 
         public String Logo { get; set; }
 
@@ -18,7 +18,7 @@ namespace Sparkle.School.Facade
 
         public Dto()
         {
-            this.ContactInformation = new Finance.Facade.ContactInformation.Dto();
+            this.ContactInformation = new Configuration.Facade.ContactInformation.Dto();
         }
 
     }
