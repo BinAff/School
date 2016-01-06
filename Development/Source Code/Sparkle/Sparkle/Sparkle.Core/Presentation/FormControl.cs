@@ -51,6 +51,7 @@ namespace Sparkle.Core.Presentation
                 this.AssignDtoFromControls();
                 this.FormDto.Dto.Id = 0;
                 this.Facade.Add();
+                //if(!this.Facade.IsError) this.FormDto.DtoList.Find((p)=>
                 return !this.Facade.IsError;
             }
             return false;

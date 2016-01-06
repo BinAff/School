@@ -32,7 +32,6 @@ namespace Sparkle.Finance.Component.AccountingYear
             dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
             dt.CurrentFlag = Convert.IsDBNull(dr["CurrentFlag"]) ? false : Convert.ToBoolean(dr["CurrentFlag"]);
-            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
 
             return dt;
         }
@@ -41,7 +40,6 @@ namespace Sparkle.Finance.Component.AccountingYear
         {
             base.AddInParameter("@Name", DbType.String, (this.Data as Data).Name);
             base.AddInParameter("@CurrentFlag", DbType.Boolean, (this.Data as Data).CurrentFlag);
-            base.AddInParameter("@IsActive", DbType.Boolean, (this.Data as Data).IsActive);
         }
 
         #endregion
