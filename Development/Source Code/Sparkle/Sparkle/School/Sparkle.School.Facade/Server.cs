@@ -3,7 +3,7 @@ using ContInfo = Crystal.Configuration.Component.ContactInformation;
 
 using FacLib = Sparkle.Core.Facade;
 
-using ContInfoFac = Sparkle.Finance.Facade.ContactInformation;
+using ContInfoFac = Sparkle.Configuration.Facade.ContactInformation;
 
 namespace Sparkle.School.Facade
 {
