@@ -2,6 +2,7 @@
 
 namespace Sparkle.Core.Facade
 {
+
     public class FormDto : BinAff.Facade.Library.FormDto
     {
 

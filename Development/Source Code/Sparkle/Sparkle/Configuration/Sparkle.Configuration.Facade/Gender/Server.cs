@@ -37,18 +37,12 @@ namespace Sparkle.Configuration.Facade.Gender
 
         public override void AssignDto()
         {
-            Dto dto = (base.FormDto as FormDto).Dto as Dto;
-            Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
-            dto.Name = data.Name;
+            ((base.FormDto as FormDto).Dto as Dto).Name = (base.ComponentData as Comp.Data).Name;
         }
 
         public override void AssignData()
         {
-            Dto dto = (base.FormDto as FormDto).Dto as Dto;
-            Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
-            data.Name = dto.Name;
+            (base.ComponentData as Comp.Data).Name = ((base.FormDto as FormDto).Dto as Dto).Name;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
