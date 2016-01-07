@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EFBB242-486B-4078-A105-4B3577C26B5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sparkle.Admission.Facade</RootNamespace>
+    <AssemblyName>Sparkle.Admission.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BinAff.Core">
+      <HintPath>..\..\..\Reference\BinAff.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BinAff.Facade.Library">
+      <HintPath>..\..\..\Reference\BinAff.Facade.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Sparkle.Core">
+      <HintPath>..\..\..\Output\Sparkle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdmissionForm\Dto.cs" />
+    <Compile Include="AdmissionForm\FormDto.cs" />
+    <Compile Include="AdmissionForm\Server.cs" />
+    <Compile Include="Applicant\Dto.cs" />
+    <Compile Include="Applicant\FormDto.cs" />
+    <Compile Include="Applicant\Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubjectScore\Dto.cs" />
+    <Compile Include="SubjectScore\FormDto.cs" />
+    <Compile Include="SubjectScore\Server.cs" />
+    <Compile Include="TestDefination\Dto.cs" />
+    <Compile Include="TestDefination\FormDto.cs" />
+    <Compile Include="TestDefination\Server.cs" />
+    <Compile Include="TestSubject\Dto.cs" />
+    <Compile Include="TestSubject\FormDto.cs" />
+    <Compile Include="TestSubject\Server.cs" />
+    <Compile Include="Test\Dto.cs" />
+    <Compile Include="Test\FormDto.cs" />
+    <Compile Include="Test\Server.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Sparkle.Admission.Component\Sparkle.Admission.Component.csproj">
+      <Project>{d412b2ea-7a70-4e76-b1c7-27d78f2f19b7}</Project>
+      <Name>Sparkle.Admission.Component</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
