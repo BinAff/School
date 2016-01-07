@@ -52,6 +52,7 @@ namespace Sparkle.Configuration.Facade.Gender
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsActive = dt.IsActive,
             };
         }
 
@@ -62,6 +63,7 @@ namespace Sparkle.Configuration.Facade.Gender
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                IsActive = dt.IsActive,
             };
         }
 

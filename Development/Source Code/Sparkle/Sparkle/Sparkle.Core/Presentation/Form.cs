@@ -80,7 +80,7 @@ namespace Sparkle.Core.Presentation
                 {
                     this.cboList.Bind(this.formControl.FormDto.DtoList, this.ListDisplayName);
                 }
-                this.formControl.ClearForm();
+                this.Reset();
             }
             this.Cursor = Cursors.Default;
             new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
@@ -92,10 +92,7 @@ namespace Sparkle.Core.Presentation
             this.formControl.Change();
             if (!this.formControl.Facade.IsError)
             {
-                this.formControl.ClearForm();
-                this.cboList.Bind(this.formControl.FormDto.DtoList, this.ListDisplayName);
-                this.cboList.Text = String.Empty;
-                this.cboList.SelectedIndex = -1;
+                this.Reset();
             }
             this.Cursor = Cursors.Default;
             new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
@@ -112,10 +109,36 @@ namespace Sparkle.Core.Presentation
                 {
                     this.formControl.FormDto.DtoList.Remove(this.cboList.SelectedItem as Dto);
                     this.cboList.Items.Remove(this.cboList.SelectedItem as Dto);
-                    this.formControl.ClearForm();
+                    this.Reset();
                 }
                 new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
             }
+            this.Cursor = Cursors.Default;
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            if (this.cboList.SelectedItem == null) return;
+            this.formControl.Facade.Activate();
+            if (!this.formControl.Facade.IsError)
+            {
+                this.Reset();
+            }
+            new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void btnDeactivate_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            if (this.cboList.SelectedItem == null) return;
+            this.formControl.Facade.Deactivate();
+            if (!this.formControl.Facade.IsError)
+            {
+                this.Reset();
+            }
+            new Lib.MessageBox().Show(this.formControl.Facade.DisplayMessageList);
             this.Cursor = Cursors.Default;
         }
 
@@ -127,6 +150,16 @@ namespace Sparkle.Core.Presentation
                 this.formControl.FormDto.Dto = this.cboList.SelectedItem as Dto;
                 this.formControl.Read();
                 this.formControl.PopulateDtoToFormControl();
+                if (this.formControl.FormDto.Dto.IsActive)
+                {
+                    btnActivate.Enabled = false;
+                    btnDeactivate.Enabled = true;
+                }
+                else
+                {
+                    btnActivate.Enabled = true;
+                    btnDeactivate.Enabled = false;
+                }
             }
             this.Cursor = Cursors.Default;
         }
@@ -139,11 +172,13 @@ namespace Sparkle.Core.Presentation
             this.cboList.SelectedIndex = -1;
             this.cboList.Text = String.Empty;
             this.formControl.ResetForm();
+            btnActivate.Enabled = true;
+            btnDeactivate.Enabled = true;
         }
 
         protected void Bind()
         {
-            this.cboList.Bind((this.formControl.FormDto as Facade.FormDto).DtoList, this.ListDisplayName);
+            this.cboList.Bind(this.formControl.FormDto.DtoList, this.ListDisplayName);
         }
         
         #region Mandatory Hook

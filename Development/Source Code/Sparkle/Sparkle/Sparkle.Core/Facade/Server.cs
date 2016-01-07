@@ -34,7 +34,7 @@ namespace Sparkle.Core.Facade
 
         public override sealed void LoadForm()
         {
-            (this.ComponentServer as BinAff.Core.Crud).IsReadOwnData = true;
+            (this.ComponentServer as Crud).IsReadOwnData = true;
             (this.FormDto as FormDto).DtoList = this.ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
         }
         
@@ -50,12 +50,12 @@ namespace Sparkle.Core.Facade
 
         public override void Read()
         {
-            this.AssignData();
-            (this.ComponentServer as BinAff.Core.Crud).IsReadOwnData = false;
-            BinAff.Core.ReturnObject<BinAff.Core.Data> ret = (this.ComponentServer as ICrud).Read();
+            this.AssignDataInternal();
+            (this.ComponentServer as Crud).IsReadOwnData = false;
+            ReturnObject<Data> ret = (this.ComponentServer as ICrud).Read();
             if (this.IsError = ret.HasError())
             {
-                this.DisplayMessageList = ret.GetMessage(BinAff.Core.Message.Type.Error);
+                this.DisplayMessageList = ret.GetMessage(Message.Type.Error);
             }
             else
             {
@@ -66,20 +66,23 @@ namespace Sparkle.Core.Facade
         public override void Delete()
         {
             this.AssignDataInternal();
-            BinAff.Core.ReturnObject<Boolean> ret = (this.ComponentServer as ICrud).Delete();
-            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
+            ReturnObject<Boolean> ret = (this.ComponentServer as ICrud).Delete();
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? Message.Type.Error : Message.Type.Information);
         }
 
         public override void Activate()
         {
-            BinAff.Core.ReturnObject<Boolean> ret = (this.ComponentServer as IActivator).Activate();
-            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
+            ReturnObject<Boolean> ret = (this.ComponentServer as IActivator).Activate();
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? Message.Type.Error : Message.Type.Information);
+            if (!this.IsError) (base.FormDto as FormDto).Dto.IsActive = true;
         }
 
         public override void Deactivate()
         {
-            BinAff.Core.ReturnObject<Boolean> ret = (this.ComponentServer as IActivator).Deactivate();
-            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
+            ReturnObject<Boolean> ret = (this.ComponentServer as IActivator).Deactivate();
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? Message.Type.Error : Message.Type.Information);
+            if (!this.IsError) (base.FormDto as FormDto).Dto.IsActive = false;
+
         }
 
         protected override sealed BinAff.Core.ICrud AssignComponentServer(BinAff.Core.Data data)
@@ -104,9 +107,9 @@ namespace Sparkle.Core.Facade
         private void Save()
         {
             this.AssignDataInternal();
-            BinAff.Core.ReturnObject<Boolean> ret = (this.ComponentServer as ICrud).Save();
+            ReturnObject<Boolean> ret = (this.ComponentServer as ICrud).Save();
             if (ret.Value) (this.FormDto as FormDto).Dto.Id = this.ComponentData.Id;
-            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? BinAff.Core.Message.Type.Error : BinAff.Core.Message.Type.Information);
+            this.DisplayMessageList = ret.GetMessage((this.IsError = ret.HasError()) ? Message.Type.Error : Message.Type.Information);
         }
 
     }

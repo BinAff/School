@@ -22,7 +22,7 @@ namespace Crystal.Configuration.Component.Gender
             base.ReadAllStoredProcedure = "Configuration.GenderReadAll";
             base.ReadAllActivateStoredProcedure = "Configuration.GenderReadAllActivate";
             base.UpdateStoredProcedure = "Configuration.GenderUpdate";
-            base.UpdateActivationStatusStoredProcedure = "Configuration.GenderStatusUpdate";
+            base.UpdateActivationStatusStoredProcedure = "Configuration.GenderUpdateStatus";
             base.NumberOfRowsAffectedInUpdate = 1;
             base.DeleteStoredProcedure = "Configuration.GenderDelete";
             base.NumberOfRowsAffectedInDelete = 1;
@@ -31,9 +31,7 @@ namespace Crystal.Configuration.Component.Gender
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-
             return dt;
         }
 

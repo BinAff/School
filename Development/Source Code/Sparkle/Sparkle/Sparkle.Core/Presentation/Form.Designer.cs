@@ -34,6 +34,8 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnActivate = new System.Windows.Forms.ToolStripButton();
+            this.btnDeactivate = new System.Windows.Forms.ToolStripButton();
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.cboList = new System.Windows.Forms.ComboBox();
             this.toolStrip.SuspendLayout();
@@ -48,7 +50,9 @@
             this.btnRefresh,
             this.btnSave,
             this.btnEdit,
-            this.btnDelete});
+            this.btnDelete,
+            this.btnActivate,
+            this.btnDeactivate});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(290, 35);
@@ -102,6 +106,26 @@
             this.btnDelete.Text = "O";
             this.btnDelete.ToolTipText = "Delete record";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnActivate
+            // 
+            this.btnActivate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnActivate.Image = ((System.Drawing.Image)(resources.GetObject("btnActivate.Image")));
+            this.btnActivate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(54, 32);
+            this.btnActivate.Text = "Activate";
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
+            // 
+            // btnDeactivate
+            // 
+            this.btnDeactivate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnDeactivate.Image = ((System.Drawing.Image)(resources.GetObject("btnDeactivate.Image")));
+            this.btnDeactivate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeactivate.Name = "btnDeactivate";
+            this.btnDeactivate.Size = new System.Drawing.Size(66, 32);
+            this.btnDeactivate.Text = "Deactivate";
+            this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
             // 
             // spcMain
             // 
@@ -158,5 +182,7 @@
         private System.Windows.Forms.ComboBox cboList;
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnEdit;
+        private System.Windows.Forms.ToolStripButton btnActivate;
+        private System.Windows.Forms.ToolStripButton btnDeactivate;
     }
 }

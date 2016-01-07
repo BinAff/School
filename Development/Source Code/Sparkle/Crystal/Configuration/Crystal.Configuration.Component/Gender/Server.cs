@@ -15,6 +15,7 @@
             base.Name = "Gender";
             base.Validator = new Validator(this.Data as Data);
             base.DataAccess = new Dao(this.Data as Data);
+            base.IsLob = true;
         }
 
         public override BinAff.Core.Data CreateDataObject()
