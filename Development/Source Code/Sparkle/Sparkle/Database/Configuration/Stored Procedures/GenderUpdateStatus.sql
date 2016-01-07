@@ -6,7 +6,7 @@
 AS
 BEGIN
 	
-	UPDATE Configuration.Frequency
+	UPDATE Configuration.Gender
 	SET	
 		IsActive = @IsActive
 	WHERE Id = @Id
