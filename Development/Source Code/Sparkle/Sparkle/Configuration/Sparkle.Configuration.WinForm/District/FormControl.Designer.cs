@@ -55,7 +55,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.Size = new System.Drawing.Size(422, 128);
+            this.tlpMain.Size = new System.Drawing.Size(277, 54);
             this.tlpMain.TabIndex = 9;
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 162;
             this.label1.Text = "Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -72,10 +72,10 @@
             // txtName
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Location = new System.Drawing.Point(214, 3);
+            this.txtName.Location = new System.Drawing.Point(141, 3);
             this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(185, 20);
+            this.txtName.Size = new System.Drawing.Size(112, 20);
             this.txtName.TabIndex = 165;
             // 
             // cboState
@@ -83,9 +83,9 @@
             this.cboState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(214, 27);
+            this.cboState.Location = new System.Drawing.Point(141, 27);
             this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(185, 21);
+            this.cboState.Size = new System.Drawing.Size(112, 21);
             this.cboState.TabIndex = 166;
             // 
             // label2
@@ -94,7 +94,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 24);
+            this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 167;
             this.label2.Text = "State";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,8 +104,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
+            this.MinimumSize = new System.Drawing.Size(240, 50);
             this.Name = "FormControl";
-            this.Size = new System.Drawing.Size(422, 128);
+            this.Size = new System.Drawing.Size(277, 54);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.ResumeLayout(false);

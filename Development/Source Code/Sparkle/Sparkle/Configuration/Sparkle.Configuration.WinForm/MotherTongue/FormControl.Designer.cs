@@ -78,6 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
+            this.MinimumSize = new System.Drawing.Size(240, 28);
             this.Name = "FormControl";
             this.Size = new System.Drawing.Size(342, 44);
             this.tlpMain.ResumeLayout(false);

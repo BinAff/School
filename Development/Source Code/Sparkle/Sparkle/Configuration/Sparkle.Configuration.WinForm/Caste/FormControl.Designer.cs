@@ -50,7 +50,7 @@
             this.tlpMain.RowCount = 2;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.Size = new System.Drawing.Size(342, 44);
+            this.tlpMain.Size = new System.Drawing.Size(342, 28);
             this.tlpMain.TabIndex = 8;
             // 
             // label1
@@ -78,8 +78,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
+            this.MinimumSize = new System.Drawing.Size(240, 28);
             this.Name = "FormControl";
-            this.Size = new System.Drawing.Size(342, 44);
+            this.Size = new System.Drawing.Size(342, 28);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.ResumeLayout(false);
