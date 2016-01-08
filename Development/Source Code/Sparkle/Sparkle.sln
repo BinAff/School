@@ -91,6 +91,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinAff.Presentation.Library", "..\..\..\..\..\..\Assembla\trunk\Project\BinAff\Source Code\BinAff\Presentation\Library\BinAff.Presentation.Library.csproj", "{1EE9A9DD-9151-437A-B1A3-28015975EF52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16EF92DC-DCA5-44C8-872A-7C0D60F259D7}"
+	ProjectSection(SolutionItems) = preProject
+		Reference\BinAff.Core.dll = Reference\BinAff.Core.dll
+		Reference\BinAff.Facade.Cache.dll = Reference\BinAff.Facade.Cache.dll
+		Reference\BinAff.Facade.Library.dll = Reference\BinAff.Facade.Library.dll
+		Reference\BinAff.Presentation.Library.dll = Reference\BinAff.Presentation.Library.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
