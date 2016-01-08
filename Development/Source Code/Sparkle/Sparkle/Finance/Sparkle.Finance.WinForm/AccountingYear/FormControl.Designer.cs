@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdlCurrYrYes = new System.Windows.Forms.RadioButton();
-            this.rdlCurrYrNo = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdlNo = new System.Windows.Forms.RadioButton();
+            this.rdlYes = new System.Windows.Forms.RadioButton();
             this.tlpMain.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +45,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 24);
+            this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 162;
             this.label1.Text = "Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -53,10 +53,10 @@
             // txtName
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Location = new System.Drawing.Point(174, 3);
+            this.txtName.Location = new System.Drawing.Point(128, 3);
             this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 20);
+            this.txtName.Size = new System.Drawing.Size(99, 20);
             this.txtName.TabIndex = 165;
             // 
             // tlpMain
@@ -68,75 +68,80 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Controls.Add(this.label1, 0, 0);
             this.tlpMain.Controls.Add(this.txtName, 2, 0);
-            this.tlpMain.Controls.Add(this.groupBox1, 2, 1);
             this.tlpMain.Controls.Add(this.label2, 0, 1);
+            this.tlpMain.Controls.Add(this.tableLayoutPanel2, 2, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.MinimumSize = new System.Drawing.Size(100, 76);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.Size = new System.Drawing.Size(342, 141);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpMain.Size = new System.Drawing.Size(250, 76);
             this.tlpMain.TabIndex = 10;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdlCurrYrNo);
-            this.groupBox1.Controls.Add(this.rdlCurrYrYes);
-            this.groupBox1.Location = new System.Drawing.Point(174, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(145, 36);
-            this.groupBox1.TabIndex = 166;
-            this.groupBox1.TabStop = false;
-            // 
-            // rdlCurrYrYes
-            // 
-            this.rdlCurrYrYes.AutoSize = true;
-            this.rdlCurrYrYes.Checked = true;
-            this.rdlCurrYrYes.Location = new System.Drawing.Point(6, 13);
-            this.rdlCurrYrYes.Name = "rdlCurrYrYes";
-            this.rdlCurrYrYes.Size = new System.Drawing.Size(43, 17);
-            this.rdlCurrYrYes.TabIndex = 0;
-            this.rdlCurrYrYes.TabStop = true;
-            this.rdlCurrYrYes.Text = "Yes";
-            this.rdlCurrYrYes.UseVisualStyleBackColor = true;
-            // 
-            // rdlCurrYrNo
-            // 
-            this.rdlCurrYrNo.AutoSize = true;
-            this.rdlCurrYrNo.Location = new System.Drawing.Point(70, 13);
-            this.rdlCurrYrNo.Name = "rdlCurrYrNo";
-            this.rdlCurrYrNo.Size = new System.Drawing.Size(39, 17);
-            this.rdlCurrYrNo.TabIndex = 1;
-            this.rdlCurrYrNo.TabStop = true;
-            this.rdlCurrYrNo.Text = "No";
-            this.rdlCurrYrNo.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 15, 5, 5);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(99, 18);
             this.label2.TabIndex = 167;
-            this.label2.Text = "Is Current Year?";
+            this.label2.Text = "Is this current year?";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.rdlNo, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.rdlYes, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(125, 24);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(105, 24);
+            this.tableLayoutPanel2.TabIndex = 171;
+            // 
+            // rdlNo
+            // 
+            this.rdlNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdlNo.Location = new System.Drawing.Point(55, 3);
+            this.rdlNo.Name = "rdlNo";
+            this.rdlNo.Size = new System.Drawing.Size(47, 18);
+            this.rdlNo.TabIndex = 168;
+            this.rdlNo.TabStop = true;
+            this.rdlNo.Text = "No";
+            this.rdlNo.UseVisualStyleBackColor = true;
+            // 
+            // rdlYes
+            // 
+            this.rdlYes.Checked = true;
+            this.rdlYes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdlYes.Location = new System.Drawing.Point(3, 3);
+            this.rdlYes.Name = "rdlYes";
+            this.rdlYes.Size = new System.Drawing.Size(46, 18);
+            this.rdlYes.TabIndex = 167;
+            this.rdlYes.TabStop = true;
+            this.rdlYes.Text = "Yes";
+            this.rdlYes.UseVisualStyleBackColor = true;
             // 
             // FormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
+            this.MinimumSize = new System.Drawing.Size(250, 52);
             this.Name = "FormControl";
-            this.Size = new System.Drawing.Size(342, 141);
+            this.Size = new System.Drawing.Size(250, 52);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -146,9 +151,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdlCurrYrNo;
-        private System.Windows.Forms.RadioButton rdlCurrYrYes;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RadioButton rdlNo;
+        private System.Windows.Forms.RadioButton rdlYes;
     }
 }
