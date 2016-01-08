@@ -15,6 +15,7 @@ namespace Sparkle.Core.Facade
         {
             base.FormDto = this.InstantiateFormDto();
             this.Instantiate();
+            if (this.ComponentServer != null) this.IsLov = this.ComponentServer.IsLov;
         }
 
         protected abstract void Instantiate();
@@ -37,7 +38,7 @@ namespace Sparkle.Core.Facade
             (this.ComponentServer as Crud).IsReadOwnData = true;
             (this.FormDto as FormDto).DtoList = this.ReadAll<Dto>().ConvertAll<Core.Facade.Dto>(new System.Converter<Dto, Core.Facade.Dto>((p) => { return p as Core.Facade.Dto; }));
         }
-        
+
         public override void Add()
         {
             this.Save();

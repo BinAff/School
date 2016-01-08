@@ -57,6 +57,16 @@ namespace Sparkle.Core.Presentation
             this.formControl.LoadForm();
             this.formControl.Facade.LoadForm();
             this.Bind();
+            if (this.formControl.Facade.IsLov)
+            {
+                btnActivate.Visible = true;
+                btnDeactivate.Visible = true;
+            }
+            else
+            {
+                btnActivate.Visible = false;
+                btnDeactivate.Visible = false;
+            }
             this.Cursor = Cursors.Default;
         }
 
