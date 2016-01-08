@@ -92,6 +92,9 @@
     <Folder Include="School\Stored Procedures\" />
     <Folder Include="Script" />
     <Folder Include="Script\Post-deployment" />
+    <Folder Include="Admission\" />
+    <Folder Include="Admission\Tables\" />
+    <Folder Include="Admission\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Student.sql" />
@@ -565,6 +568,25 @@
     <Build Include="Billing\Stored Procedures\BillDelete.sql" />
     <Build Include="Configuration\Stored Procedures\GenderUpdateStatus.sql" />
     <Build Include="Configuration\Stored Procedures\GenderReadAllActive.sql" />
+    <Build Include="Admission\Tables\TestSubject.sql" />
+    <Build Include="Admission\Tables\TestDefinition.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectUpdateStatus.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectReadDuplicate.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectReadAllActive.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectUpdate.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectReadAll.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectRead.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectInsert.sql" />
+    <Build Include="Admission\Stored Procedures\TestSubjectDelete.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionReadDuplicate.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionUpdateStatus.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionReadAllActive.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionUpdate.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionReadAll.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionRead.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionInsert.sql" />
+    <Build Include="Admission\Stored Procedures\TestDefinitionDelete.sql" />
+    <Build Include="Security\Admission.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
