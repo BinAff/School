@@ -33,6 +33,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.cboFeeGroup = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboFineDe = new System.Windows.Forms.ComboBox();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +49,18 @@
             this.tlpMain.Controls.Add(this.txtName, 2, 0);
             this.tlpMain.Controls.Add(this.cboFeeGroup, 2, 1);
             this.tlpMain.Controls.Add(this.label2, 0, 1);
+            this.tlpMain.Controls.Add(this.label3, 0, 2);
+            this.tlpMain.Controls.Add(this.cboFineDe, 2, 2);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.MinimumSize = new System.Drawing.Size(100, 52);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 4;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpMain.Size = new System.Drawing.Size(240, 52);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(240, 76);
             this.tlpMain.TabIndex = 10;
             // 
             // label1
@@ -99,14 +104,34 @@
             this.label2.Text = "Fee Group";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.TabIndex = 168;
+            this.label3.Text = "Fine Definition";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cboFineDe
+            // 
+            this.cboFineDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboFineDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFineDe.FormattingEnabled = true;
+            this.cboFineDe.Location = new System.Drawing.Point(123, 51);
+            this.cboFineDe.Name = "cboFineDe";
+            this.cboFineDe.Size = new System.Drawing.Size(94, 21);
+            this.cboFineDe.TabIndex = 169;
+            // 
             // FormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
-            this.MinimumSize = new System.Drawing.Size(240, 52);
+            this.MinimumSize = new System.Drawing.Size(240, 76);
             this.Name = "FormControl";
-            this.Size = new System.Drawing.Size(240, 52);
+            this.Size = new System.Drawing.Size(240, 76);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.ResumeLayout(false);
@@ -120,5 +145,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cboFeeGroup;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboFineDe;
     }
 }
