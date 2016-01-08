@@ -97,6 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Reference\BinAff.Facade.Cache.dll = Reference\BinAff.Facade.Cache.dll
 		Reference\BinAff.Facade.Library.dll = Reference\BinAff.Facade.Library.dll
 		Reference\BinAff.Presentation.Library.dll = Reference\BinAff.Presentation.Library.dll
+		Reference\BinAff.Utility.dll = Reference\BinAff.Utility.dll
 	EndProjectSection
 EndProject
 Global
