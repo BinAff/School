@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.rdlCurrYrNo = new System.Windows.Forms.RadioButton();
-            this.rdlCurrYrYes = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdlNo = new System.Windows.Forms.RadioButton();
+            this.rdlYes = new System.Windows.Forms.RadioButton();
             this.tlpMain.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -91,36 +91,13 @@
             this.label2.Text = "Is the fine taken as percentage?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rdlCurrYrNo
-            // 
-            this.rdlCurrYrNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdlCurrYrNo.Location = new System.Drawing.Point(88, 3);
-            this.rdlCurrYrNo.Name = "rdlCurrYrNo";
-            this.rdlCurrYrNo.Size = new System.Drawing.Size(79, 18);
-            this.rdlCurrYrNo.TabIndex = 168;
-            this.rdlCurrYrNo.TabStop = true;
-            this.rdlCurrYrNo.Text = "No";
-            this.rdlCurrYrNo.UseVisualStyleBackColor = true;
-            // 
-            // rdlCurrYrYes
-            // 
-            this.rdlCurrYrYes.Checked = true;
-            this.rdlCurrYrYes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdlCurrYrYes.Location = new System.Drawing.Point(3, 3);
-            this.rdlCurrYrYes.Name = "rdlCurrYrYes";
-            this.rdlCurrYrYes.Size = new System.Drawing.Size(79, 18);
-            this.rdlCurrYrYes.TabIndex = 167;
-            this.rdlCurrYrYes.TabStop = true;
-            this.rdlCurrYrYes.Text = "Yes";
-            this.rdlCurrYrYes.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.rdlCurrYrNo, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.rdlCurrYrYes, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.rdlNo, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.rdlYes, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(190, 24);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -129,6 +106,29 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(170, 24);
             this.tableLayoutPanel2.TabIndex = 170;
+            // 
+            // rdlNo
+            // 
+            this.rdlNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdlNo.Location = new System.Drawing.Point(88, 3);
+            this.rdlNo.Name = "rdlNo";
+            this.rdlNo.Size = new System.Drawing.Size(79, 18);
+            this.rdlNo.TabIndex = 168;
+            this.rdlNo.TabStop = true;
+            this.rdlNo.Text = "No";
+            this.rdlNo.UseVisualStyleBackColor = true;
+            // 
+            // rdlYes
+            // 
+            this.rdlYes.Checked = true;
+            this.rdlYes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdlYes.Location = new System.Drawing.Point(3, 3);
+            this.rdlYes.Name = "rdlYes";
+            this.rdlYes.Size = new System.Drawing.Size(79, 18);
+            this.rdlYes.TabIndex = 167;
+            this.rdlYes.TabStop = true;
+            this.rdlYes.Text = "Yes";
+            this.rdlYes.UseVisualStyleBackColor = true;
             // 
             // FormControl
             // 
@@ -151,8 +151,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rdlCurrYrYes;
-        private System.Windows.Forms.RadioButton rdlCurrYrNo;
+        private System.Windows.Forms.RadioButton rdlYes;
+        private System.Windows.Forms.RadioButton rdlNo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
