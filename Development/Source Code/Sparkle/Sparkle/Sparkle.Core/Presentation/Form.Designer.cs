@@ -38,6 +38,9 @@
             this.btnDeactivate = new System.Windows.Forms.ToolStripButton();
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.cboList = new System.Windows.Forms.ComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
@@ -48,9 +51,12 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnRefresh,
+            this.toolStripSeparator2,
             this.btnSave,
             this.btnEdit,
+            this.toolStripSeparator3,
             this.btnDelete,
+            this.toolStripSeparator1,
             this.btnActivate,
             this.btnDeactivate});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
@@ -110,21 +116,25 @@
             // btnActivate
             // 
             this.btnActivate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnActivate.Font = new System.Drawing.Font("Wingdings 2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnActivate.Image = ((System.Drawing.Image)(resources.GetObject("btnActivate.Image")));
             this.btnActivate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnActivate.Name = "btnActivate";
-            this.btnActivate.Size = new System.Drawing.Size(54, 32);
-            this.btnActivate.Text = "Activate";
+            this.btnActivate.Size = new System.Drawing.Size(32, 32);
+            this.btnActivate.Text = "<";
+            this.btnActivate.ToolTipText = "Activate";
             this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
             // btnDeactivate
             // 
             this.btnDeactivate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnDeactivate.Font = new System.Drawing.Font("Wingdings 2", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnDeactivate.Image = ((System.Drawing.Image)(resources.GetObject("btnDeactivate.Image")));
             this.btnDeactivate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeactivate.Name = "btnDeactivate";
-            this.btnDeactivate.Size = new System.Drawing.Size(66, 32);
-            this.btnDeactivate.Text = "Deactivate";
+            this.btnDeactivate.Size = new System.Drawing.Size(32, 32);
+            this.btnDeactivate.Text = "=";
+            this.btnDeactivate.ToolTipText = "Deactivate";
             this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
             // 
             // spcMain
@@ -151,6 +161,21 @@
             this.cboList.Sorted = true;
             this.cboList.TabIndex = 0;
             this.cboList.Click += new System.EventHandler(this.cboList_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 35);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 35);
             // 
             // Form
             // 
@@ -184,5 +209,8 @@
         private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.ToolStripButton btnActivate;
         private System.Windows.Forms.ToolStripButton btnDeactivate;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
