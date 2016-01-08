@@ -39,6 +39,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concession\Dto.cs" />
+    <Compile Include="Concession\FormDto.cs" />
+    <Compile Include="Concession\Server.cs" />
+    <Compile Include="Dto.cs" />
     <Compile Include="Fee\Definition\Dto.cs" />
     <Compile Include="Fee\Definition\FormDto.cs" />
     <Compile Include="Fee\Definition\Server.cs" />
@@ -57,7 +61,9 @@
     <Compile Include="Fine\Type\Dto.cs" />
     <Compile Include="Fine\Type\FormDto.cs" />
     <Compile Include="Fine\Type\Server.cs" />
+    <Compile Include="FormDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
