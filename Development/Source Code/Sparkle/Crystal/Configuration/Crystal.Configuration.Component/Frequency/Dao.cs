@@ -20,7 +20,9 @@ namespace Crystal.Configuration.Component.Frequency
             base.CreateStoredProcedure = "Billing.FrequencyInsert";
             base.ReadStoredProcedure = "Billing.FrequencyRead";
             base.ReadAllStoredProcedure = "Billing.FrequencyReadAll";
+            base.ReadAllActivateStoredProcedure = "Configuration.FrequencyReadAllActive";
             base.UpdateStoredProcedure = "Billing.FrequencyUpdate";
+            base.UpdateActivationStatusStoredProcedure = "Configuration.FrequencyUpdateStatus";
             base.NumberOfRowsAffectedInUpdate = 1;
             base.DeleteStoredProcedure = "Billing.FrequencyDelete";
             base.NumberOfRowsAffectedInDelete = 1;
