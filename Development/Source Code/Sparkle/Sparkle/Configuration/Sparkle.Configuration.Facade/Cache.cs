@@ -40,10 +40,10 @@ namespace Sparkle.Configuration.Facade
             {
                 AppCache.Current.Cache["GenderList"] = new Gender.Server(null).ReadAllActivate<Gender.Dto>();
             });
-            Task.Factory.StartNew(() =>
-            {
-                AppCache.Current.Cache["IdentityProofTypeList"] = new IdentityProofType.Server(null).ReadAll<IdentityProofType.Dto>();
-            });
+            //Task.Factory.StartNew(() =>
+            //{
+            //    AppCache.Current.Cache["IdentityProofTypeList"] = new IdentityProofType.Server(null).ReadAll<IdentityProofType.Dto>();
+            //});
             Task.Factory.StartNew(() =>
             {
                 AppCache.Current.Cache["MotherTongueList"] = new MotherTongue.Server(null).ReadAll<MotherTongue.Dto>();
@@ -55,6 +55,10 @@ namespace Sparkle.Configuration.Facade
             Task.Factory.StartNew(() =>
             {
                 AppCache.Current.Cache["RelationshipList"] = new Relationship.Server(null).ReadAll<Relationship.Dto>();
+            });
+            Task.Factory.StartNew(() =>
+            {
+                AppCache.Current.Cache["FrequencyList"] = new Frequency.Server(null).ReadAllActivate<Frequency.Dto>();
             });
         }
 
