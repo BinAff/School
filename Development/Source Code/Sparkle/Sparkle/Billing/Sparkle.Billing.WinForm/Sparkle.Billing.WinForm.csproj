@@ -51,6 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concession\Form.cs" />
+    <Compile Include="Concession\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concession\FormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Concession\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fee\Definition\Form.cs">
       <SubType>Form</SubType>
     </Compile>
