@@ -1,5 +1,7 @@
-﻿using BinAff.Core;
-using System;
+﻿using System;
+using System.Collections.Generic;
+
+using BinAff.Core;
 
 namespace Sparkle.Core.Facade
 {
@@ -62,6 +64,23 @@ namespace Sparkle.Core.Facade
             {
                 this.AssignDtoInternal();
             }
+        }
+
+        public virtual List<T> ReadAllActivate<T>() where T : Dto
+        {
+            ReturnObject<List<BinAff.Core.Data>> categoryList = ((IActivator)this.AssignComponentServer(null)).ReadAllActivate();
+            this.IsError = categoryList.HasError();
+            this.DisplayMessageList = categoryList.GetMessage(this.IsError ? Message.Type.Error : Message.Type.Information);
+            List<Dto> ret = null;
+            if (!this.IsError)
+            {
+                ret = new List<Dto>();
+                foreach (BinAff.Core.Data data in categoryList.Value)
+                {
+                    ret.Add(this.Convert(data) as Dto);
+                }
+            }
+            return ret.ConvertAll<T>((p) => { return p as T; });
         }
 
         public override void Delete()
