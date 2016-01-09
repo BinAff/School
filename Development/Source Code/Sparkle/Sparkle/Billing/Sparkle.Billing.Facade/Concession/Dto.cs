@@ -6,15 +6,13 @@ namespace Sparkle.Billing.Facade.Concession
     public class Dto : Sparkle.Core.Facade.Dto
     {
 
-        /// <summary>
-        /// Fee LineItem
-        /// </summary>
+        public Fee.Definition.Dto FeeDefinition { get; set; }
+
+        public Configuration.Facade.Caste.Dto Caste { get; set; }
         
         public Double Amount { get; set; }
 
         public Boolean IsPercentage { get; set; }
-
-        public Boolean IsActive { get; set; }
 
     }
 

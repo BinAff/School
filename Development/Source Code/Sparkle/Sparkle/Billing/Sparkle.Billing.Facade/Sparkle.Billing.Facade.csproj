@@ -72,6 +72,10 @@
     <Compile Include="Server.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Configuration\Sparkle.Configuration.Facade\Sparkle.Configuration.Facade.csproj">
+      <Project>{f6940d8b-541d-4e0b-be95-9f51dfaca156}</Project>
+      <Name>Sparkle.Configuration.Facade</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
       <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
       <Name>Sparkle.Core</Name>
