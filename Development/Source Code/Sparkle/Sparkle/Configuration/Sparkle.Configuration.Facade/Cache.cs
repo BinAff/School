@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 
+using BinAff.Core;
+
 using AppCache = BinAff.Facade.Cache.Server;
 
 namespace Sparkle.Configuration.Facade
@@ -36,7 +38,7 @@ namespace Sparkle.Configuration.Facade
             });
             Task.Factory.StartNew(() =>
             {
-                AppCache.Current.Cache["GenderList"] = new Gender.Server(null).ReadAll<Gender.Dto>();
+                AppCache.Current.Cache["GenderList"] = new Gender.Server(null).ReadAllActivate<Gender.Dto>();
             });
             Task.Factory.StartNew(() =>
             {
