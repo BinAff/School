@@ -18,27 +18,22 @@ namespace Sparkle.Finance.WinForm.Frequency
             return new Fac.Server(base.FormDto as Fac.FormDto);
         }
 
-        protected override void Bind()
-        {
-
-        }
-
         protected override void ClearForm()
         {
-            //this.txtName.Text = String.Empty;
-            //this.txtName.Focus();
+            this.txtName.Text = String.Empty;
+            this.txtName.Focus();
         }
 
         protected override void AssignDto()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            //dto.Name = this.txtName.Text;
+            dto.Name = this.txtName.Text;
         }
 
         protected override void AssignFormControls()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            //this.txtName.Text = dto.Name;
+            this.txtName.Text = dto.Name;
         }
 
         protected override Boolean ValidateForm()
