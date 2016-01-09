@@ -39,6 +39,8 @@
             this.btnExaminationManagement = new System.Windows.Forms.Button();
             this.btnLibraryManagement = new System.Windows.Forms.Button();
             this.btnLaboratoryManagement = new System.Windows.Forms.Button();
+            this.btnFineManagement = new System.Windows.Forms.Button();
+            this.btnConcessionManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSchoolInformation
@@ -55,7 +57,7 @@
             // btnSyllabusManagement
             // 
             this.btnSyllabusManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyllabusManagement.Location = new System.Drawing.Point(212, 12);
+            this.btnSyllabusManagement.Location = new System.Drawing.Point(212, 212);
             this.btnSyllabusManagement.Name = "btnSyllabusManagement";
             this.btnSyllabusManagement.Size = new System.Drawing.Size(94, 94);
             this.btnSyllabusManagement.TabIndex = 12;
@@ -66,7 +68,7 @@
             // btnCourseManagement
             // 
             this.btnCourseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourseManagement.Location = new System.Drawing.Point(112, 12);
+            this.btnCourseManagement.Location = new System.Drawing.Point(512, 112);
             this.btnCourseManagement.Name = "btnCourseManagement";
             this.btnCourseManagement.Size = new System.Drawing.Size(94, 94);
             this.btnCourseManagement.TabIndex = 13;
@@ -77,7 +79,7 @@
             // btnFeeManagement
             // 
             this.btnFeeManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeManagement.Location = new System.Drawing.Point(312, 12);
+            this.btnFeeManagement.Location = new System.Drawing.Point(112, 12);
             this.btnFeeManagement.Name = "btnFeeManagement";
             this.btnFeeManagement.Size = new System.Drawing.Size(94, 94);
             this.btnFeeManagement.TabIndex = 14;
@@ -147,7 +149,7 @@
             // 
             this.btnLibraryManagement.Enabled = false;
             this.btnLibraryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryManagement.Location = new System.Drawing.Point(412, 12);
+            this.btnLibraryManagement.Location = new System.Drawing.Point(12, 212);
             this.btnLibraryManagement.Name = "btnLibraryManagement";
             this.btnLibraryManagement.Size = new System.Drawing.Size(94, 94);
             this.btnLibraryManagement.TabIndex = 20;
@@ -159,7 +161,7 @@
             // 
             this.btnLaboratoryManagement.Enabled = false;
             this.btnLaboratoryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLaboratoryManagement.Location = new System.Drawing.Point(512, 12);
+            this.btnLaboratoryManagement.Location = new System.Drawing.Point(112, 212);
             this.btnLaboratoryManagement.Name = "btnLaboratoryManagement";
             this.btnLaboratoryManagement.Size = new System.Drawing.Size(94, 94);
             this.btnLaboratoryManagement.TabIndex = 21;
@@ -167,11 +169,35 @@
             this.btnLaboratoryManagement.UseVisualStyleBackColor = true;
             this.btnLaboratoryManagement.Click += new System.EventHandler(this.btnLaboratoryManagement_Click);
             // 
-            // ManagerForm
+            // btnFineManagement
+            // 
+            this.btnFineManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFineManagement.Location = new System.Drawing.Point(212, 12);
+            this.btnFineManagement.Name = "btnFineManagement";
+            this.btnFineManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFineManagement.TabIndex = 22;
+            this.btnFineManagement.Text = "Fine Management";
+            this.btnFineManagement.UseVisualStyleBackColor = true;
+            this.btnFineManagement.Click += new System.EventHandler(this.btnFineManagement_Click);
+            // 
+            // btnConcessionManagement
+            // 
+            this.btnConcessionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConcessionManagement.Location = new System.Drawing.Point(312, 12);
+            this.btnConcessionManagement.Name = "btnConcessionManagement";
+            this.btnConcessionManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnConcessionManagement.TabIndex = 23;
+            this.btnConcessionManagement.Text = "Concession Management";
+            this.btnConcessionManagement.UseVisualStyleBackColor = true;
+            this.btnConcessionManagement.Click += new System.EventHandler(this.btnConcessionManagement_Click);
+            // 
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 217);
+            this.ClientSize = new System.Drawing.Size(617, 317);
+            this.Controls.Add(this.btnConcessionManagement);
+            this.Controls.Add(this.btnFineManagement);
             this.Controls.Add(this.btnLaboratoryManagement);
             this.Controls.Add(this.btnLibraryManagement);
             this.Controls.Add(this.btnExaminationManagement);
@@ -183,7 +209,7 @@
             this.Controls.Add(this.btnCourseManagement);
             this.Controls.Add(this.btnSyllabusManagement);
             this.Controls.Add(this.btnSchoolInformation);
-            this.Name = "ManagerForm";
+            this.Name = "Menu";
             this.Text = "School Manager";
             this.ResumeLayout(false);
 
@@ -202,6 +228,8 @@
         private System.Windows.Forms.Button btnExaminationManagement;
         private System.Windows.Forms.Button btnLibraryManagement;
         private System.Windows.Forms.Button btnLaboratoryManagement;
+        private System.Windows.Forms.Button btnFineManagement;
+        private System.Windows.Forms.Button btnConcessionManagement;
     }
 }
 

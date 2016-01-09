@@ -48,10 +48,8 @@
       <HintPath>..\..\..\Reference\BinAff.Presentation.Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Form.cs">
@@ -141,6 +139,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Billing\Sparkle.Billing.WinForm\Sparkle.Billing.WinForm.csproj">
+      <Project>{54f9f6e6-a651-4092-aa06-57b42b2a7557}</Project>
+      <Name>Sparkle.Billing.WinForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
       <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
       <Name>Sparkle.Core</Name>
