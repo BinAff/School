@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Fac = Sparkle.Finance.Facade.Frequency;
+using Fac = Sparkle.Configuration.Facade.Frequency;
 
 namespace Sparkle.Configuration.WinForm.Frequency
 {
