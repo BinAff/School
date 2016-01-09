@@ -2,7 +2,7 @@
 AS
 BEGIN
 	
-	SELECT Id, Name
+	SELECT Id, Name, IsActive
 	FROM Configuration.Occupation WITH (NOLOCK)
    
 END

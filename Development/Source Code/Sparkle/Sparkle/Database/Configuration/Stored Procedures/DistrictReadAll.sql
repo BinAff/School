@@ -2,7 +2,7 @@
 AS
 BEGIN
 	
-	SELECT Id, Name, StateId
+	SELECT Id, Name, StateId, IsActive
 	FROM Configuration.District WITH (NOLOCK)
    
 END

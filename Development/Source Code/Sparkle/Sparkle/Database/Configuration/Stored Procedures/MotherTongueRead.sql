@@ -5,7 +5,7 @@
 AS
 BEGIN
 	
-   SELECT Id, Name
+   SELECT Id, Name, IsActive
    FROM Configuration.MotherTongue WITH (NOLOCK)
    WHERE Id = @Id
    

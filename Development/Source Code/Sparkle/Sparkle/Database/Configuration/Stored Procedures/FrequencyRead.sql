@@ -6,7 +6,7 @@ CREATE PROCEDURE [Configuration].[FrequencyRead]
 AS
 BEGIN
 	
-   SELECT Id, Name,IsActive
+   SELECT Id, Name, IsActive
    FROM Configuration.Frequency WITH (NOLOCK)
    WHERE Id = @Id
    

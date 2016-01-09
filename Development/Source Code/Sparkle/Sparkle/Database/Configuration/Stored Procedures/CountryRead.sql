@@ -5,7 +5,7 @@
 AS
 BEGIN
 	
-   SELECT Id, Name,Code,IsdCode
+   SELECT Id, Name, Code, IsdCode, IsActive
    FROM Configuration.Country WITH (NOLOCK)
    WHERE Id = @Id
    

@@ -587,6 +587,24 @@
     <Build Include="Admission\Stored Procedures\TestDefinitionInsert.sql" />
     <Build Include="Admission\Stored Procedures\TestDefinitionDelete.sql" />
     <Build Include="Security\Admission.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\CasteReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\CountryReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\DistrictUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\DistrictReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\MotherTongueUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\MotherTongueReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\OccupationUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\OccupationReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\RelationshipUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\RelationshipReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\ReligionUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\ReligionReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\StateUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\StateReadAllActive.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteUpdateStatus.sql" />
+    <Build Include="Configuration\Stored Procedures\SubCasteReadAllActive.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
