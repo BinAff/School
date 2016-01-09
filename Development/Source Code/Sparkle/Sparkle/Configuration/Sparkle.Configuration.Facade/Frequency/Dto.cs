@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sparkle.Finance.Facade.Frequency
+namespace Sparkle.Configuration.Facade.Frequency
 {
 
     public class Dto : Sparkle.Core.Facade.Dto

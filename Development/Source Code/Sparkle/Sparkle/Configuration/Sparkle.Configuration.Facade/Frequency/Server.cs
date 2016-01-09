@@ -2,7 +2,7 @@
 
 using FacLib = Sparkle.Core.Facade;
 
-namespace Sparkle.Finance.Facade.Frequency
+namespace Sparkle.Configuration.Facade.Frequency
 {
 
     public class Server : Sparkle.Core.Facade.Server
