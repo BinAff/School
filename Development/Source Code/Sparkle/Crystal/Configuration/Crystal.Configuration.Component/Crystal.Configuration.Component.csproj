@@ -57,6 +57,10 @@
     <Compile Include="District\Data.cs" />
     <Compile Include="District\Server.cs" />
     <Compile Include="District\Validator.cs" />
+    <Compile Include="Frequency\Dao.cs" />
+    <Compile Include="Frequency\Data.cs" />
+    <Compile Include="Frequency\Server.cs" />
+    <Compile Include="Frequency\Validator.cs" />
     <Compile Include="Gender\Dao.cs" />
     <Compile Include="Gender\Data.cs" />
     <Compile Include="Gender\Server.cs" />
