@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concession\Form.cs" />
+    <Compile Include="Concession\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Concession\Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
@@ -158,6 +160,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Concession\FormControl.resx">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fee\Definition\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
