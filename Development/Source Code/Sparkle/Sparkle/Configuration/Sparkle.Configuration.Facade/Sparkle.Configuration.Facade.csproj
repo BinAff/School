@@ -56,6 +56,9 @@
     <Compile Include="District\Dto.cs" />
     <Compile Include="District\FormDto.cs" />
     <Compile Include="District\Server.cs" />
+    <Compile Include="Frequency\Dto.cs" />
+    <Compile Include="Frequency\FormDto.cs" />
+    <Compile Include="Frequency\Server.cs" />
     <Compile Include="Gender\Dto.cs" />
     <Compile Include="Gender\FormDto.cs" />
     <Compile Include="Gender\Server.cs" />
