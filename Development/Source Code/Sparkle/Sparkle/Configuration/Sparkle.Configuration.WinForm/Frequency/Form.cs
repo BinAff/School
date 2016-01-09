@@ -1,4 +1,4 @@
-﻿namespace Sparkle.Finance.WinForm.Frequency
+﻿namespace Sparkle.Configuration.WinForm.Frequency
 {
 
     public partial class Form : Sparkle.Core.Presentation.Form

@@ -2,7 +2,7 @@
 
 using Fac = Sparkle.Finance.Facade.Frequency;
 
-namespace Sparkle.Finance.WinForm.Frequency
+namespace Sparkle.Configuration.WinForm.Frequency
 {
 
     public partial class FormControl : Sparkle.Core.Presentation.FormControl
