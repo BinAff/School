@@ -20,7 +20,7 @@ namespace Crystal.Configuration.Component.Gender
             base.CreateStoredProcedure = "Configuration.GenderInsert";
             base.ReadStoredProcedure = "Configuration.GenderRead";
             base.ReadAllStoredProcedure = "Configuration.GenderReadAll";
-            base.ReadAllActivateStoredProcedure = "Configuration.GenderReadAllActivate";
+            base.ReadAllActivateStoredProcedure = "Configuration.GenderReadAllActive";
             base.UpdateStoredProcedure = "Configuration.GenderUpdate";
             base.UpdateActivationStatusStoredProcedure = "Configuration.GenderUpdateStatus";
             base.NumberOfRowsAffectedInUpdate = 1;
