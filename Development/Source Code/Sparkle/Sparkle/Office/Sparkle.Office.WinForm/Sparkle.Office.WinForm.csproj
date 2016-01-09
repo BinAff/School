@@ -74,6 +74,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Billing\Sparkle.Billing.WinForm\Sparkle.Billing.WinForm.csproj">
+      <Project>{54f9f6e6-a651-4092-aa06-57b42b2a7557}</Project>
+      <Name>Sparkle.Billing.WinForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Configuration\Sparkle.Configuration.WinForm\Sparkle.Configuration.WinForm.csproj">
       <Project>{0492dd92-37c2-44cd-9ad7-0d3abc632fba}</Project>
       <Name>Sparkle.Configuration.WinForm</Name>
@@ -81,6 +85,10 @@
     <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
       <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
       <Name>Sparkle.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Student\Sparkle.Student.WinForm\Sparkle.Student.WinForm.csproj">
+      <Project>{82c303e3-6df0-423f-977d-5718e6bf9abc}</Project>
+      <Name>Sparkle.Student.WinForm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

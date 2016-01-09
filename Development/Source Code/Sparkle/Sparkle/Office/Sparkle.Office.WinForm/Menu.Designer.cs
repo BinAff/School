@@ -38,6 +38,12 @@
             this.btnRelationshipManagement = new System.Windows.Forms.Button();
             this.btnMotherTongueManagement = new System.Windows.Forms.Button();
             this.btnOcupationManagement = new System.Windows.Forms.Button();
+            this.btnFeeGroupManagement = new System.Windows.Forms.Button();
+            this.btnFeeDefinitionManagement = new System.Windows.Forms.Button();
+            this.btnFineDefinitionManagement = new System.Windows.Forms.Button();
+            this.btnFineTypeManagement = new System.Windows.Forms.Button();
+            this.btnStudentCategoryManagement = new System.Windows.Forms.Button();
+            this.btnFrequencyManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStateManagement
@@ -150,11 +156,83 @@
             this.btnOcupationManagement.UseVisualStyleBackColor = true;
             this.btnOcupationManagement.Click += new System.EventHandler(this.btnOcupationManagement_Click);
             // 
+            // btnFeeGroupManagement
+            // 
+            this.btnFeeGroupManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeGroupManagement.Location = new System.Drawing.Point(412, 112);
+            this.btnFeeGroupManagement.Name = "btnFeeGroupManagement";
+            this.btnFeeGroupManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFeeGroupManagement.TabIndex = 11;
+            this.btnFeeGroupManagement.Text = "Fee Group Management";
+            this.btnFeeGroupManagement.UseVisualStyleBackColor = true;
+            this.btnFeeGroupManagement.Click += new System.EventHandler(this.btnFeeGroupManagement_Click);
+            // 
+            // btnFeeDefinitionManagement
+            // 
+            this.btnFeeDefinitionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeDefinitionManagement.Location = new System.Drawing.Point(512, 112);
+            this.btnFeeDefinitionManagement.Name = "btnFeeDefinitionManagement";
+            this.btnFeeDefinitionManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFeeDefinitionManagement.TabIndex = 12;
+            this.btnFeeDefinitionManagement.Text = "Fee Definition Management";
+            this.btnFeeDefinitionManagement.UseVisualStyleBackColor = true;
+            this.btnFeeDefinitionManagement.Click += new System.EventHandler(this.btnFeeDefinitionManagement_Click);
+            // 
+            // btnFineDefinitionManagement
+            // 
+            this.btnFineDefinitionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFineDefinitionManagement.Location = new System.Drawing.Point(112, 212);
+            this.btnFineDefinitionManagement.Name = "btnFineDefinitionManagement";
+            this.btnFineDefinitionManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFineDefinitionManagement.TabIndex = 14;
+            this.btnFineDefinitionManagement.Text = "Fine Definition Management";
+            this.btnFineDefinitionManagement.UseVisualStyleBackColor = true;
+            this.btnFineDefinitionManagement.Click += new System.EventHandler(this.btnFineDefinitionManagement_Click);
+            // 
+            // btnFineTypeManagement
+            // 
+            this.btnFineTypeManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFineTypeManagement.Location = new System.Drawing.Point(12, 212);
+            this.btnFineTypeManagement.Name = "btnFineTypeManagement";
+            this.btnFineTypeManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFineTypeManagement.TabIndex = 13;
+            this.btnFineTypeManagement.Text = "Fine Type Management";
+            this.btnFineTypeManagement.UseVisualStyleBackColor = true;
+            this.btnFineTypeManagement.Click += new System.EventHandler(this.btnFineTypeManagement_Click);
+            // 
+            // btnStudentCategoryManagement
+            // 
+            this.btnStudentCategoryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentCategoryManagement.Location = new System.Drawing.Point(212, 212);
+            this.btnStudentCategoryManagement.Name = "btnStudentCategoryManagement";
+            this.btnStudentCategoryManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnStudentCategoryManagement.TabIndex = 15;
+            this.btnStudentCategoryManagement.Text = "Student Category Management";
+            this.btnStudentCategoryManagement.UseVisualStyleBackColor = true;
+            this.btnStudentCategoryManagement.Click += new System.EventHandler(this.btnStudentCategoryManagement_Click);
+            // 
+            // btnFrequencyManagement
+            // 
+            this.btnFrequencyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFrequencyManagement.Location = new System.Drawing.Point(312, 211);
+            this.btnFrequencyManagement.Name = "btnFrequencyManagement";
+            this.btnFrequencyManagement.Size = new System.Drawing.Size(94, 94);
+            this.btnFrequencyManagement.TabIndex = 16;
+            this.btnFrequencyManagement.Text = "Frequency Management";
+            this.btnFrequencyManagement.UseVisualStyleBackColor = true;
+            this.btnFrequencyManagement.Click += new System.EventHandler(this.btnFrequencyManagement_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 215);
+            this.ClientSize = new System.Drawing.Size(611, 317);
+            this.Controls.Add(this.btnFrequencyManagement);
+            this.Controls.Add(this.btnStudentCategoryManagement);
+            this.Controls.Add(this.btnFineDefinitionManagement);
+            this.Controls.Add(this.btnFineTypeManagement);
+            this.Controls.Add(this.btnFeeDefinitionManagement);
+            this.Controls.Add(this.btnFeeGroupManagement);
             this.Controls.Add(this.btnOcupationManagement);
             this.Controls.Add(this.btnMotherTongueManagement);
             this.Controls.Add(this.btnRelationshipManagement);
@@ -183,6 +261,12 @@
         private System.Windows.Forms.Button btnRelationshipManagement;
         private System.Windows.Forms.Button btnMotherTongueManagement;
         private System.Windows.Forms.Button btnOcupationManagement;
+        private System.Windows.Forms.Button btnFeeGroupManagement;
+        private System.Windows.Forms.Button btnFeeDefinitionManagement;
+        private System.Windows.Forms.Button btnFineDefinitionManagement;
+        private System.Windows.Forms.Button btnFineTypeManagement;
+        private System.Windows.Forms.Button btnStudentCategoryManagement;
+        private System.Windows.Forms.Button btnFrequencyManagement;
 
     }
 }
