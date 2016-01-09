@@ -17,23 +17,21 @@ namespace Crystal.Configuration.Component.Frequency
 
         protected override void Compose()
         {
-            base.CreateStoredProcedure = "Billing.FrequencyInsert";
-            base.ReadStoredProcedure = "Billing.FrequencyRead";
-            base.ReadAllStoredProcedure = "Billing.FrequencyReadAll";
+            base.CreateStoredProcedure = "Configuration.FrequencyInsert";
+            base.ReadStoredProcedure = "Configuration.FrequencyRead";
+            base.ReadAllStoredProcedure = "Configuration.FrequencyReadAll";
             base.ReadAllActivateStoredProcedure = "Configuration.FrequencyReadAllActive";
-            base.UpdateStoredProcedure = "Billing.FrequencyUpdate";
+            base.UpdateStoredProcedure = "Configuration.FrequencyUpdate";
             base.UpdateActivationStatusStoredProcedure = "Configuration.FrequencyUpdateStatus";
             base.NumberOfRowsAffectedInUpdate = 1;
-            base.DeleteStoredProcedure = "Billing.FrequencyDelete";
+            base.DeleteStoredProcedure = "Configuration.FrequencyDelete";
             base.NumberOfRowsAffectedInDelete = 1;
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-
             return dt;
         }
 
@@ -48,8 +46,8 @@ namespace Crystal.Configuration.Component.Frequency
         {
             Data data = this.Data as Data;
             this.CreateConnection();
-            this.CreateCommand("Billing.FrequencyReadDuplicate");
-            this.AssignParameter("Billing.FrequencyReadDuplicate");
+            this.CreateCommand("Configuration.FrequencyReadDuplicate");
+            this.AssignParameter("Configuration.FrequencyReadDuplicate");
 
             DataSet ds = this.ExecuteDataSet();
 
