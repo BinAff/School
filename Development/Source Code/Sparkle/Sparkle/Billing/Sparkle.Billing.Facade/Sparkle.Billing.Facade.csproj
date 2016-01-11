@@ -72,10 +72,6 @@
     <Compile Include="Server.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Crystal\Configuration\Crystal.Configuration.Component\Crystal.Configuration.Component.csproj">
-      <Project>{2c1a698f-760a-4b91-8f91-4f3a579d7d12}</Project>
-      <Name>Crystal.Configuration.Component</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Configuration\Sparkle.Configuration.Facade\Sparkle.Configuration.Facade.csproj">
       <Project>{f6940d8b-541d-4e0b-be95-9f51dfaca156}</Project>
       <Name>Sparkle.Configuration.Facade</Name>
