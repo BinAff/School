@@ -39,18 +39,14 @@ namespace Sparkle.Billing.Facade.Fine.Type
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
             dto.Name = data.Name;
-            dto.IsActive = data.IsActive;
         }
 
         public override void AssignData()
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
             data.Name = dto.Name;
-            data.IsActive = dto.IsActive;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
