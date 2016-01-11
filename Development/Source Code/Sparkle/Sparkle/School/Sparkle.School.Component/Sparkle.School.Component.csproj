@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\Output\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -57,6 +57,10 @@
     <Compile Include="Standard\Data.cs" />
     <Compile Include="Standard\Server.cs" />
     <Compile Include="Standard\Validator.cs" />
+    <Compile Include="Subject\Dao.cs" />
+    <Compile Include="Subject\Data.cs" />
+    <Compile Include="Subject\Server.cs" />
+    <Compile Include="Subject\Validator.cs" />
     <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +69,7 @@
       <Name>Crystal.Configuration.Component</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
