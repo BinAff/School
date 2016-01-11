@@ -28,6 +28,15 @@
             return new Server(data as Data);
         }
 
+        protected override void CreateChildren()
+        {
+            base.AddChild(new Definition.Server((this.Data as Data).Definition)
+            {
+                IsReadOnly = true,
+                Type = ChildType.Independent
+            });
+        }
+
     }
 
 }

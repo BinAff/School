@@ -25,12 +25,7 @@ namespace Sparkle.Billing.Component.Fine
                 retMsg.Add(new Message("Amount cannot be empty.", Message.Type.Error));
             }
 
-            if (ValidationRule.IsNegative(data.FineType.Id))
-            {
-                retMsg.Add(new Message("Please select Fine Type.", Message.Type.Error));
-            }
-
-            if (ValidationRule.IsNegative(data.FineDefinition.Id))
+            if (ValidationRule.IsNegative(data.Definition.Id))
             {
                 retMsg.Add(new Message("Please select Fine Defination.", Message.Type.Error));
             }
