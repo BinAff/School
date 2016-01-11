@@ -35,8 +35,8 @@
             this.cboFineDefinition = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboStandard = new System.Windows.Forms.ComboBox();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.LowerLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,14 +140,6 @@
             this.cboStandard.Size = new System.Drawing.Size(174, 21);
             this.cboStandard.TabIndex = 171;
             // 
-            // txtAmount
-            // 
-            this.txtAmount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAmount.Location = new System.Drawing.Point(203, 75);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(174, 20);
-            this.txtAmount.TabIndex = 173;
-            // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -157,6 +149,14 @@
             this.label4.TabIndex = 172;
             this.label4.Text = "Amount";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAmount.Location = new System.Drawing.Point(203, 75);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(174, 20);
+            this.txtAmount.TabIndex = 173;
             // 
             // label5
             // 
