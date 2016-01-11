@@ -24,10 +24,24 @@ namespace Sparkle.Billing.Component.Fee.LineItem
             {
                 retMsg.Add(new Message("Installment cannot be empty.", Message.Type.Error));
             }
+            else
+            {
+                if (ValidationRule.IsNegative(data.Installment))
+                {
+                    retMsg.Add(new Message("Installment cannot be Negative.", Message.Type.Error));
+                } 
+            }
 
             if (ValidationRule.IsNullOrEmpty(data.Amount))
             {
                 retMsg.Add(new Message("Amount cannot be empty.", Message.Type.Error));
+            }
+            else
+            {
+                if (ValidationRule.IsNegative(data.Amount))
+                {
+                    retMsg.Add(new Message("Amount cannot be Negative.", Message.Type.Error));
+                }
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())

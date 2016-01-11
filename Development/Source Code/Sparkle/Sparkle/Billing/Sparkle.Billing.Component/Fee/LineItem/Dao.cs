@@ -29,7 +29,6 @@ namespace Sparkle.Billing.Component.Fee.LineItem
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Installment = Convert.IsDBNull(dr["Installment"]) ? 0 : Convert.ToInt32(dr["Installment"]);
             dt.Amount = Convert.IsDBNull(dr["Amount"]) ? 0.00 : Convert.ToDouble(dr["Amount"]);
             
