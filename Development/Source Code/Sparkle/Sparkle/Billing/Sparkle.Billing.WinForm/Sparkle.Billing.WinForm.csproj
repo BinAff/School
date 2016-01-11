@@ -150,9 +150,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\School\Sparkle.School.Facade\Sparkle.School.Facade.csproj">
+      <Project>{12fd6282-7696-49b8-b7d0-7b142264a7e6}</Project>
+      <Name>Sparkle.School.Facade</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Sparkle.Core\Sparkle.Core.csproj">
       <Project>{de8c61e5-9c06-404f-ae93-6ed1ec58808a}</Project>
       <Name>Sparkle.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Student\Sparkle.Student.Facade\Sparkle.Student.Facade.csproj">
+      <Project>{3aac29d7-22e6-495e-9a9b-422906292655}</Project>
+      <Name>Sparkle.Student.Facade</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sparkle.Billing.Facade\Sparkle.Billing.Facade.csproj">
       <Project>{ac4386b3-df94-41e8-92c3-bff1827f94ed}</Project>
