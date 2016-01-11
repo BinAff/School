@@ -619,6 +619,12 @@
     <Build Include="Admission\Stored Procedures\SubjectScoreRead.sql" />
     <Build Include="Admission\Stored Procedures\SubjectScoreInsert.sql" />
     <Build Include="Admission\Stored Procedures\SubjectScoreDelete.sql" />
+    <Build Include="Admission\Tables\EducationBackground.sql" />
+    <Build Include="Admission\Stored Procedures\EducationBackgroundUpdate.sql" />
+    <Build Include="Admission\Stored Procedures\EducationBackgroundReadAll.sql" />
+    <Build Include="Admission\Stored Procedures\EducationBackgroundRead.sql" />
+    <Build Include="Admission\Stored Procedures\EducationBackgroundInsert.sql" />
+    <Build Include="Admission\Stored Procedures\EducationBackgroundDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
