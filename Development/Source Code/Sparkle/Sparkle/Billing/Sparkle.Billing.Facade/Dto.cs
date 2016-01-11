@@ -6,8 +6,6 @@ namespace Sparkle.Billing.Facade
     public class Dto : Sparkle.Core.Facade.Dto
     {
 
-        public Int64 Id { get; set; }
-
         public DateTime Date { get; set; }
 
         public Int32 Installment { get; set; }
