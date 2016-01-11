@@ -8,11 +8,8 @@ namespace Sparkle.Billing.Component.Fine.Definition
 
         public String Name { get; set; }
 
-        public Fee.Data Fee { get; set; }
-
         public Boolean IsPercentage { get; set; }
 
-        public Boolean IsActive { get; set; }
     }
 
 }
