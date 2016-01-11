@@ -25,20 +25,23 @@ namespace Sparkle.Billing.WinForm.Fine.Definition
 
         protected override void ClearForm()
         {
-            //this.txtName.Text = String.Empty;
-            //this.txtName.Focus();
+            this.txtName.Text = String.Empty;
+            this.rdlYes.Checked = true;
+            this.txtName.Focus();
         }
 
         protected override void AssignDto()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            //dto.Name = this.txtName.Text;
+            dto.Name = this.txtName.Text;
+            dto.IsPercentage = this.rdlYes.Checked == true ? true : false;
         }
 
         protected override void AssignFormControls()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            //this.txtName.Text = dto.Name;
+            this.txtName.Text = dto.Name;
+            this.rdlYes.Checked = dto.IsPercentage;
         }
 
         protected override Boolean ValidateForm()
