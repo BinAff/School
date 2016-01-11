@@ -24,14 +24,15 @@ namespace Sparkle.Billing.Component.Fine.Type
             base.NumberOfRowsAffectedInUpdate = 1;
             base.DeleteStoredProcedure = "Billing.FineTypeDelete";
             base.NumberOfRowsAffectedInDelete = 1;
+
+            base.ReadAllActivateStoredProcedure = "Billing.FineTypeReadAllActive";
+            base.UpdateActivationStatusStoredProcedure = "Billing.FineTypeUpdateStatus";
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Name = Convert.IsDBNull(dr["Name"]) ? String.Empty : Convert.ToString(dr["Name"]);
-            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
             return dt;
         }
 
@@ -61,27 +62,7 @@ namespace Sparkle.Billing.Component.Fine.Type
 
             return false;
         }
-
-        internal Boolean Activate()
-        {
-            return UpdateStatus(true);
-        }
-
-        internal Boolean Deactivate()
-        {
-            return UpdateStatus(false);
-        }
-
-        internal Boolean UpdateStatus(Boolean ActiveStatus)
-        {
-            Data data = this.Data as Data;
-            this.CreateConnection();
-            this.CreateCommand("Billing.FineTypeUpdateStatus");
-            base.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
-            base.AddInParameter("@IsActive", DbType.Boolean, ActiveStatus);
-            return this.ExecuteNonQuery() == 1 ? true : false;
-        }
-
+        
     }
 
 }
