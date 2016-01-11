@@ -39,20 +39,22 @@ namespace Sparkle.Billing.Facade.Concession
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
+            dto.FeeDefinition = new Fee.Definition.Server(null).Convert(data.FeeDefinition) as Fee.Definition.Dto;
+            dto.Caste = new Configuration.Facade.Caste.Server(null).Convert(data.Caste) as Configuration.Facade.Caste.Dto;
             dto.Amount = data.Amount;
             dto.IsPercentage = data.IsPercentage;
-            dto.IsActive = data.IsActive;
+            
         }
 
         public override void AssignData()
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
+            data.FeeDefinition = new Fee.Definition.Server(null).Convert(dto.FeeDefinition) as Sparkle.Billing.Component.Fee.Definition.Data;
+            data.Caste = new Configuration.Facade.Caste.Server(null).Convert(dto.Caste) as Crystal.Configuration.Component.Caste.Data;
             data.Amount = dto.Amount;
             data.IsPercentage = dto.IsPercentage;
-            data.IsActive = dto.IsActive;
+            
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -61,6 +63,8 @@ namespace Sparkle.Billing.Facade.Concession
             return new Dto
             {
                 Id = dt.Id,
+                FeeDefinition = new Fee.Definition.Server(null).Convert(dt.FeeDefinition) as Fee.Definition.Dto,
+                Caste = new Configuration.Facade.Caste.Server(null).Convert(dt.Caste) as Configuration.Facade.Caste.Dto,
                 Amount = dt.Amount,
                 IsPercentage = dt.IsPercentage,
                 IsActive = dt.IsActive,
@@ -73,6 +77,8 @@ namespace Sparkle.Billing.Facade.Concession
             return new Comp.Data
             {
                 Id = dt.Id,
+                FeeDefinition = new Fee.Definition.Server(null).Convert(dt.FeeDefinition) as Sparkle.Billing.Component.Fee.Definition.Data,
+                Caste = new Configuration.Facade.Caste.Server(null).Convert(dt.Caste) as Crystal.Configuration.Component.Caste.Data,
                 Amount = dt.Amount,
                 IsPercentage = dt.IsPercentage,
                 IsActive = dt.IsActive,

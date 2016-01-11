@@ -14,6 +14,12 @@ namespace Sparkle.Billing.Facade.Concession
 
         public Boolean IsPercentage { get; set; }
 
+        public Dto()
+        {
+            FeeDefinition = new Fee.Definition.Dto();
+            Caste = new Configuration.Facade.Caste.Dto();
+        }
+
     }
 
 }
