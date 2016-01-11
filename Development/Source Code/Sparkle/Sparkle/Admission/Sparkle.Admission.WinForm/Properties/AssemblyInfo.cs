@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sparkle.Admission.Facade")]
-[assembly: AssemblyDescription("Sparkle Admission : Facade")]
+[assembly: AssemblyTitle("Sparkle.Admission.WinForm")]
+[assembly: AssemblyDescription("Sparkle Admission : WinForm")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Binary Affairs")]
 [assembly: AssemblyProduct("Sparkle")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0dbd5b80-f88b-4003-9a7b-f767f249b436")]
+[assembly: Guid("bda149bd-7819-4248-9085-1bd81f512b0b")]
 
 // Version information for an assembly consists of the following four values:
 //

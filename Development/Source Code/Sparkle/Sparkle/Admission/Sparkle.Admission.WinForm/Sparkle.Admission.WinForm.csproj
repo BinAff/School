@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}</ProjectGuid>
+    <ProjectGuid>{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sparkle.Admission.Component</RootNamespace>
-    <AssemblyName>Sparkle.Admission.Component</AssemblyName>
+    <RootNamespace>Sparkle.Admission.WinForm</RootNamespace>
+    <AssemblyName>Sparkle.Admission.WinForm</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -29,53 +31,45 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BinAff.Core">
-      <HintPath>..\..\..\Reference\BinAff.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="BinAff.Utility">
-      <HintPath>..\..\..\Reference\BinAff.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdmissionForm\Dao.cs" />
-    <Compile Include="AdmissionForm\Data.cs" />
-    <Compile Include="AdmissionForm\Server.cs" />
-    <Compile Include="AdmissionForm\Validator.cs" />
-    <Compile Include="Applicant\Dao.cs" />
-    <Compile Include="Applicant\Data.cs" />
-    <Compile Include="Applicant\Server.cs" />
-    <Compile Include="Applicant\Validator.cs" />
-    <Compile Include="Dao.cs" />
-    <Compile Include="Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server.cs" />
-    <Compile Include="SubjectScore\Dao.cs" />
-    <Compile Include="SubjectScore\Data.cs" />
-    <Compile Include="SubjectScore\Server.cs" />
-    <Compile Include="SubjectScore\Validator.cs" />
-    <Compile Include="TestDefination\Dao.cs" />
-    <Compile Include="TestDefination\Data.cs" />
-    <Compile Include="TestDefination\Server.cs" />
-    <Compile Include="TestDefination\Validator.cs" />
-    <Compile Include="TestSubject\Dao.cs" />
-    <Compile Include="TestSubject\Data.cs" />
-    <Compile Include="TestSubject\Server.cs" />
-    <Compile Include="TestSubject\Validator.cs" />
-    <Compile Include="Test\Dao.cs" />
-    <Compile Include="Test\Data.cs" />
-    <Compile Include="Test\Server.cs" />
-    <Compile Include="Test\Validator.cs" />
-    <Compile Include="Validator.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

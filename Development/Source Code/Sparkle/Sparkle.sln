@@ -100,6 +100,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Reference\BinAff.Utility.dll = Reference\BinAff.Utility.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admission", "Admission", "{AD387911-0DE5-479D-A82B-82C7BB0F22F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.Admission.Component", "Sparkle\Admission\Sparkle.Admission.Component\Sparkle.Admission.Component.csproj", "{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.Admission.Facade", "Sparkle\Admission\Sparkle.Admission.Facade\Sparkle.Admission.Facade.csproj", "{5EFBB242-486B-4078-A105-4B3577C26B5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparkle.Admission.WinForm", "Sparkle\Admission\Sparkle.Admission.WinForm\Sparkle.Admission.WinForm.csproj", "{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,6 +236,18 @@ Global
 		{1EE9A9DD-9151-437A-B1A3-28015975EF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE9A9DD-9151-437A-B1A3-28015975EF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE9A9DD-9151-437A-B1A3-28015975EF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EFBB242-486B-4078-A105-4B3577C26B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFBB242-486B-4078-A105-4B3577C26B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFBB242-486B-4078-A105-4B3577C26B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFBB242-486B-4078-A105-4B3577C26B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FBC3C94-F596-4A8A-8B3C-CEF331D10184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -275,5 +295,8 @@ Global
 		{F6AB9943-F271-4293-B13E-DC58DEF3F59D} = {A7F7C738-72FF-43A7-91F7-56107CB662E3}
 		{266B4DEB-D9C2-4607-A5D5-60F5124E89AE} = {A7F7C738-72FF-43A7-91F7-56107CB662E3}
 		{1EE9A9DD-9151-437A-B1A3-28015975EF52} = {A5D9C5A9-3221-4209-ADB3-342793BD0A64}
+		{D412B2EA-7A70-4E76-B1C7-27D78F2F19B7} = {AD387911-0DE5-479D-A82B-82C7BB0F22F8}
+		{5EFBB242-486B-4078-A105-4B3577C26B5D} = {AD387911-0DE5-479D-A82B-82C7BB0F22F8}
+		{6FBC3C94-F596-4A8A-8B3C-CEF331D10184} = {AD387911-0DE5-479D-A82B-82C7BB0F22F8}
 	EndGlobalSection
 EndGlobal

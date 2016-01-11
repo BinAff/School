@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sparkle.Admission.Component")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Sparkle Admission : Component")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sparkle.Admission.Component")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Binary Affairs")]
+[assembly: AssemblyProduct("Sparkle")]
+[assembly: AssemblyCopyright("Copyright © Binary Affairs 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
