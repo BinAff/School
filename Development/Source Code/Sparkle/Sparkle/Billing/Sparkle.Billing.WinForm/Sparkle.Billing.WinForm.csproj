@@ -141,15 +141,13 @@
     <Compile Include="Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FormControl.Designer.cs">
-      <DependentUpon>FormControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Configuration\Sparkle.Configuration.Facade\Sparkle.Configuration.Facade.csproj">
+      <Project>{f6940d8b-541d-4e0b-be95-9f51dfaca156}</Project>
+      <Name>Sparkle.Configuration.Facade</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\School\Sparkle.School.Facade\Sparkle.School.Facade.csproj">
       <Project>{12fd6282-7696-49b8-b7d0-7b142264a7e6}</Project>
       <Name>Sparkle.School.Facade</Name>
@@ -188,9 +186,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fine\Type\FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormControl.resx">
-      <DependentUpon>FormControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

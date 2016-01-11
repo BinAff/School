@@ -44,8 +44,8 @@ namespace Sparkle.Billing.WinForm.Fine
         protected override void AssignDto()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            dto.FineType = this.cboFineType.SelectedItem as Fac.Type.Dto;
-            dto.FineDefinition = this.cboFineDefinition.SelectedItem as Fac.Definition.Dto;
+            //dto.FineType = this.cboFineType.SelectedItem as Fac.Type.Dto;
+            dto.Definition = this.cboFineDefinition.SelectedItem as Fac.Definition.Dto;
             dto.SchoolStandard = this.cboStandard.SelectedItem as Sch.Standard.Dto;
             dto.Amount = Convert.ToDouble(this.txtAmount.Text);
 
@@ -55,8 +55,8 @@ namespace Sparkle.Billing.WinForm.Fine
         protected override void AssignFormControls()
         {
             Fac.Dto dto = base.FormDto.Dto as Fac.Dto;
-            this.cboFineType.SelectedItem = (this.FormDto as Fac.FormDto).FineTypeList.FindLast((p) => { return p.Id == dto.FineType.Id; });
-            this.cboFineDefinition.SelectedItem = (this.FormDto as Fac.FormDto).FineDefinitionList.FindLast((p) => { return p.Id == dto.FineDefinition.Id; });
+            //this.cboFineType.SelectedItem = (this.FormDto as Fac.FormDto).FineTypeList.FindLast((p) => { return p.Id == dto.FineType.Id; });
+            this.cboFineDefinition.SelectedItem = (this.FormDto as Fac.FormDto).FineDefinitionList.FindLast((p) => { return p.Id == dto.Definition.Id; });
             this.cboStandard.SelectedItem = (this.FormDto as Fac.FormDto).SchoolStandardList.FindLast((p) => { return p.Id == dto.SchoolStandard.Id; });
             this.txtAmount.Text = Convert.ToString(dto.Amount);
         }

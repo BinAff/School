@@ -15,7 +15,7 @@
 
         protected override void InstantiateFormControl()
         {
-            base.FormControl = new FormControl();
+            //base.FormControl = new FormControl();
         }
 
         #endregion
