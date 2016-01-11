@@ -625,6 +625,18 @@
     <Build Include="Admission\Stored Procedures\EducationBackgroundRead.sql" />
     <Build Include="Admission\Stored Procedures\EducationBackgroundInsert.sql" />
     <Build Include="Admission\Stored Procedures\EducationBackgroundDelete.sql" />
+    <Build Include="Admission\Tables\Applicant.sql" />
+    <Build Include="Admission\Tables\AdmissionForm.sql" />
+    <Build Include="Admission\Stored Procedures\ApplicantUpdate.sql" />
+    <Build Include="Admission\Stored Procedures\ApplicantReadAll.sql" />
+    <Build Include="Admission\Stored Procedures\ApplicantRead.sql" />
+    <Build Include="Admission\Stored Procedures\ApplicantInsert.sql" />
+    <Build Include="Admission\Stored Procedures\ApplicantDelete.sql" />
+    <Build Include="Admission\Stored Procedures\AdmissionFormUpdate.sql" />
+    <Build Include="Admission\Stored Procedures\AdmissionFormReadAll.sql" />
+    <Build Include="Admission\Stored Procedures\AdmissionFormRead.sql" />
+    <Build Include="Admission\Stored Procedures\AdmissionFormInsert.sql" />
+    <Build Include="Admission\Stored Procedures\AdmissionFormDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
