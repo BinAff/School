@@ -64,6 +64,9 @@
     <Compile Include="Standard\Dto.cs" />
     <Compile Include="Standard\FormDto.cs" />
     <Compile Include="Standard\Server.cs" />
+    <Compile Include="Subject\Dto.cs" />
+    <Compile Include="Subject\FormDto.cs" />
+    <Compile Include="Subject\Server.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Crystal\Configuration\Crystal.Configuration.Component\Crystal.Configuration.Component.csproj">
