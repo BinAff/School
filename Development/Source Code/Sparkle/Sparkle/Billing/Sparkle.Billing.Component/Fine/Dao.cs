@@ -33,6 +33,7 @@ namespace Sparkle.Billing.Component.Fine
         {
             Data dt = data as Data;
             dt.Amount = Convert.IsDBNull(dr["Amount"]) ? 0.00 : Convert.ToDouble(dr["Amount"]);
+            
             return dt;
         }
 
