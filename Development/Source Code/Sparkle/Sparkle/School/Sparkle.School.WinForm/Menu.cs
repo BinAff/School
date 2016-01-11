@@ -29,20 +29,20 @@ namespace Sparkle.School.WinForm
 
         private void btnFeeManagement_Click(object sender, EventArgs e)
         {
-            new Billing.WinForm.Fee.Form().Show();
-            this.Close();
+            //new Billing.WinForm.Fee.Form().Show();
+            //this.Close();
         }
 
         private void btnFineManagement_Click(object sender, EventArgs e)
         {
-            new Billing.WinForm.Fine.Form().Show();
-            this.Close();
+            //new Billing.WinForm.Fine.Form().Show();
+            //this.Close();
         }
 
         private void btnConcessionManagement_Click(object sender, EventArgs e)
         {
-            new Billing.WinForm.Concession.Form().Show();
-            this.Close();
+            //new Billing.WinForm.Concession.Form().Show();
+            //this.Close();
         }
 
         private void btnLibraryManagement_Click(object sender, EventArgs e)
