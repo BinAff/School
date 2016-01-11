@@ -20,9 +20,16 @@ namespace Sparkle.Billing.Component.Fine.LineItem
             List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
-            if (ValidationRule.IsNegative(data.Amount))
+            if (ValidationRule.IsNullOrEmpty(data.Amount))
             {
-                retMsg.Add(new Message("Amount cannot be empty.", Message.Type.Error));
+                retMsg.Add(new Message("Amount cannot be Empty.", Message.Type.Error));
+            }
+            else
+            {
+                if (ValidationRule.IsNegative(data.Amount))
+                {
+                    retMsg.Add(new Message("Amount cannot be Negative.", Message.Type.Error));
+                }
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())

@@ -35,7 +35,7 @@ namespace Sparkle.Billing.Component.Fine.LineItem
 
         protected override void AssignParameter(String procedureName)
         {
-            base.AddInParameter("@Amount", DbType.String, (this.Data as Data).Amount);
+            base.AddInParameter("@Amount", DbType.Double, (this.Data as Data).Amount);
         }
 
         #endregion
