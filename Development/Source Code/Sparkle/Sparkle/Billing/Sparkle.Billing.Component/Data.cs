@@ -6,8 +6,6 @@ namespace Sparkle.Billing.Component
     public class Data : BinAff.Core.Data
     {
 
-        public Int64 Id { get; set; }
-
         public DateTime Date { get; set; }
 
         public Int32 Installment { get; set; }
