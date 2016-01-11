@@ -1,4 +1,14 @@
-﻿using Comp = Sparkle.Billing.Component.Fee.Definition;
+﻿using BinAff.Facade.Library;
+using Sparkle.Core;
+
+using Comp = Sparkle.Billing.Component.Fee.Definition;
+
+using FeeGroupComp = Sparkle.Billing.Component.Fee.Group;
+//using FeeGroupFac = Sparkle.Billing.Facade.Fee.Group;
+
+using FineDefComp = Sparkle.Billing.Component.Fine.Definition;
+//using FineDefFac = Sparkle.Billing.Facade.Fine.Definition;
+
 
 using FacLib = Sparkle.Core.Facade;
 
@@ -39,18 +49,18 @@ namespace Sparkle.Billing.Facade.Fee.Definition
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
             dto.Name = data.Name;
-            dto.IsActive = data.IsActive;
+            dto.FeeGroup = new Fee.Group.Server(null).Convert(data.FeeGroup) as Fee.Group.Dto;
+            dto.FineDefination = new Fine.Definition.Server(null).Convert(data.FineDefination) as Fine.Definition.Dto;
         }
 
         public override void AssignData()
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
             data.Name = dto.Name;
-            data.IsActive = dto.IsActive;
+            data.FeeGroup = new Fee.Group.Server(null).Convert(dto.FeeGroup) as FeeGroupComp.Data;
+            data.FineDefination = new Fine.Definition.Server(null).Convert(dto.FineDefination) as FineDefComp.Data;
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -60,6 +70,8 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                FeeGroup = new Fee.Group.Server(null).Convert(dt.FeeGroup) as Fee.Group.Dto,
+                FineDefination = new Fine.Definition.Server(null).Convert(dt.FineDefination) as Fine.Definition.Dto,
                 IsActive = dt.IsActive,
             };
         }
@@ -71,6 +83,8 @@ namespace Sparkle.Billing.Facade.Fee.Definition
             {
                 Id = dt.Id,
                 Name = dt.Name,
+                FeeGroup = new Fee.Group.Server(null).Convert(dt.FeeGroup) as FeeGroupComp.Data,
+                FineDefination = new Fine.Definition.Server(null).Convert(dt.FineDefination) as FineDefComp.Data,
                 IsActive = dt.IsActive,
             };
         }
