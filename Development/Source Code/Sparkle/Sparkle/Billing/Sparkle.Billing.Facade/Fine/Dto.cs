@@ -9,16 +9,16 @@ namespace Sparkle.Billing.Facade.Fine
     {
         public Double Amount { get; set; }
 
-        public Type.Dto FineType { get; set; }
+        //public Type.Dto Type { get; set; }
 
-        public Definition.Dto FineDefinition { get; set; }
+        public Definition.Dto Definition { get; set; }
 
         public Sch.Standard.Dto SchoolStandard { get; set; }
 
         public Dto()
         {
-            this.FineType = new Type.Dto();
-            this.FineDefinition = new Definition.Dto();
+            //this.Type = new Type.Dto();
+            this.Definition = new Definition.Dto();
             this.SchoolStandard = new Sch.Standard.Dto();
         }
     }
