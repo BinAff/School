@@ -1,5 +1,7 @@
 ﻿using Comp = Sparkle.Billing.Component.Fine;
 
+using SchComp = Sparkle.School.Component;
+
 using FacLib = Sparkle.Core.Facade;
 
 namespace Sparkle.Billing.Facade.Fine
@@ -39,18 +41,21 @@ namespace Sparkle.Billing.Facade.Fine
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
             dto.Amount = data.Amount;
-            dto.IsActive = data.IsActive;
+            dto.FineType = new Type.Server(null).Convert(data.FineType) as Fine.Type.Dto;
+            dto.FineDefinition = new Definition.Server(null).Convert(data.FineDefinition) as Fine.Definition.Dto;
+            dto.SchoolStandard = new School.Facade.Standard.Server(null).Convert(data.SchoolStandard) as School.Facade.Standard.Dto;
         }
 
         public override void AssignData()
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
             data.Amount = dto.Amount;
-            data.IsActive = dto.IsActive;
+            data.FineType = new Type.Server(null).Convert(dto.FineType) as Comp.Type.Data;
+            data.FineDefinition = new Definition.Server(null).Convert(dto.FineDefinition) as Comp.Definition.Data;
+            data.SchoolStandard = new School.Facade.Standard.Server(null).Convert(dto.SchoolStandard) as School.Component.Standard.Data;
+            
         }
 
         public override BinAff.Facade.Library.Dto Convert(BinAff.Core.Data data)
@@ -60,6 +65,9 @@ namespace Sparkle.Billing.Facade.Fine
             {
                 Id = dt.Id,
                 Amount = dt.Amount,
+                FineType = new Type.Server(null).Convert(dt.FineType) as Fine.Type.Dto,
+                FineDefinition = new Definition.Server(null).Convert(dt.FineDefinition) as Fine.Definition.Dto,
+                SchoolStandard = new School.Facade.Standard.Server(null).Convert(dt.SchoolStandard) as School.Facade.Standard.Dto,
                 IsActive = dt.IsActive,
             };
         }
@@ -71,6 +79,9 @@ namespace Sparkle.Billing.Facade.Fine
             {
                 Id = dt.Id,
                 Amount = dt.Amount,
+                FineType = new Type.Server(null).Convert(dt.FineType) as Comp.Type.Data,
+                FineDefinition = new Definition.Server(null).Convert(dt.FineDefinition) as Comp.Definition.Data,
+                SchoolStandard = new School.Facade.Standard.Server(null).Convert(dt.SchoolStandard) as School.Component.Standard.Data,
                 IsActive = dt.IsActive,
             };
         }
