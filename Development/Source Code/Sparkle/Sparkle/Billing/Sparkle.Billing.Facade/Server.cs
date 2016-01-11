@@ -39,7 +39,6 @@ namespace Sparkle.Billing.Facade
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
             dto.Date = data.Date;
             dto.Installment = data.Installment;
             dto.FeeAmount = data.FeeAmount;
@@ -52,7 +51,6 @@ namespace Sparkle.Billing.Facade
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
             data.Date = dto.Date;
             data.Installment = dto.Installment;
             data.FeeAmount = dto.FeeAmount;
