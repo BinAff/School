@@ -10,7 +10,6 @@ namespace Sparkle.Billing.Component.Concession
 
         public Boolean IsPercentage { get; set; }
 
-        public Boolean IsActive { get; set; }
 
     }
 

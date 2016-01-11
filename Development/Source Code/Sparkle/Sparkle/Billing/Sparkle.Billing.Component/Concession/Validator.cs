@@ -20,14 +20,21 @@ namespace Sparkle.Billing.Component.Concession
             List<Message> retMsg = new List<Message>();
             Data data = base.Data as Data;
 
-            if (ValidationRule.IsNegative(data.Amount))
+            if (ValidationRule.IsNullOrEmpty(data.Amount))
             {
                 retMsg.Add(new Message("Amount cannot be empty.", Message.Type.Error));
+            }
+            else
+            {
+                if (ValidationRule.IsNegative(data.Amount))
+                {
+                    retMsg.Add(new Message("Amount cannot be Negative.", Message.Type.Error));
+                }
             }
 
             if ((this.Server.DataAccess as Dao).ReadDuplicate())
             {
-                retMsg.Add(new Message("Fine already exists.", Message.Type.Error));
+                retMsg.Add(new Message("Concession already exists.", Message.Type.Error));
             }
             return retMsg;
         }

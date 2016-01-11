@@ -24,15 +24,17 @@ namespace Sparkle.Billing.Component.Concession
             base.NumberOfRowsAffectedInUpdate = 1;
             base.DeleteStoredProcedure = "Billing.ConcessionDelete";
             base.NumberOfRowsAffectedInDelete = 1;
+
+            base.ReadAllActivateStoredProcedure = "Billing.ConcessionReadAllActive";
+            base.UpdateActivationStatusStoredProcedure = "Billing.ConcessionUpdateStatus";
+            
         }
 
         protected override BinAff.Core.Data CreateDataObject(DataRow dr, BinAff.Core.Data data)
         {
             Data dt = data as Data;
-            dt.Id = Convert.IsDBNull(dr["Id"]) ? 0 : Convert.ToInt64(dr["Id"]);
             dt.Amount = Convert.IsDBNull(dr["Amount"]) ? 0.00 : Convert.ToDouble(dr["Amount"]);
             dt.IsPercentage = Convert.IsDBNull(dr["IsPercentage"]) ? false : Convert.ToBoolean(dr["IsPercentage"]);
-            dt.IsActive = Convert.IsDBNull(dr["IsActive"]) ? false : Convert.ToBoolean(dr["IsActive"]);
             return dt;
         }
 
@@ -62,27 +64,5 @@ namespace Sparkle.Billing.Component.Concession
 
             return false;
         }
-
-        internal Boolean Activate()
-        {
-            return UpdateStatus(true);
-        }
-
-        internal Boolean Deactivate()
-        {
-            return UpdateStatus(false);
-        }
-
-        internal Boolean UpdateStatus(Boolean ActiveStatus)
-        {
-            Data data = this.Data as Data;
-            this.CreateConnection();
-            this.CreateCommand("Billing.ConcessionUpdateStatus");
-            base.AddInParameter("@Id", DbType.String, (this.Data as Data).Id);
-            base.AddInParameter("@IsActive", DbType.Boolean, ActiveStatus);
-            return this.ExecuteNonQuery() == 1 ? true : false;
-        }
-
     }
-
 }
