@@ -39,7 +39,6 @@ namespace Sparkle.Billing.Facade.Fine.LineItem
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            base.ComponentData.Id = data.Id;
             dto.Amount = data.Amount;
         }
 
@@ -47,7 +46,6 @@ namespace Sparkle.Billing.Facade.Fine.LineItem
         {
             Dto dto = (base.FormDto as FormDto).Dto as Dto;
             Comp.Data data = base.ComponentData as Comp.Data;
-            data.Id = dto.Id;
             data.Amount = dto.Amount;
         }
 
